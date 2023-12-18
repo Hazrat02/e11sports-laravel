@@ -24,10 +24,10 @@ Route::get('/vc', function () {
         return 'view';
 });
 
-    Route::get('/bal', function () {
+    Route::get('/working', function () {
 
-        return 'fdsdf';
-});
+        return 'working.....';
+})->name('working');
     Route::controller('LoginController')->group(function () {
         Route::get('/login', 'showLoginForm')->name('login');
         Route::post('/login', 'login');
