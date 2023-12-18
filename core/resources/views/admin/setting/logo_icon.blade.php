@@ -44,12 +44,12 @@
                                         <div class="avatar-preview">
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <div class="profilePicPreview logoPicPrev" style="background-image: url({{ getImage(getFilePath('logoIcon') .'/favicon.png', '?'.time()) }})">
+                                                    <div class="profilePicPreview logoPicPrev" style="background-image: url({{ getImage(getFilePath('logoIcon') .'/favicon2.png', '?'.time()) }})">
                                                         <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 mt-sm-0 mt-4">
-                                                    <div class="profilePicPreview logoPicPrev bg--dark" style="background-image: url({{ getImage(getFilePath('logoIcon') .'/favicon.png', '?'.time()) }})">
+                                                    <div class="profilePicPreview logoPicPrev bg--dark" style="background-image: url({{ getImage(getFilePath('logoIcon') .'/favicon2.png', '?'.time()) }})">
                                                         <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                                     </div>
                                                 </div>

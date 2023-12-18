@@ -17,7 +17,7 @@ if(isset($seoContents) && count($seoContents)){
 @if($seoContents)
     <meta name="description" content="{{ $seoContents->meta_description??$seoContents->description }}">
     <meta name="keywords" content="{{ implode(',',$seoContents->keywords) }}">
-    <link rel="shortcut icon" href="{{ getImage(getFilePath('logoIcon') . '/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ getImage(getFilePath('logoIcon') . '/favicon2.png') }}" type="image/x-icon">
 
     {{--
     <!-- Apple Stuff -->--}}
