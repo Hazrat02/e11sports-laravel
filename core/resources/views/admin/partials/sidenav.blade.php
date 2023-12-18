@@ -2,7 +2,7 @@
     <button class="res-sidebar-close-btn"><i class="las la-times"></i></button>
     <div class="sidebar__inner">
         <div class="sidebar__logo">
-            <a class="sidebar__main-logo" href="{{ route('admin.dashboard') }}"><img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="@lang('image')"></a>
+            <a class="sidebar__main-logo" href="{{ route('admin.dashboard') }}"><img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="@lang('image')"></a>
         </div>
 
         <div class="sidebar__menu-wrapper" id="sidebar__menuWrapper">

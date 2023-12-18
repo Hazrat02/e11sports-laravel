@@ -10,7 +10,7 @@
             <div class="registration-area-inner">
                 <div class="text-center">
                     <a class="site-logo mb-4" href="{{ route('home') }}">
-                        <img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="site-logo">
+                        <img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="site-logo">
                     </a>
                     <h2 class="title mb-3">{{ __(@$register->data_values->title) }}</h2>
                     <p>{{ __(@$register->data_values->subtitle) }}</p>

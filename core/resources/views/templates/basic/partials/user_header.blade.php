@@ -2,7 +2,7 @@
     <div class="header__bottom">
         <div class="container">
             <nav class="navbar navbar-expand-xl align-items-center p-0">
-                <a class="site-logo site-title" href="{{ route('home') }}"><img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
+                <a class="site-logo site-title" href="{{ route('home') }}"><img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
                 <button class="navbar-toggler ml-auto" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="menu-toggle"></span>
                 </button>
