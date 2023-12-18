@@ -10,7 +10,7 @@ $login = getContent('login.content',true);
                 <a class="site-logo mb-4" href="{{ route('home') }}">
                     <img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="site-logo">
                 </a>
-                <h2 class="title mb-2">{{ __(@$login->data_values->title) }}</h2>
+                <h2 class="title mb-2">Welcome to E11sports</h2>
                 <p>{{ __(@$login->data_values->subtitle) }}</p>
             </div>
             {{-- {{ route('user.login')}} --}}
