@@ -29,7 +29,7 @@
     <div class="preloader">
         <div class="preloader__inner">
             <div class="preloader__thumb">
-                <img class="loaderLogo mt-3" src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="imge">
+                <img class="loaderLogo mt-3" src="{{ getImage(getFilePath('logoIcon') . '/favicon2.png') }}" alt="imge">
                 <img class="loadercircle" src="{{ asset($activeTemplateTrue . 'images/preloader-dice.png') }}" alt="image">
             </div>
         </div>
