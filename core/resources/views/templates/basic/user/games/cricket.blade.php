@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="card-body h-100 middle-el">
+                    <div class="card-body h-100 middle-el px-0">
                         <div class="contenedorEquipo">
                             <div class="base">
                                 <div class="panel panel-superior">
@@ -39,13 +39,7 @@
                                         <p class="">Bangladesh</p>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-center">
-
-                                    <div class="inferior-boton  float-izquierda"><a
-                                            href="{{ route('user.play.cricketbet') }}"><button>Bet Now</button></a>
-                                    </div>
-
-                                </div>
+            
                             </div>
                         </div>
                  
