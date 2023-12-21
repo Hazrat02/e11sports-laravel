@@ -781,7 +781,7 @@ class PlayController extends Controller {
     }
     public function cricket() {
        $game='';
-       $pageTitle='';
+       $pageTitle='Cricket';
 
         return view($this->activeTemplate . 'user.cricket', compact('game', 'pageTitle'));
 
