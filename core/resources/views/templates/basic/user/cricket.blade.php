@@ -223,10 +223,6 @@
             text-align: center;
         }
 
-        .inferior-boton {
-            width: 34%;
-        }
-
         .imagen-estrella {
             width: 30px;
             margin: 20px 0px 0px 1px;
@@ -389,9 +385,7 @@
                 text-align: center;
             }
 
-            .inferior-boton {
-                width: 34%;
-            }
+       
 
             .imagen-estrella {
                 width: 16px;
