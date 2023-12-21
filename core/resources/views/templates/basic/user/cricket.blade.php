@@ -1,4 +1,4 @@
-@extends($activeTemplate . 'layouts.master')
+{{-- @extends($activeTemplate . 'layouts.master')
 @section('content')
     <section class="pt-120 pb-120">
         <div class="container">
@@ -114,4 +114,5 @@
             complete(data, url);
         }
     </script>
-@endpush
+@endpush --}}
+dgdfgd
