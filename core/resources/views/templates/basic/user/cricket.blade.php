@@ -130,11 +130,10 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
-                    <h1>
-                        Upcoming game.....
-                    </h1>
+                   
                     <div class="game-details-right">
-                        gfffgfg
+                       <h3> Upcoming game.....</h3>
+                       
                     </div>
                 </div>
             </div>
