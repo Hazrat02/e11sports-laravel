@@ -116,7 +116,7 @@ Route::middleware('auth')->name('user.')->group(function () {
                 Route::get('game/{alias}', 'playGame')->name('game');
                 Route::post('game/invest/{alias}', 'investGame')->name('game.invest');
                 Route::post('game/end/{alias}', 'gameEnd')->name('game.end');
-                Route::get('/cricket', 'cricket')->name('.cricket');
+                Route::get('/cricket', 'cricket')->name('cricket');
 
             });
         });
