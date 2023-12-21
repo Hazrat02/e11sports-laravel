@@ -263,14 +263,13 @@
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
             .base {
-                //width: 75%;
                 width: 90%;
                 margin: 0px auto;
                 box-shadow: 1px 1px 1px 1px black;
-                border-radius: 50px;
+                border-radius: 10px;
                 background: rgba(0, 0, 0, 1);
                 overflow: hidden;
-                border: 5px solid white;
+                border: 2px solid white;
                 font-family: bebas, Verdana, Geneva, sans-serif;
                 color: white;
             }
