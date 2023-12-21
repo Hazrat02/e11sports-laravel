@@ -237,7 +237,7 @@
             background-color: #e8065b;
             border: 2px solid #fff;
             border-radius: 30px;
-            padding: 5px 50px;
+            padding: 5px 15px;
             box-shadow: 0px 0px 10px 2px black inset;
             color: #fff;
             font-weight: 600;
@@ -400,7 +400,7 @@
                 background-color: #e8065b;
                 border: 2px solid #fff;
                 border-radius: 30px;
-                padding: 2px 20px;
+                padding: 2px 15px;
                 box-shadow: 0px 0px 10px 2px black inset;
                 color: #fff;
                 font-weight: 600;
