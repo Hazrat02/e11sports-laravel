@@ -131,9 +131,9 @@
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
                    
-                    <div class="game-details-right">
+                    <div class="game-details-right mt-0 pt-0 ">
                        <h3> Upcoming game.....</h3>
-                       
+                        
                     </div>
                 </div>
             </div>
