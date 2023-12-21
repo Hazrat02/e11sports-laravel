@@ -10,44 +10,44 @@
 
                     <div class="contenedorEquipo">
                         <div class="base">
-                          <div class="panel panel-superior">
-                            <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda" src="
+                            <div class="panel panel-superior">
+                                <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
+                                        src="
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 ">
-                                
-                              <div class="estadisticas float-izquierda">
-                                <p>2X</p>
-                               
-                              </div>
-                              
-                            </div>
-                            <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha" src='
+
+                                    <div class="" style="position: absolute;top:0%;left:40%">
+                                        <p>2X</p>
+                                        <p>5% commition</p>
+                                    </div>
+
+                                </div>
+                                <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
+                                        src='
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 '>
-                              <div class="estadisticas float-derecha">
-                                <p>5% commition</p>
-          
-                              </div>
-                            
+
+
+                                </div>
                             </div>
-                          </div>
-                          <div class="panel marcadores">
-                            <div class="equipo-marcador  izquierdo">
-                              <p class="float-izquierda">india</p>
-                              
+                            <div class="panel marcadores">
+                                <div class="equipo-marcador  izquierdo">
+                                    <p class="float-izquierda">india</p>
+
+                                </div>
+                                <div class="marcador-tiempo"><time>VS</time></div>
+                                <div class="equipo-marcador  derecho">
+                                    <p class="">Bangladesh</p>
+                                </div>
                             </div>
-                            <div class="marcador-tiempo"><time>VS</time></div>
-                            <div class="equipo-marcador  derecho">
-                              <p class="">Bangladesh</p>
+                            <div class="d-flex justify-content-center">
+
+                                <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a>
+                                </div>
+
                             </div>
-                          </div>
-                          <div class="d-flex justify-content-center">
-                         
-                            <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a></div>
-                          
-                          </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
                     <div class="game-details-right">
@@ -88,7 +88,7 @@
         }
 
         .base {
-          
+
             width: 90%;
             margin: 0px auto;
             box-shadow: 1px 1px 1px 1px black;
@@ -196,7 +196,7 @@
         .marcador-tiempo {
             width: 20%;
             font-size: 26px;
-           
+
             line-height: 50px !important;
         }
 
@@ -357,7 +357,7 @@
 
             .marcadores div p {
                 margin: 0px 0px 0px 5px;
-     
+
                 width: 60%;
                 font-size: 10px;
             }
@@ -376,7 +376,7 @@
                 line-height: 35px !important;
             }
 
-          
+
 
             .equipo-inferor {
                 width: 33%;
@@ -385,7 +385,7 @@
                 text-align: center;
             }
 
-       
+
 
             .imagen-estrella {
                 width: 16px;
