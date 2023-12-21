@@ -8,44 +8,42 @@
                         <div class="alt"></div>
                         <div class="game-details-left">
                             <div class="game-details-left__body">
-                                <div class="flp">
-                                    <div class="contenedorEquipo">
-                                        <div class="base">
-                                            <div class="panel panel-superior">
-                                                <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
-                                                        class="float-izquierda" src="">
-                                                    <div class="estadisticas float-derecha">
-                                                        <p>DEF:</p>
-                                                        <p>85</p>
-                                                    </div>
-                                                    <div class="estadisticas float-derecha">
-                                                        <p>MID:</p>
-                                                        <p>65</p>
-                                                    </div>
-                                                    <div class="estadisticas float-derecha">
-                                                        <p>ATT:</p>
-                                                        <p>70</p>
-                                                    </div>
+                                <div class="contenedorEquipo">
+                                    <div class="base">
+                                        <div class="panel panel-superior">
+                                            <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
+                                                    class="float-izquierda" src="">
+                                                <div class="estadisticas float-derecha">
+                                                    <p>DEF:</p>
+                                                    <p>85</p>
+                                                </div>
+                                                <div class="estadisticas float-derecha">
+                                                    <p>MID:</p>
+                                                    <p>65</p>
+                                                </div>
+                                                <div class="estadisticas float-derecha">
+                                                    <p>ATT:</p>
+                                                    <p>70</p>
                                                 </div>
                                             </div>
-                                            <div class="panel marcadores">
-                                                <div class="equipo-marcador nombre izquierdo">
-                                                    <p class="float-izquierda">Betis</p>
-                                                    <div class="marcador-goles float-derecha">0</div>
-                                                </div>
-                                                <div class="marcador-tiempo"><time>66:66</time></div>
-                                                <div class="equipo-marcador nombre derecho">
-                                                    <p class="float-derecha">Malaga</p>
-                                                    <div class="marcador-goles float-izquierda">1</div>
-                                                </div>
+                                        </div>
+                                        <div class="panel marcadores">
+                                            <div class="equipo-marcador nombre izquierdo">
+                                                <p class="float-izquierda">Betis</p>
+                                                <div class="marcador-goles float-derecha">0</div>
                                             </div>
-                                            <div class="panel panel-inferior">
-                                                <div class="equipo-inferor izquierdo float-izquierda">
-                                                    <img class="imagen-estrella" src="">
-                                                    <img class="imagen-estrella" src="">
-                                                    <img class="imagen-estrella" src="">
-                                                    <img class="imagen-estrella" src="">
-                                                </div>
+                                            <div class="marcador-tiempo"><time>66:66</time></div>
+                                            <div class="equipo-marcador nombre derecho">
+                                                <p class="float-derecha">Malaga</p>
+                                                <div class="marcador-goles float-izquierda">1</div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-inferior">
+                                            <div class="equipo-inferor izquierdo float-izquierda">
+                                                <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
+                                                <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
+                                                <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
+                                                <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
                                             </div>
                                         </div>
                                     </div>
