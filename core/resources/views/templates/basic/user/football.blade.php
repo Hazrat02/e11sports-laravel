@@ -1,6 +1,6 @@
 @extends($activeTemplate . 'layouts.master')
 @section('content')
-    <section class="mt-5 pb-120">
+    <section class="pt-50 pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -19,7 +19,14 @@
                                 <p>ATT:</p>
                                 <p>85</p>
                               </div>
-                              
+                              <div class="estadisticas float-izquierda">
+                                <p>MID:</p>
+                                <p>65</p>
+                              </div>
+                              <div class="estadisticas float-izquierda">
+                                <p>DEF:</p>
+                                <p>70</p>
+                              </div>
                             </div>
                             <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha" src='
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
@@ -28,23 +35,35 @@
                                 <p>DEF:</p>
                                 <p>85</p>
                               </div>
-                            
+                              <div class="estadisticas float-derecha">
+                                <p>MID:</p>
+                                <p>65</p>
+                              </div>
+                              <div class="estadisticas float-derecha">
+                                <p>ATT:</p>
+                                <p>70</p>
+                              </div>
                             </div>
                           </div>
                           <div class="panel marcadores">
                             <div class="equipo-marcador nombre izquierdo">
-                              <p class="float-izquierda">india</p>
-                              
+                              <p class="float-izquierda">Betis</p>
+                              <div class="marcador-goles float-derecha">0</div>
                             </div>
-                            <div class="marcador-tiempo">VS</div>
+                            <div class="marcador-tiempo"><time>66:66</time></div>
                             <div class="equipo-marcador nombre derecho">
-                              <p class="float-derecha">Bangladesh</p>
+                              <p class="float-derecha">Malaga</p>
+                              <div class="marcador-goles float-izquierda">1</div>
                             </div>
                           </div>
                           <div class="panel panel-inferior">
-                         
-                            <div class="inferior-boton  float-izquierda"><a href="#"><button>Enter</button></a></div>
-                          
+                            <div class="equipo-inferor izquierdo float-izquierda">
+                              
+                            </div>
+                            <div class="inferior-boton float-izquierda"><a href="#"><button>Enter</button></a></div>
+                            <div class="equipo-inferor derecho float-izquierda">
+
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -233,7 +252,6 @@
         }
 
         .inferior-boton {
-            text-align: center;
             text-align: center;
         }
 
