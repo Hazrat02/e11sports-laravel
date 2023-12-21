@@ -41,9 +41,9 @@
                               <p class="">Bangladesh</p>
                             </div>
                           </div>
-                          <div class="panel panel-inferior">
+                          <div class="d-flex justify-content-center panel panel-inferior">
                          
-                            <div class="inferior-boton  float-izquierda"><a href="#"><button>Enter</button></a></div>
+                            <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a></div>
                           
                           </div>
                         </div>
