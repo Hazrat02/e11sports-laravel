@@ -92,7 +92,7 @@
         }
 
         .base {
-            //width: 75%;
+          
             width: 90%;
             margin: 0px auto;
             box-shadow: 1px 1px 1px 1px black;
@@ -124,7 +124,7 @@
         }
 
         .equipo-superior img {
-            //max-width: 13vw;
+
             width: 100px;
             margin: 0px 20px;
         }
@@ -364,7 +364,7 @@
 
             .marcadores div p {
                 margin: 0px 0px 0px 5px;
-                //float: left;
+     
                 width: 60%;
                 font-size: 10px;
             }
