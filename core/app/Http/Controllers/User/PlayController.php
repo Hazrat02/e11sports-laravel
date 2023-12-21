@@ -779,5 +779,12 @@ class PlayController extends Controller {
 
         return $res;
     }
+    public function cricket() {
+       $game='';
+       $pageTitle='';
+
+        return view($this->activeTemplate . 'user.cricket', compact('game', 'pageTitle'));
+
+    }
 
 }
