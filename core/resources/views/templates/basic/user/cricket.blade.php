@@ -41,7 +41,7 @@
                               <p class="">Bangladesh</p>
                             </div>
                           </div>
-                          <div class="d-flex justify-content-center panel panel-inferior">
+                          <div class="d-flex justify-content-center">
                          
                             <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a></div>
                           
@@ -233,8 +233,7 @@
         }
 
         .inferior-boton {
-            display: flex;
-            text-align: center;
+
             text-align: center;
         }
 
