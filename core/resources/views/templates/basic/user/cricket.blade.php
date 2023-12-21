@@ -1,51 +1,9 @@
 @extends($activeTemplate . 'layouts.master')
 @section('content')
-    <section class="pb-120">
+    <section class="pt-50 pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    {{-- <div class="contenedorEquipo">
-                        <div class="base">
-                            <div class="panel panel-superior">
-                                <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
-                                        class="float-izquierda" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                                    <div class="estadisticas float-derecha">
-                                        <p>DEF:</p>
-                                        <p>85</p>
-                                    </div>
-                                    <div class="estadisticas float-derecha">
-                                        <p>MID:</p>
-                                        <p>65</p>
-                                    </div>
-                                    <div class="estadisticas float-derecha">
-                                        <p>ATT:</p>
-                                        <p>70</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel marcadores">
-                                <div class="equipo-marcador nombre izquierdo">
-                                    <p class="float-izquierda">Betis</p>
-                                    <div class="marcador-goles float-derecha">0</div>
-                                </div>
-                                <div class="marcador-tiempo"><time>66:66</time></div>
-                                <div class="equipo-marcador nombre derecho">
-                                    <p class="float-derecha">Malaga</p>
-                                    <div class="marcador-goles float-izquierda">1</div>
-                                </div>
-                            </div>
-                            <div class="panel panel-inferior">
-                                <div class="equipo-inferor izquierdo float-izquierda">
-                                    <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                                    <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                                    <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                                    <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-
 
 
 
@@ -100,15 +58,11 @@
                           </div>
                           <div class="panel panel-inferior">
                             <div class="equipo-inferor izquierdo float-izquierda">
-                              <img class="imagen-estrella" src="
-                              https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                              <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                              <img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
+                              
                             </div>
                             <div class="inferior-boton float-izquierda"><a href="#"><button>Enter</button></a></div>
-                            <div class="equipo-inferor derecho float-izquierda"><img class="imagen-estrella" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
-                              <img class="imagen-estrella" src="">
-                              <img class="imagen-estrella" src="">
+                            <div class="equipo-inferor derecho float-izquierda">
+
                             </div>
                           </div>
                         </div>
@@ -157,7 +111,7 @@
             width: 90%;
             margin: 0px auto;
             box-shadow: 1px 1px 1px 1px black;
-            border-radius: 50px;
+            border-radius: 10px;
             background: rgba(0, 0, 0, 1);
             overflow: hidden;
             border: 5px solid white;
@@ -282,7 +236,7 @@
         }
 
         .equipo-inferor {
-            width: 33%;
+            width: 20%;
             /* line-height: 38px; */
             /* vertical-align: middle; */
             text-align: center;
