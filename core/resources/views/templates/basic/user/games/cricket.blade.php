@@ -7,53 +7,51 @@
                     <div class="card-body h-100 middle-el">
                         <div class="alt"></div>
                         <div class="game-details-left">
-                            <div class="game-details-left__body">
-                                <div class="contenedorEquipo">
-                                    <div class="base">
-                                        <div class="panel panel-superior">
-                                            <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
-                                                    class="float-izquierda"
-                                                    src="
-                                            https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                            ">
+                            <div class="contenedorEquipo">
+                                <div class="base">
+                                    <div class="panel panel-superior">
+                                        <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
+                                                class="float-izquierda"
+                                                src="
+                                        https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
+                                        ">
 
-                                                <div class="" style="position: absolute;top:0%;left:33%">
-                                                    <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
-                                                    <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
-                                                </div>
-
-                                            </div>
-                                            <div class="equipo-superior derecho"><img alt="nombreEquipo"
-                                                    class="float-derecha"
-                                                    src='
-                                            https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                            '>
-
-
-                                            </div>
-                                        </div>
-                                        <div class="panel marcadores">
-                                            <div class="equipo-marcador  izquierdo">
-                                                <p class="float-izquierda">india</p>
-
-                                            </div>
-                                            <div class="marcador-tiempo"><time>VS</time></div>
-                                            <div class="equipo-marcador  derecho">
-                                                <p class="">Bangladesh</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-center">
-
-                                            <div class="inferior-boton  float-izquierda"><a
-                                                    href="{{ route('user.play.cricketbet') }}"><button>Bet Now</button></a>
+                                            <div class="" style="position: absolute;top:0%;left:33%">
+                                                <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
+                                                <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
                                             </div>
 
                                         </div>
+                                        <div class="equipo-superior derecho"><img alt="nombreEquipo"
+                                                class="float-derecha"
+                                                src='
+                                        https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
+                                        '>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="panel marcadores">
+                                        <div class="equipo-marcador  izquierdo">
+                                            <p class="float-izquierda">india</p>
+
+                                        </div>
+                                        <div class="marcador-tiempo"><time>VS</time></div>
+                                        <div class="equipo-marcador  derecho">
+                                            <p class="">Bangladesh</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+
+                                        <div class="inferior-boton  float-izquierda"><a
+                                                href="{{ route('user.play.cricketbet') }}"><button>Bet Now</button></a>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="cd-ft"></div>
+                 
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
@@ -83,22 +81,8 @@
                                         54%</span>
                                 </small>
                             </div>
-                            <div class="form-group justify-content-center d-flex mt-5">
-                                <div class="single-select head gmimg">
-                                    <img src="{{ asset($activeTemplateTrue . '/images/play/head.png') }}" alt="game-image">
-                                </div>
-                                <div class="single-select tail gmimg">
-                                    <img src="{{ asset($activeTemplateTrue . '/images/play/tail.png') }}" alt="game-image">
-                                </div>
-                                <input name="choose" type="hidden">
-                            </div>
-                            <div class="mt-5 text-center">
-                                <button class="cmn-btn w-100 game text-center" id="flip"
-                                    type="submit">@lang('Play Now')</button>
-                                <a class="game-instruction mt-2" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModalCenter">@lang('Game Instruction') <i
-                                        class="las la-info-circle"></i></a>
-                            </div>
+                           
+                           
                         </form>
                     </div>
                 </div>
