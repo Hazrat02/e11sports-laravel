@@ -31,12 +31,14 @@
                                 </div>
                                 <div class="panel marcadores">
                                     <div class="equipo-marcador  izquierdo">
-                                        <p class="float-izquierda">india</p>
+                                        <p class="float-izquierda">india</p><br>
+                                        <p class="float-izquierda"> 140/2  </p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
                                     <div class="equipo-marcador  derecho">
-                                        <p class="">Bangladesh</p>
+                                        <p class="">Bangladesh</p> <br>
+                                        <p class="">350/5</p>
                                     </div>
                                 </div>
             
