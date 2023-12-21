@@ -43,12 +43,9 @@
                                     <span class="input-group-text" id="basic-addon2">{{ __($general->cur_text) }}</span>
                                 </div>
                                 <small class="form-text text-muted"><i class="fas fa-info-circle mr-2"></i>@lang('Minimum')
-                                    : {{ showAmount($game->min_limit) }} {{ __($general->cur_text) }} | @lang('Maximum')
-                                    : {{ showAmount($game->max_limit) }} {{ __($general->cur_text) }} | <span class="text--warning">@lang('Win Amount') @if ($game->invest_back == 1)
-                                            {{ showAmount($game->win + 100) }}
-                                        @else
-                                            {{ showAmount($game->win) }}
-                                        @endif %</span></small>
+                                    :  {{ __($general->cur_text) }} | @lang('Maximum')
+                                    :  {{ __($general->cur_text) }} | <span class="text--warning">@lang('Win Amount') 
+                                        60%
                             </div>
                             <div class="form-group justify-content-center d-flex mt-5">
                                 <div class="single-select head gmimg">
@@ -79,7 +76,7 @@
                     <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    @php echo $game->instruction @endphp
+                    dfsdfsdfsdsdfsdfsfsdfsdf
                 </div>
             </div>
         </div>
