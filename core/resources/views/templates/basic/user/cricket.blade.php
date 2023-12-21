@@ -16,7 +16,7 @@
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 ">
 
-                                    <div class="" style="position: absolute;top:0%;left:40%">
+                                    <div class="" style="position: absolute;top:0%;left:33%">
                                         <p><span>Retio : </span> <span style="color: #93127b">2X</span></p> 
                                         <p><span>commition : </span> <span  style="color: #93127b"> 10%</span>
                                     </div>
@@ -56,7 +56,7 @@
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 ">
 
-                                    <div class="" style="position: absolute;top:0%;left:40%">
+                                    <div class="" style="position: absolute;top:0%;left:33%">
                                         <p><span>Retio : </span> <span style="color: #93127b">2X</span></p> 
                                         <p><span>commition : </span> <span  style="color: #93127b"> 10%</span>
                                     </div>
@@ -96,7 +96,7 @@
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 ">
 
-                                    <div class="" style="position: absolute;top:0%;left:40%">
+                                    <div class="" style="position: absolute;top:0%;left:33%">
                                         <p><span>Retio : </span> <span style="color: #93127b">2X</span></p> 
                                         <p><span>commition : </span> <span  style="color: #93127b"> 10%</span>
                                     </div>
@@ -130,6 +130,9 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
+                    <h1>
+                        Upcoming game.....
+                    </h1>
                     <div class="game-details-right">
                         gfffgfg
                     </div>
