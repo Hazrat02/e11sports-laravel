@@ -42,7 +42,7 @@
                             </div>
                             <div class="d-flex justify-content-center">
 
-                                <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a>
+                                <div class="inferior-boton  float-izquierda"><a href="{{ route('user.play.cricketbet') }}"><button>Bet Now</button></a>
                                 </div>
 
                             </div>
@@ -133,7 +133,7 @@
                    
                     <div class="game-details-right mt-0 pt-0 ">
                        <h3> Upcoming game.....</h3>
-                        
+
                     </div>
                 </div>
             </div>
