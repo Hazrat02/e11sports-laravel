@@ -36,7 +36,7 @@
                               <p class="float-izquierda">india</p>
                               
                             </div>
-                            <div class="marcador-tiempo">VS</div>
+                            <div class="marcador-tiempo"><time>VS</time></div>
                             <div class="equipo-marcador nombre derecho">
                               <p class="float-derecha">Bangladesh</p>
                             </div>
@@ -189,13 +189,13 @@
         }
 
         .equipo-marcador {
-            width: 33%;
+            width: 40%;
         }
 
         .marcador-tiempo {
-            width: 34%;
+            width: 20%;
             font-size: 26px;
-            //padding: 20px
+           
             line-height: 50px !important;
         }
 
@@ -233,6 +233,7 @@
         }
 
         .inferior-boton {
+            display: flex;
             text-align: center;
             text-align: center;
         }
@@ -367,11 +368,11 @@
             }
 
             .equipo-marcador {
-                width: 33%;
+                width: 40%;
             }
 
             .marcador-tiempo {
-                width: 34%;
+                width: 20%;
                 font-size: 16px;
                 line-height: 35px !important;
             }
@@ -380,17 +381,7 @@
                 line-height: 35px !important;
             }
 
-            .marcador-goles {
-                background: white;
-                width: 25%;
-                height: 25px !important;
-                margin: 7px 5px;
-                box-shadow: 0px 0px 0px 1px black;
-                color: #000;
-                line-height: 22px !important;
-                text-align: center;
-                font-size: 16px;
-            }
+          
 
             .equipo-inferor {
                 width: 33%;
