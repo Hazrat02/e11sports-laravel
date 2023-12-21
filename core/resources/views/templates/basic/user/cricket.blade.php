@@ -16,8 +16,8 @@
                                 ">
                                 
                               <div class="estadisticas float-izquierda">
-                                <p>ATT:</p>
-                                <p>85</p>
+                                <p>2X</p>
+                               
                               </div>
                               
                             </div>
@@ -25,8 +25,8 @@
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 '>
                               <div class="estadisticas float-derecha">
-                                <p>DEF:</p>
-                                <p>85</p>
+                                <p>5% commition</p>
+          
                               </div>
                             
                             </div>
@@ -95,9 +95,10 @@
             border-radius: 10px;
             background: rgba(0, 0, 0, 1);
             overflow: hidden;
-            border: 5px solid white;
+            border: 2px solid white;
             font-family: bebas, Verdana, Geneva, sans-serif;
             color: white;
+            padding-bottom: 10px;
         }
 
         .panel {
