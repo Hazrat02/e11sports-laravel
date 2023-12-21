@@ -9,22 +9,7 @@
                         <div class="game-details-left">
                             <div class="game-details-left__body">
                                 <div class="flp">
-                                    <div id="coin-flip-cont">
-                                        <div class="flipcoin" id="coin">
-                                            <div class="flpng coins-wrapper">
-                                                <div class="front"><img src="{{ asset($activeTemplateTrue . 'images/play/head.png') }}" alt=""></div>
-                                                <div class="back"><img src="{{ asset($activeTemplateTrue . 'images/play/tail.png') }}" alt=""></div>
-                                            </div>
-                                            <div class="headCoin d-none">
-                                                <div class="front"><img src="{{ asset($activeTemplateTrue . 'images/play/head.png') }}" alt=""></div>
-                                                <div class="back"><img src="{{ asset($activeTemplateTrue . 'images/play/tail.png') }}" alt=""></div>
-                                            </div>
-                                            <div class="tailCoin d-none">
-                                                <div class="front"><img src="{{ asset($activeTemplateTrue . 'images/play/tail.png') }}" alt=""></div>
-                                                <div class="back"><img src="{{ asset($activeTemplateTrue . 'images/play/head.png') }}" alt=""></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    hjhjh
                                 </div>
                             </div>
                         </div>
@@ -33,34 +18,7 @@
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
                     <div class="game-details-right">
-                        <form id="game" method="post">
-                            @csrf
-                            <h3 class="f-size--28 mb-4 text-center">@lang('Current Balance :') <span class="base--color"><span class="bal">{{ showAmount(auth()->user()->balance) }}</span> {{ __($general->cur_text) }}</span>
-                            </h3>
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <input class="form-control amount-field" name="invest" type="text" value="{{ old('invest') }}" placeholder="@lang('Enter amount')">
-                                    <span class="input-group-text" id="basic-addon2">{{ __($general->cur_text) }}</span>
-                                </div>
-                                <small class="form-text text-muted"><i class="fas fa-info-circle mr-2"></i>@lang('Minimum')
-                                    :  {{ __($general->cur_text) }} | @lang('Maximum')
-                                    :  {{ __($general->cur_text) }} | <span class="text--warning">@lang('Win Amount') 
-                                        60%
-                            </div>
-                            <div class="form-group justify-content-center d-flex mt-5">
-                                <div class="single-select head gmimg">
-                                    <img src="{{ asset($activeTemplateTrue . '/images/play/head.png') }}" alt="game-image">
-                                </div>
-                                <div class="single-select tail gmimg">
-                                    <img src="{{ asset($activeTemplateTrue . '/images/play/tail.png') }}" alt="game-image">
-                                </div>
-                                <input name="choose" type="hidden">
-                            </div>
-                            <div class="mt-5 text-center">
-                                <button class="cmn-btn w-100 game text-center" id="flip" type="submit">@lang('Play Now')</button>
-                                <a class="game-instruction mt-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">@lang('Game Instruction') <i class="las la-info-circle"></i></a>
-                            </div>
-                        </form>
+                        gfffgfg
                     </div>
                 </div>
             </div>
