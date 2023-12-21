@@ -38,7 +38,7 @@
                             </div>
                             <div class="marcador-tiempo"><time>VS</time></div>
                             <div class="equipo-marcador  derecho">
-                              <p class="float-derecha">Bangladesh</p>
+                              <p class="">Bangladesh</p>
                             </div>
                           </div>
                           <div class="panel panel-inferior">
