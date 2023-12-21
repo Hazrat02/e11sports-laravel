@@ -1,6 +1,6 @@
 @extends($activeTemplate . 'layouts.master')
 @section('content')
-    <section class="pt-120 pb-120">
+    <section class="pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -8,7 +8,7 @@
                         <div class="base">
                             <div class="panel panel-superior">
                                 <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
-                                        class="float-izquierda" src="">
+                                        class="float-izquierda" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png">
                                     <div class="estadisticas float-derecha">
                                         <p>DEF:</p>
                                         <p>85</p>
