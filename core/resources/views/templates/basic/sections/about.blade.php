@@ -23,7 +23,8 @@ $abouts = getContent('about.element',false,null,true);
                         </div>
                         @endforeach
                     </div>
-                    {{-- <a href="{{ $content->data_values->button_url }}" class="cmn-btn mt-3">{{ __($content->data_values->button) }}</a> --}}
+                    {{-- {{ __($content->data_values->button) }} --}}
+                    <a href="{{ $content->data_values->button_url }}" class="cmn-btn mt-3">jfks</a>
                 </div>
             </div>
             <div class="col-lg-6 mt-lg-0 mt-5 d-lg-block d-none">
