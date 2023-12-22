@@ -18,7 +18,12 @@
                                             <h3 class="text-white">7657</h3>
                                             <p class="text-white">@lang('Balance')</p>
                                         </div>
-                                        <a class="widget-two__btn" href=""> fgfgfg</a>
+                                        <div>
+                                            <a class="widget-two__btn" href=""> details</a>
+                                            <a class="widget-two__btn" href=""> Stop Bet</a>
+                                            <a class="widget-two__btn" href=""> Clear Pay</a>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
