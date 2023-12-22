@@ -52,22 +52,28 @@
                         @if (!empty($data['data']))
                             {{-- Loop through each match --}}
                             @foreach ($data['data'] as $match)
-                            <div class="col-12">
-                                <div class="row gy-4 mt-2">
-    
-                                    <div class="widget-two style--two box--shadow2 b-radius--5 bg--17">
-    
-                                        <div class="widget-two__content">
-                                            <h5 class="text-white">{{ $match['name'] }}</h5>
-                                            <p class="text-white">@lang('Start : ') <Span style="color: rgb(226, 218, 206)">
-                                                    05/12/2023 5h7g7h</Span></p>
+                                <div class="col-12">
+                                    <div class="row gy-4 mt-2">
+
+                                        <div class="widget-two style--two box--shadow2 b-radius--5 bg--17">
+
+                                            <div class="widget-two__content">
+                                                <h5 class="text-white">{{ $match['name'] }}</h5>
+                                                <p class="text-white">@lang('Start : ') <Span
+                                                        style="color: rgb(226, 218, 206)">
+                                                        {{ $match['dateTimeGMT'] }}</Span></p>
+                                            </div>
+                                            <a class="widget-two__btn" href="#">@lang('Place in bet')</a>
                                         </div>
-                                        <a class="widget-two__btn" href="#">@lang('Place in bet')</a>
+
+
                                     </div>
-    
-    
+                                    @if ($data->hasPages())
+                                        <div class="card-footer py-4">
+                                            {{ paginateLinks($data) }}
+                                        </div>
+                                    @endif
                                 </div>
-                            </div>
                                 {{-- <div>
                                     <h2>{{ $match['name'] }}</h2>
                                     <p>ID: {{ $match['id'] }}</p>
@@ -78,7 +84,7 @@
                         @else
                             <p>Api Problem</p>
                         @endif
-                        
+
                     </div>
 
                 </div>

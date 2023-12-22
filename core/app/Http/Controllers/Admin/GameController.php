@@ -152,7 +152,7 @@ class GameController extends Controller {
         // Check if the request was successful (status code 200)
         if ($response->successful()) {
             // You can access the response data as an array or JSON
-            $data = $response->json();
+            $data = $response->json()->paginate('5');
 
    
         } else {
