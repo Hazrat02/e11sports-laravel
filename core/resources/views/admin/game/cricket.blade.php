@@ -2,7 +2,7 @@
 @section('panel')
     <div class="col-12">
         <div class="">
-            <div class="row justify-content-between gap-2">
+            <div class="row justify-content-between ">
                 <div class="col-md-6 col-12 card pt-1 pb-3">
                     <h3>Betting games</h3>
                     <div class="row">
@@ -18,7 +18,7 @@
                                             <h3 class="text-white">7657</h3>
                                             <p class="text-white">@lang('Balance')</p>
                                         </div>
-                                        <a class="widget-two__btn" href=""> </a>
+                                        <a class="widget-two__btn" href=""> fgfgfg</a>
                                     </div>
                                 </div>
                             </div>
