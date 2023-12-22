@@ -554,10 +554,7 @@
                     </a>
                 </li> --}}
             </ul>
-            <div class="text-uppercase mb-3 text-center">
-                <span class="text--primary">{{ __(systemDetails()['name']) }}</span>
-                <span class="text--success">@lang('V'){{ systemDetails()['version'] }} </span>
-            </div>
+            
         </div>
     </div>
 </div>

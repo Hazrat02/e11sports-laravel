@@ -90,21 +90,22 @@ class ManageUsersController extends Controller {
     }
 
     public function detail($id) {
-        $user      = User::findOrFail($id);
-        $pageTitle = 'User Detail - ' . $user->username;
+        // $user      = User::findOrFail($id);
+        // $pageTitle = 'User Detail - ' . $user->username;
 
-        $totalDeposit     = Deposit::where('user_id', $user->id)->where('status', Status::PAYMENT_SUCCESS)->sum('amount');
-        $totalWithdrawals = Withdrawal::where('user_id', $user->id)->where('status', Status::PAYMENT_SUCCESS)->sum('amount');
-        $totalTransaction = Transaction::where('user_id', $user->id)->count();
-        $countries        = json_decode(file_get_contents(resource_path('views/partials/country.json')));
+        // $totalDeposit     = Deposit::where('user_id', $user->id)->where('status', Status::PAYMENT_SUCCESS)->sum('amount');
+        // $totalWithdrawals = Withdrawal::where('user_id', $user->id)->where('status', Status::PAYMENT_SUCCESS)->sum('amount');
+        // $totalTransaction = Transaction::where('user_id', $user->id)->count();
+        // $countries        = json_decode(file_get_contents(resource_path('views/partials/country.json')));
 
-        $widget['total_played']      = GameLog::where('user_id', $user->id)->count();
-        $widget['total_invest']      = GameLog::where('user_id', $user->id)->sum('invest');
-        $widget['total_win_amount']  = GameLog::where('user_id', $user->id)->where('win_status', '!=', 0)->sum('invest');
-        $widget['total_loss_amount'] = GameLog::loss()->where('user_id', $user->id)->sum('invest');
+        // $widget['total_played']      = GameLog::where('user_id', $user->id)->count();
+        // $widget['total_invest']      = GameLog::where('user_id', $user->id)->sum('invest');
+        // $widget['total_win_amount']  = GameLog::where('user_id', $user->id)->where('win_status', '!=', 0)->sum('invest');
+        // $widget['total_loss_amount'] = GameLog::loss()->where('user_id', $user->id)->sum('invest');
 
-        return view('admin.users.detail', compact('pageTitle', 'user', 'totalDeposit', 'totalWithdrawals', 'totalTransaction', 'countries', 'widget'));
-    }
+        // return view('admin.users.detail', compact('pageTitle', 'user', 'totalDeposit', 'totalWithdrawals', 'totalTransaction', 'countries', 'widget'));
+        return 'working...';
+     }
 
     public function kycDetails($id) {
         $pageTitle = 'KYC Details';
