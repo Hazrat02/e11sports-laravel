@@ -15,13 +15,13 @@
                                             <i class="las la-money-bill-wave-alt"></i>
                                         </div>
                                         <div class="widget-two__content">
-                                            <h3 class="text-white">7657</h3>
-                                            <p class="text-white">@lang('Balance')</p>
+                                            <h3 class="text-white">Bangladesh</h3>
+                                            <p class="text-white">@lang('VS')</p>
+                                            <h3 class="text-white">India</h3>
                                         </div>
                                         <div>
-                                            <a class="widget-two__btn" href=""> details</a>
-                                            <a class="widget-two__btn" href=""> Stop Bet</a>
-                                            <a class="widget-two__btn" href=""> Clear Pay</a>
+                                            <a class="widget-two__btn" href=""> Details</a>
+                                            
                                         </div>
                                         
                                     </div>
