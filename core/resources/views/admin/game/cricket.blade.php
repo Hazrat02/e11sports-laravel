@@ -4,7 +4,26 @@
         <div class="">
             <div class="row justify-content-between gap-2">
                 <div class="col-md-6 col-12 card">
-                    betting
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row gy-4">
+                    
+                                <div class="col-xxl-3 col-sm-6">
+                                    <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
+                                        <div class="widget-two__icon b-radius--5 bg--primary">
+                                            <i class="las la-money-bill-wave-alt"></i>
+                                        </div>
+                                        <div class="widget-two__content">
+                                            <h3 class="text-white">7657</h3>
+                                            <p class="text-white">@lang('Balance')</p>
+                                        </div>
+                                        <a class="widget-two__btn" href=""> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="col-md-5 col-12 card">
                     upcoming
