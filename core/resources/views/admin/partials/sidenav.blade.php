@@ -29,7 +29,7 @@
                     <div class="sidebar-submenu {{ menuActive('admin.game*', 2) }}">
                         <ul>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.game.cricket') }}">
                                 <a class="nav-link" href="{{ route('admin.game.cricket') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Cricket')</span>
