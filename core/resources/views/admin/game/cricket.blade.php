@@ -3,11 +3,11 @@
     <div class="col-12">
         <div class="">
             <div class="row justify-content-between gap-2">
-                <div class="col-md-6 col-12 card">
+                <div class="col-md-6 col-12 card pt-1 pb-3">
                     <h3>Betting games</h3>
                     <div class="row">
                         <div class="col-12">
-                            <div class="row gy-4">
+                            <div class="row gy-4 mt-2">
                     
                                 <div class="">
                                     <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
