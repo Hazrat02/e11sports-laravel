@@ -154,16 +154,11 @@ class GameController extends Controller {
             // You can access the response data as an array or JSON
             $data = $response->json();
 
-            // Process the data as needed
-
-            // For example, return the data as JSON from your controller
-            return response()->json($data);
+   
         } else {
-            // If the request was not successful, handle the error
-            // You can get the error information using $response->status(), $response->body(), etc.
-            return response()->json(['error' => 'Failed to fetch data'], $response->status());
+           $data='';
         }
-        // $pageTitle='Cricket Manage';
-        // return view('admin.game.cricket', compact('pageTitle'));
+        $pageTitle='Cricket Manage';
+        return view('admin.game.cricket', compact('pageTitle','data'));
     }
 }
