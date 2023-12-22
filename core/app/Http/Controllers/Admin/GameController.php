@@ -10,19 +10,14 @@ use App\Models\GuessBonus;
 use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Pagination\LengthAwarePaginator;
-
-class GameController extends Controller
-{
-    public function index()
-    {
+class GameController extends Controller {
+    public function index() {
         $pageTitle = "Games";
         $games     = Game::latest()->get();
         return view('admin.game.index', compact('pageTitle', 'games'));
     }
 
-    public function edit($id)
-    {
+    public function edit($id) {
         $game      = Game::findOrFail($id);
         $pageTitle = "Update " . $game->name;
         $view      = 'game_edit';
@@ -36,8 +31,7 @@ class GameController extends Controller
         return view('admin.game.' . $view, compact('pageTitle', 'game', 'bonuses'));
     }
 
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $request->validate([
             'name'        => 'required',
             'min'         => 'required|numeric',
@@ -87,7 +81,7 @@ class GameController extends Controller
         if ($request->hasFile('image')) {
             try {
                 $game->image = fileUploader($request->image, getFilePath('game'), getFileSize('game'), $oldImage);
-            } catch (\Exception $e) {
+            } catch (\Exception$e) {
                 $notify[] = ['error', 'Could not upload the Image.'];
                 return back()->withNotify($notify);
             }
@@ -99,16 +93,14 @@ class GameController extends Controller
         return back()->withNotify($notify);
     }
 
-    public function gameLog(Request $request)
-    {
+    public function gameLog(Request $request) {
 
         $pageTitle = "Game Logs";
         $logs      = GameLog::where('status', Status::ENABLE)->searchable(['user:username'])->filter(['win_status'])->with('user', 'game')->latest('id')->paginate(getPaginate());
         return view('admin.game.log', compact('pageTitle', 'logs'));
     }
 
-    public function chanceCreate(Request $request)
-    {
+    public function chanceCreate(Request $request) {
 
         $request->validate([
             'chance'    => 'required|array|min:1',
@@ -134,8 +126,7 @@ class GameController extends Controller
         return back()->withNotify($notify);
     }
 
-    public function status($id)
-    {
+    public function status($id) {
         $game = Game::findOrFail($id);
 
         if ($game->status == Status::ENABLE) {
@@ -149,8 +140,7 @@ class GameController extends Controller
         $game->save();
         return back()->withNotify($notify);
     }
-    public function cricket()
-    {
+    public function cricket() {
         $apiKey = '4237d025-e20f-4db8-aebc-395b63e2fe26';
         $offset = 0;
 
@@ -163,16 +153,12 @@ class GameController extends Controller
         if ($response->successful()) {
             // You can access the response data as an array or JSON
             $data = $response->json();
-            // Paginate the data
-            $currentPage = LengthAwarePaginator::resolveCurrentPage();
-            $perPage = 5; // Adjust the number of items per page as needed
 
-            $currentItems = array_slice($data['data'], ($currentPage - 1) * $perPage, $perPage);
-            $paginatedData = new LengthAwarePaginator($currentItems, count($data['data']), $perPage, $currentPage);
+   
         } else {
-            $data = '';
+           $data='';
         }
-        $pageTitle = 'Cricket Manage';
-        return view('admin.game.cricket', compact('pageTitle', 'paginatedData'));
+        $pageTitle='Cricket Manage';
+        return view('admin.game.cricket', compact('pageTitle','data'));
     }
 }

@@ -49,9 +49,9 @@
                 <div class="col-md-5 col-12 card pt-1 pb-3">
                     <h3>upcoming games</h3>
                     <div class="row">
-                        @if (!empty($paginatedData))
+                        @if (!empty($data['data']))
                             {{-- Loop through each match --}}
-                            @foreach ($paginatedData as $match)
+                            @foreach ($data['data'] as $match)
                                 <div class="col-12">
                                     <div class="row gy-4 mt-2">
 
@@ -68,7 +68,11 @@
 
 
                                     </div>
-                                   
+                                    @if ($data->hasPages())
+                                        <div class="card-footer py-4">
+                                            {{ paginateLinks($data) }}
+                                        </div>
+                                    @endif
                                 </div>
                                 {{-- <div>
                                     <h2>{{ $match['name'] }}</h2>
@@ -80,11 +84,7 @@
                         @else
                             <p>Api Problem</p>
                         @endif
-                        @if ($paginatedData->hasPages())
-                        <div class="card-footer py-4">
-                            {{ paginateLinks($paginatedData) }}
-                        </div>
-                    @endif
+
                     </div>
 
                 </div>
