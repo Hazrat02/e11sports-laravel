@@ -9,7 +9,7 @@
                         <p>@lang('Your account is verified successfully. Now you can change your password. Please enter a strong password and don\'t share it with anyone.')</p>
                     </div>
                     {{-- {{ route('user.password.update') }} --}}
-                    <form method="POST" action="">
+                    <form method="POST" action="#">
                         @csrf
                         <input type="hidden" name="email" value="{{ $email }}">
                         <input type="hidden" name="token" value="{{ $token }}">
