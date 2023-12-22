@@ -63,16 +63,12 @@
                                                         style="color: rgb(226, 218, 206)">
                                                         {{ $match['dateTimeGMT'] }}</Span></p>
                                             </div>
-                                            <a class="widget-two__btn" href="#">@lang('Place in bet')</a>
+                                            <a class="widget-two__btn" href="{{ route('admin.game.cricket', $match['id'] ) }}">@lang('Place in bet')</a>
                                         </div>
 
 
                                     </div>
-                                    @if ($data['data']->hasPages())
-                                        <div class="card-footer py-4">
-                                            {{ paginateLinks($data['data']) }}
-                                        </div>
-                                    @endif
+                             
                                 </div>
                                 {{-- <div>
                                     <h2>{{ $match['name'] }}</h2>
