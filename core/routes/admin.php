@@ -53,6 +53,7 @@ Route::middleware('admin')->group(function () {
     // Game
     Route::controller('GameController')->name('game.')->prefix('game')->group(function () {
         Route::get('index', 'index')->name('index');
+        Route::get('cricket', 'cricket')->name('cricket');
         Route::get('edit/{id}', 'edit')->name('edit');
         Route::post('update/{id}', 'update')->name('update');
         Route::post('status/{id}', 'status')->name('status');

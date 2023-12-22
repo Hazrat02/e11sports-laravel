@@ -30,6 +30,12 @@
                         <ul>
 
                             <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
+                                <a class="nav-link" href="{{ route('admin.game.cricket') }}">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Cricket')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
                                 <a class="nav-link" href="{{ route('admin.game.index') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Games')</span>

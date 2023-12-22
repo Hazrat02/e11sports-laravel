@@ -140,4 +140,8 @@ class GameController extends Controller {
         $game->save();
         return back()->withNotify($notify);
     }
+    public function cricket($id) {
+        $pageTitle='Cricket Manage';
+        return view('admin.game.cricket', compact('pageTitle'));
+    }
 }
