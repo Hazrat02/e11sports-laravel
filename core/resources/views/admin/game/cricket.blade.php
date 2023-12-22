@@ -55,8 +55,8 @@
                                 <div class="widget-two style--two box--shadow2 b-radius--5 bg--17">
                               
                                     <div class="widget-two__content">
-                                        <h3 class="text-white">Bangladesh vs India</h3>
-                                        <p class="text-white">@lang('Start : ')</p> <Span> 05/12/2023 5h7g7h</Span>
+                                        <h5 class="text-white">Bangladesh vs India</h5>
+                                        <p class="text-white">@lang('Start : ') <Span> 05/12/2023 5h7g7h</Span></p> 
                                     </div>
                                     <a class="widget-two__btn" href="#">@lang('Place in bet')</a>
                                 </div>
