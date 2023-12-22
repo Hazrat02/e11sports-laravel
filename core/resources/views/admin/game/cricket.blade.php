@@ -6,7 +6,7 @@
                 <div class="col-lg-6 card">
                     betting
                 </div>
-                <div class="col-lg-6 card">
+                <div class="col-lg-5 card">
                     upcoming
                 </div>
             </div>
