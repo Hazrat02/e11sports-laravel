@@ -135,13 +135,13 @@
                                     <span class="menu-title">@lang('All Users')</span>
                                 </a>
                             </li>
-
+{{-- 
                             <li class="sidebar-menu-item {{ menuActive('admin.users.notification.all') }}">
                                 <a class="nav-link" href="{{ route('admin.users.notification.all') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Notification to All')</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                         </ul>
                     </div>

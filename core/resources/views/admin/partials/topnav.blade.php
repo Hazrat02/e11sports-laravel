@@ -27,7 +27,7 @@
                         @endif
                     </div>
                     <div class="dropdown-menu__body">
-                        @foreach($adminNotifications as $notification)
+                        {{-- @foreach($adminNotifications as $notification)
                             <a href="{{ route('admin.notification.read',$notification->id) }}"
                                 class="dropdown-menu__item">
                                 <div class="navbar-notifi">
@@ -41,10 +41,11 @@
                                     </div>
                                 </div><!-- navbar-notifi end -->
                             </a>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                     <div class="dropdown-menu__footer">
-                        <a href="{{ route('admin.notifications') }}"
+                        {{-- {{ route('admin.notifications') }} --}}
+                        <a href=""
                             class="view-all-message">@lang('View all notification')</a>
                     </div>
                 </div>
