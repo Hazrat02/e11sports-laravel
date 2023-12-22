@@ -63,7 +63,7 @@
                                                         style="color: rgb(226, 218, 206)">
                                                         {{ $match['dateTimeGMT'] }}</Span></p>
                                             </div>
-                                            <a class="widget-two__btn" href="{{ route('admin.game.cricket', $match['id'] ) }}">@lang('Place in bet')</a>
+                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', $match['id'] ) }}">@lang('Place in bet')</a>
                                         </div>
 
 
