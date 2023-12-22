@@ -4,11 +4,12 @@
         <div class="">
             <div class="row justify-content-between gap-2">
                 <div class="col-md-6 col-12 card">
+                    <h3>Betting games</h3>
                     <div class="row">
                         <div class="col-12">
                             <div class="row gy-4">
                     
-                                <div class="col-xxl-3 col-sm-6">
+                                <div class="">
                                     <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
                                         <div class="widget-two__icon b-radius--5 bg--primary">
                                             <i class="las la-money-bill-wave-alt"></i>
