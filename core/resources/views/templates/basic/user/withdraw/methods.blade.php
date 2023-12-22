@@ -6,7 +6,8 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{route('user.withdraw.money')}}" method="post">
+                        {{-- {{route('user.withdraw.money')}} --}}
+                        <form action="#" method="post">
                             @csrf
                             <div class="row gy-2">
 

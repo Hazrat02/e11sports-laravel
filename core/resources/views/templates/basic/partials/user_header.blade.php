@@ -14,18 +14,18 @@
                             <a href="#">@lang('Deposit')</a>
                             <ul class="sub-menu">
                                 <li><a href="{{ route('user.deposit.index') }}">@lang('Deposit')</a></li>
-                                <li><a href="{{ route('user.deposit.history') }}">@lang('Deposit Log')</a></li>
+                                <li><a href="{{ route('user.deposit.history') }}">@lang('Deposit History')</a></li>
                             </ul>
                         </li>
                         <li class="menu_has_children">
                             <a href="#">@lang('Withdraw')</a>
                             <ul class="sub-menu">
                                 <li><a href="{{ route('user.withdraw') }}">@lang('Withdraw')</a></li>
-                                <li><a href="{{ route('user.withdraw.history') }}">@lang('Withdraw Log')</a>
+                                <li><a href="{{ route('user.withdraw.history') }}">@lang('Withdraw History')</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('user.referrals') }}">@lang('Referrals')</a></li>
+                        {{-- <li><a href="{{ route('user.referrals') }}">@lang('Referrals')</a></li>
                         <li class="menu_has_children">
                             <a href="#">@lang('Reports')</a>
                             <ul class="sub-menu">
@@ -33,7 +33,7 @@
                                 <li><a href="{{ route('user.commission.log') }}">@lang('Commission Log')</a></li>
                                 <li><a href="{{ route('user.transactions') }}">@lang('Transactions')</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="menu_has_children">
                             <a href="#">@lang('Support')</a>
                             <ul class="sub-menu">
@@ -41,14 +41,14 @@
                                 <li><a href="{{ route('ticket.index') }}">@lang('My Tickets')</a></li>
                             </ul>
                         </li>
-                        <li class="menu_has_children">
+                        {{-- <li class="menu_has_children">
                             <a href="#">@lang('Account')</a>
                             <ul class="sub-menu">
                                 <li><a href="{{ route('user.profile.setting') }}">@lang('Profile Setting')</a></li>
                                 <li><a href="{{ route('user.change.password') }}">@lang('Change Password')</a></li>
                                 <li><a href="{{ route('user.twofactor') }}">@lang('2FA Security')</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                     @endauth
 
