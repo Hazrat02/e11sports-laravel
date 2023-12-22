@@ -49,9 +49,9 @@
                 <div class="col-md-5 col-12 card pt-1 pb-3">
                     <h3>upcoming games</h3>
                     <div class="row">
-                        @if (!empty($data['data']))
+                        @if (!empty($paginatedData))
                             {{-- Loop through each match --}}
-                            @foreach ($data['data'] as $match)
+                            @foreach ($paginatedData as $match)
                                 <div class="col-12">
                                     <div class="row gy-4 mt-2">
 
@@ -68,9 +68,9 @@
 
 
                                     </div>
-                                    @if ($data->hasPages())
+                                    @if ($paginatedData->hasPages())
                                         <div class="card-footer py-4">
-                                            {{ paginateLinks($data) }}
+                                            {{ paginateLinks($paginatedData) }}
                                         </div>
                                     @endif
                                 </div>
