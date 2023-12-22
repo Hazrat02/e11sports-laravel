@@ -9,7 +9,7 @@ use App\Models\GameLog;
 use App\Models\GuessBonus;
 use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Http;
 class GameController extends Controller {
     public function index() {
         $pageTitle = "Games";
@@ -141,7 +141,29 @@ class GameController extends Controller {
         return back()->withNotify($notify);
     }
     public function cricket() {
-        $pageTitle='Cricket Manage';
-        return view('admin.game.cricket', compact('pageTitle'));
+        $apiKey = '4237d025-e20f-4db8-aebc-395b63e2fe26';
+        $offset = 0;
+
+        $response = Http::get('https://api.cricapi.com/v1/matches', [
+            'apikey' => $apiKey,
+            'offset' => $offset,
+        ]);
+
+        // Check if the request was successful (status code 200)
+        if ($response->successful()) {
+            // You can access the response data as an array or JSON
+            $data = $response->json();
+
+            // Process the data as needed
+
+            // For example, return the data as JSON from your controller
+            return response()->json($data);
+        } else {
+            // If the request was not successful, handle the error
+            // You can get the error information using $response->status(), $response->body(), etc.
+            return response()->json(['error' => 'Failed to fetch data'], $response->status());
+        }
+        // $pageTitle='Cricket Manage';
+        // return view('admin.game.cricket', compact('pageTitle'));
     }
 }
