@@ -3,10 +3,10 @@
     <div class="col-12">
         <div class="">
             <div class="row justify-content-between gap-2">
-                <div class="col-lg-6 card">
+                <div class="col-md-6 col-12 card">
                     betting
                 </div>
-                <div class="col-lg-5 card">
+                <div class="col-md-5 col-12 card">
                     upcoming
                 </div>
             </div>
