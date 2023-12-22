@@ -2,7 +2,7 @@
 @section('panel')
     <div class="col-12">
         <div class="">
-            <div class="row justify-content-between">
+            <div class="row justify-content-between gap-2">
                 <div class="col-lg-6 card">
                     betting
                 </div>
