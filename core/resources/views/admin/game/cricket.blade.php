@@ -68,11 +68,7 @@
 
 
                                     </div>
-                                    @if ($paginatedData->hasPages())
-                                        <div class="card-footer py-4">
-                                            {{ paginateLinks($paginatedData) }}
-                                        </div>
-                                    @endif
+                                   
                                 </div>
                                 {{-- <div>
                                     <h2>{{ $match['name'] }}</h2>
@@ -84,7 +80,11 @@
                         @else
                             <p>Api Problem</p>
                         @endif
-
+                        @if ($paginatedData->hasPages())
+                        <div class="card-footer py-4">
+                            {{ paginateLinks($paginatedData) }}
+                        </div>
+                    @endif
                     </div>
 
                 </div>
