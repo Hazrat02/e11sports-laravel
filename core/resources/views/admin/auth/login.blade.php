@@ -8,8 +8,8 @@
                 <div class="login-area">
                     <div class="login-wrapper">
                         <div class="login-wrapper__top">
-                            <h3 class="title text-white">@lang('Welcome to') <strong>{{ __($general->site_name) }}</strong></h3>
-                            <p class="text-white">{{ __($pageTitle) }} @lang('to') {{ __($general->site_name) }}
+                            <h3 class="title text-white">@lang('Welcome to') <strong>E11sports</strong></h3>
+                            <p class="text-white">Admin Login to @lang('to') E11sports
                                 @lang('Dashboard')</p>
                         </div>
                         <div class="login-wrapper__body">
