@@ -14,12 +14,12 @@
                     </a>
                 </li>
 
-                <li class="sidebar-menu-item {{ menuActive('admin.referral.index') }}">
+                {{-- <li class="sidebar-menu-item {{ menuActive('admin.referral.index') }}">
                     <a class="nav-link" href="{{ route('admin.referral.index') }}">
                         <i class="menu-icon la la-link"></i>
                         <span class="menu-title">@lang('Referral') </span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.game*', 3) }}" href="javascript:void(0)">
@@ -35,7 +35,7 @@
                                     <span class="menu-title">@lang('Cricket')</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
                                 <a class="nav-link" href="{{ route('admin.game.index') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Games')</span>
@@ -46,7 +46,7 @@
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Game Log')</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                         </ul>
                     </div>
@@ -146,7 +146,7 @@
                         </ul>
                     </div>
                 </li>
-
+{{-- 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.gateway*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-credit-card"></i>
@@ -552,7 +552,7 @@
                         <i class="menu-icon las la-bug"></i>
                         <span class="menu-title">@lang('Report & Request') </span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
             <div class="text-uppercase mb-3 text-center">
                 <span class="text--primary">{{ __(systemDetails()['name']) }}</span>

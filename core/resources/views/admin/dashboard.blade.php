@@ -112,7 +112,9 @@
                     <h3>{{ $general->cur_sym }}{{ showAmount($deposit['total_deposit_amount']) }}</h3>
                     <p>@lang('Total Deposited')</p>
                 </div>
-                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.deposit.list') }}">@lang('View All')</a>
+
+                {{-- {{ route('admin.deposit.list') }} --}}
+                <a class="widget-two__btn border--success btn-outline--success border" href="#">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -125,7 +127,8 @@
                     <h3>{{ $deposit['total_deposit_pending'] }}</h3>
                     <p>@lang('Pending Deposits')</p>
                 </div>
-                <a class="widget-two__btn border--warning btn-outline--warning border" href="{{ route('admin.deposit.pending') }}">@lang('View All')</a>
+                {{-- {{ route('admin.deposit.pending') }} --}}
+                <a class="widget-two__btn border--warning btn-outline--warning border" href="#">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -138,7 +141,8 @@
                     <h3>{{ $deposit['total_deposit_rejected'] }}</h3>
                     <p>@lang('Rejected Deposits')</p>
                 </div>
-                <a class="widget-two__btn border--danger btn-outline--danger border" href="{{ route('admin.deposit.rejected') }}">@lang('View All')</a>
+                {{-- {{ route('admin.deposit.rejected') }} --}}
+                <a class="widget-two__btn border--danger btn-outline--danger border" href="">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -151,7 +155,8 @@
                     <h3>{{ $general->cur_sym }}{{ showAmount($deposit['total_deposit_charge']) }}</h3>
                     <p>@lang('Deposited Charge')</p>
                 </div>
-                <a class="widget-two__btn border--primary btn-outline--primary border" href="{{ route('admin.deposit.list') }}">@lang('View All')</a>
+                {{-- {{ route('admin.deposit.list') }} --}}
+                <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
     </div><!-- row end-->
@@ -167,7 +172,8 @@
                     <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_amount']) }}</h3>
                     <p>@lang('Total Withdrawan')</p>
                 </div>
-                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.withdraw.log') }}">@lang('View All')</a>
+                {{-- {{ route('admin.withdraw.log') }} --}}
+                <a class="widget-two__btn border--success btn-outline--success border" href="">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -180,7 +186,8 @@
                     <h3>{{ $withdrawals['total_withdraw_pending'] }}</h3>
                     <p>@lang('Pending Withdrawals')</p>
                 </div>
-                <a class="widget-two__btn border--warning btn-outline--warning border" href="{{ route('admin.withdraw.pending') }}">@lang('View All')</a>
+                {{-- {{ route('admin.withdraw.pending') }} --}}
+                <a class="widget-two__btn border--warning btn-outline--warning border" href="">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -193,7 +200,8 @@
                     <h3>{{ $withdrawals['total_withdraw_rejected'] }}</h3>
                     <p>@lang('Rejected Withdrawals')</p>
                 </div>
-                <a class="widget-two__btn border--danger btn-outline--danger border" href="{{ route('admin.withdraw.rejected') }}">@lang('View All')</a>
+                {{-- {{ route('admin.withdraw.rejected') }} --}}
+                <a class="widget-two__btn border--danger btn-outline--danger border" href="">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -206,7 +214,8 @@
                     <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
                     <p>@lang('Withdrawal Charge')</p>
                 </div>
-                <a class="widget-two__btn border--primary btn-outline--primary border" href="{{ route('admin.withdraw.log') }}">@lang('View All')</a>
+                {{-- {{ route('admin.withdraw.log') }} --}}
+                <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
             </div>
         </div>
     </div><!-- row end-->
@@ -223,7 +232,8 @@
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_played']) }}</h3>
                     <p class="text-white">@lang('Total Played')</p>
                 </div>
-                <a class="widget-two__btn" href="{{ route('admin.game.log') }}">@lang('View All')</a>
+                {{-- {{ route('admin.game.log') }} --}}
+                <a class="widget-two__btn" href="">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -236,7 +246,8 @@
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_win_amount']) }}</h3>
                     <p class="text-white">@lang('Total Win')</p>
                 </div>
-                <a class="widget-two__btn" href="{{ route('admin.game.log') }}?win_status=1">@lang('View All')</a>
+                {{-- {{ route('admin.game.log') }}?win_status=1 --}}
+                <a class="widget-two__btn" href="#">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -249,7 +260,8 @@
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_loss_amount']) }}</h3>
                     <p class="text-white">@lang('Total Loss')</p>
                 </div>
-                <a class="widget-two__btn" href="{{ route('admin.game.log') }}?win_status=2">@lang('View All')</a>
+                {{-- {{ route('admin.game.log') }}?win_status=2 --}}
+                <a class="widget-two__btn" href="#">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -310,7 +322,7 @@
             </div>
         </div>
     </div>
-    @if (Carbon\Carbon::parse($general->last_cron)->diffInMinutes() > 15)
+    {{-- @if (Carbon\Carbon::parse($general->last_cron)->diffInMinutes() > 15)
         <div class="modal fade" id="cronModal" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -332,7 +344,7 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
 @endsection
 
 @push('breadcrumb-plugins')
