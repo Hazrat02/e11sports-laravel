@@ -9,8 +9,13 @@ $banner = getContent('banner.content',true);
                     <h2 class="hero__title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">{{ __(@$banner->data_values->heading) }}</h2>
                     <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">{{ __(@$banner->data_values->subheading) }}</p>
                     <div class="btn-group justify-content-lg-start justify-content-center mt-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.9s">
+                        @guest
                         <a href="{{ __(@$banner->data_values->button_url_one) }}" class="cmn-btn">{{ __(@$banner->data_values->button_one) }}</a>
                         <a href="{{ __(@$banner->data_values->button_url_two) }}" class="cmn-btn-two">{{ __(@$banner->data_values->button_two) }}</a>
+                        @endguest
+                       @auth
+                       <a href="{{ route('user.home') }}" class="cmn-btn-two">Dashboard</a>
+                       @endauth
                     </div>
                 </div>
             </div>
