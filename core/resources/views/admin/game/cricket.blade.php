@@ -68,9 +68,9 @@
 
 
                                     </div>
-                                    @if ($data->hasPages())
+                                    @if ($data['data']->hasPages())
                                         <div class="card-footer py-4">
-                                            {{ paginateLinks($data) }}
+                                            {{ paginateLinks($data['data']) }}
                                         </div>
                                     @endif
                                 </div>
