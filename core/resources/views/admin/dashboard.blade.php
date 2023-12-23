@@ -174,7 +174,20 @@
             </div>
         </div><!-- dashboard-w1 end -->
     </div><!-- row end-->
-
+    <div class="col-xxl-3 col-sm-6">
+        <div class="widget-two box--shadow2 b-radius--5 bg--white">
+            <i class="las la-percent overlay-icon text--primary"></i>
+            <div class="widget-two__icon b-radius--5 border--primary text--primary border">
+                <i class="las la-percent"></i>
+            </div>
+            <div class="widget-two__content">
+                <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
+                <p>@lang('Today’s Revenue')</p>
+            </div>
+            {{-- {{ route('admin.withdraw.log') }} --}}
+            <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
+        </div>
+    </div>
     <div class="row gy-4 mt-2">
         <div class="col-xxl-3 col-sm-6">
             <div class="widget-two box--shadow2 b-radius--5 bg--white">
@@ -218,20 +231,7 @@
                 <a class="widget-two__btn border--danger btn-outline--danger border" href="">@lang('View All')</a>
             </div>
         </div>
-        <div class="col-xxl-3 col-sm-6">
-            <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                <i class="las la-percent overlay-icon text--primary"></i>
-                <div class="widget-two__icon b-radius--5 border--primary text--primary border">
-                    <i class="las la-percent"></i>
-                </div>
-                <div class="widget-two__content">
-                    <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
-                    <p>@lang('Today’s Revenue')</p>
-                </div>
-                {{-- {{ route('admin.withdraw.log') }} --}}
-                <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
-            </div>
-        </div>
+        
     </div><!-- row end-->
 
     <div class="row gy-4 mt-2">
@@ -243,7 +243,7 @@
                     <i class="las la-list"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $general->cur_sym }}{{$widget['total_played'] }}</h3>
+                    <h3 class="text-white">{{$widget['total_played'] }}</h3>
                     <p class="text-white">@lang('Today Live Players')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }} --}}
@@ -285,7 +285,7 @@
                     <i class="las la-percentage"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $general->cur_sym }}{{ $widget['total_profit'] }}</h3>
+                    <h3 class="text-white">{{ $widget['total_profit'] }}</h3>
                     <p class="text-white">@lang('Today Bet Users')</p>
                 </div>
             </div>
