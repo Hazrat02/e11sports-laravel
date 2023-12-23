@@ -68,7 +68,7 @@
                             <li class="sidebar-menu-item {{ menuActive('admin.users.active') }}">
                                 <a class="nav-link" href="{{ route('admin.users.active') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Active Users')</span>
+                                    <span class="menu-title">@lang('Active Bet')</span>
                                 </a>
                             </li>
                             {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.banned') }}">
