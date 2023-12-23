@@ -71,7 +71,7 @@
                                     <span class="menu-title">@lang('Active Users')</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.banned') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.banned') }}">
                                 <a class="nav-link" href="{{ route('admin.users.banned') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Banned Users')</span>
@@ -79,9 +79,9 @@
                                     <span class="menu-badge pill bg--danger ms-auto">{{ $bannedUsersCount }}</span>
                                     @endif
                                 </a>
-                            </li>
+                            </li> --}}
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.email.unverified') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.email.unverified') }}">
                                 <a class="nav-link" href="{{ route('admin.users.email.unverified') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Email Unverified')</span>
@@ -90,9 +90,9 @@
                                     <span class="menu-badge pill bg--danger ms-auto">{{ $emailUnverifiedUsersCount }}</span>
                                     @endif
                                 </a>
-                            </li>
+                            </li> --}}
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.mobile.unverified') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.mobile.unverified') }}">
                                 <a class="nav-link" href="{{ route('admin.users.mobile.unverified') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Mobile Unverified')</span>
@@ -100,9 +100,9 @@
                                     <span class="menu-badge pill bg--danger ms-auto">{{ $mobileUnverifiedUsersCount }}</span>
                                     @endif
                                 </a>
-                            </li>
+                            </li> --}}
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.users.kyc.unverified') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.kyc.unverified') }}">
                                 <a class="nav-link" href="{{ route('admin.users.kyc.unverified') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('KYC Unverified')</span>
@@ -120,14 +120,14 @@
                                     <span class="menu-badge pill bg--danger ms-auto">{{ $kycPendingUsersCount }}</span>
                                     @endif
                                 </a>
-                            </li>
-
+                            </li> --}}
+{{-- 
                             <li class="sidebar-menu-item {{ menuActive('admin.users.with.balance') }}">
                                 <a class="nav-link" href="{{ route('admin.users.with.balance') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('With Balance')</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="sidebar-menu-item {{ menuActive('admin.users.all') }}">
                                 <a class="nav-link" href="{{ route('admin.users.all') }}">
