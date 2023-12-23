@@ -243,7 +243,7 @@
                     <i class="las la-list"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_played']) }}</h3>
+                    <h3 class="text-white">{{ $general->cur_sym }}{{$widget['total_played'] }}</h3>
                     <p class="text-white">@lang('Today Live Players')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }} --}}
@@ -285,7 +285,7 @@
                     <i class="las la-percentage"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_profit']) }}</h3>
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ $widget['total_profit'] }}</h3>
                     <p class="text-white">@lang('Today Bet Users')</p>
                 </div>
             </div>
