@@ -129,11 +129,11 @@
                 </a>
             </div>
 
-            <div class="flex-fill">
+            {{-- <div class="flex-fill">
                 <a class="btn btn--secondary btn--shadow w-100 btn-lg" href="{{ route('admin.users.notification.log', $user->id) }}">
                     <i class="las la-bell"></i>@lang('Notifications')
                 </a>
-            </div>
+            </div> --}}
 
             <div class="flex-fill">
                 <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.users.login', $user->id) }}" target="_blank">
@@ -141,7 +141,7 @@
                 </a>
             </div>
 
-            @if ($user->kyc_data)
+            {{-- @if ($user->kyc_data)
             <div class="flex-fill">
                 <a class="btn btn--dark btn--shadow w-100 btn-lg" href="{{ route('admin.users.kyc.details', $user->id) }}" target="_blank">
                     <i class="las la-user-check"></i>@lang('KYC Data')
@@ -159,7 +159,7 @@
                     <i class="las la-undo"></i>@lang('Unban User')
                 </button>
                 @endif
-            </div>
+            </div> --}}
         </div>
 
         <div class="card mt-30">
@@ -246,7 +246,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="form-group col-xl-3 col-md-6 col-12">
                             <label>@lang('Email Verification')</label>
                             <input name="ev" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->ev) checked @endif>
@@ -266,7 +266,7 @@
                             <label>@lang('KYC') </label>
                             <input name="kv" data-width="100%" data-height="50" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->kv == 1) checked @endif>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="row mt-4">
                         <div class="col-md-12">
