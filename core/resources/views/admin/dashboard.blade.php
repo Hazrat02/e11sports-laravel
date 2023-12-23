@@ -173,21 +173,22 @@
                 <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
-    </div><!-- row end-->
-    <div class="col-xxl-3 col-sm-6">
-        <div class="widget-two box--shadow2 b-radius--5 bg--white">
-            <i class="las la-percent overlay-icon text--primary"></i>
-            <div class="widget-two__icon b-radius--5 border--primary text--primary border">
-                <i class="las la-percent"></i>
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two box--shadow2 b-radius--5 bg--white">
+                <i class="las la-percent overlay-icon text--primary"></i>
+                <div class="widget-two__icon b-radius--5 border--primary text--primary border">
+                    <i class="las la-percent"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
+                    <p>@lang('Today’s Revenue')</p>
+                </div>
+                {{-- {{ route('admin.withdraw.log') }} --}}
+                <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
             </div>
-            <div class="widget-two__content">
-                <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
-                <p>@lang('Today’s Revenue')</p>
-            </div>
-            {{-- {{ route('admin.withdraw.log') }} --}}
-            <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
         </div>
-    </div>
+    </div><!-- row end-->
+    
     <div class="row gy-4 mt-2">
         <div class="col-xxl-3 col-sm-6">
             <div class="widget-two box--shadow2 b-radius--5 bg--white">
