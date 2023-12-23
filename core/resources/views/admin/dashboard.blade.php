@@ -60,14 +60,14 @@
                             <i class="las la-user-check f-size--56"></i>
                         </div>
                         <div class="col-8 text-end">
-                            <span class="text--small text-white">@lang('Active Users')</span>
+                            <span class="text--small text-white">@lang('Active Bet')</span>
                             <h2 class="text-white">{{ $widget['verified_users'] }}</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div><!-- dashboard-w1 end -->
-        <div class="col-xxl-3 col-sm-6">
+        {{-- <div class="col-xxl-3 col-sm-6">
             <div class="card bg--danger has-link box--shadow2">
                 <a class="item-link" href="{{ route('admin.users.email.unverified') }}"></a>
                 <div class="card-body">
@@ -82,8 +82,8 @@
                     </div>
                 </div>
             </div>
-        </div><!-- dashboard-w1 end -->
-        <div class="col-xxl-3 col-sm-6">
+        </div><!-- dashboard-w1 end --> --}}
+        {{-- <div class="col-xxl-3 col-sm-6">
             <div class="card bg--red has-link box--shadow2">
                 <a class="item-link" href="{{ route('admin.users.mobile.unverified') }}"></a>
                 <div class="card-body">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
             </div>
-        </div><!-- dashboard-w1 end -->
+        </div><!-- dashboard-w1 end --> --}}
     </div><!-- row end-->
 
     <div class="row gy-4 mt-2">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3>{{ $general->cur_sym }}{{ showAmount($deposit['total_deposit_amount']) }}</h3>
-                    <p>@lang('Total Deposited')</p>
+                    <p>@lang('Lifetime Deposit')</p>
                 </div>
 
                 {{-- {{ route('admin.deposit.list') }} --}}
@@ -126,6 +126,20 @@
                 <div class="widget-two__content">
                     <h3>{{ $deposit['total_deposit_pending'] }}</h3>
                     <p>@lang('Pending Deposits')</p>
+                </div>
+                {{-- {{ route('admin.deposit.pending') }} --}}
+                <a class="widget-two__btn border--warning btn-outline--warning border" href="#">@lang('View All')</a>
+            </div>
+        </div><!-- dashboard-w1 end -->
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two box--shadow2 b-radius--5 bg--white">
+                <i class="fas fa-spinner overlay-icon text--warning"></i>
+                <div class="widget-two__icon b-radius--5 bg--warning">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3>{{ $deposit['total_deposit_pending'] }}</h3>
+                    <p>@lang('Current Deposits')</p>
                 </div>
                 {{-- {{ route('admin.deposit.pending') }} --}}
                 <a class="widget-two__btn border--warning btn-outline--warning border" href="#">@lang('View All')</a>
@@ -153,7 +167,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3>{{ $general->cur_sym }}{{ showAmount($deposit['total_deposit_charge']) }}</h3>
-                    <p>@lang('Deposited Charge')</p>
+                    <p>@lang('Lifetime Revenue')</p>
                 </div>
                 {{-- {{ route('admin.deposit.list') }} --}}
                 <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
@@ -212,7 +226,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
-                    <p>@lang('Withdrawal Charge')</p>
+                    <p>@lang('Today’s Revenue')</p>
                 </div>
                 {{-- {{ route('admin.withdraw.log') }} --}}
                 <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
@@ -230,7 +244,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_played']) }}</h3>
-                    <p class="text-white">@lang('Total Played')</p>
+                    <p class="text-white">@lang('Today Live Players')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }} --}}
                 <a class="widget-two__btn" href="">@lang('View All')</a>
@@ -244,7 +258,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_win_amount']) }}</h3>
-                    <p class="text-white">@lang('Total Win')</p>
+                    <p class="text-white">@lang('Today win amount')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }}?win_status=1 --}}
                 <a class="widget-two__btn" href="#">@lang('View All')</a>
@@ -258,7 +272,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_loss_amount']) }}</h3>
-                    <p class="text-white">@lang('Total Loss')</p>
+                    <p class="text-white">@lang('Today Loss amount')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }}?win_status=2 --}}
                 <a class="widget-two__btn" href="#">@lang('View All')</a>
@@ -272,7 +286,7 @@
                 </div>
                 <div class="widget-two__content">
                     <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_profit']) }}</h3>
-                    <p class="text-white">@lang('Total Profit')</p>
+                    <p class="text-white">@lang('Today Bet Users')</p>
                 </div>
             </div>
         </div>
