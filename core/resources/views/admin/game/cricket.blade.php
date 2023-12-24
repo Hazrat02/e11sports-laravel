@@ -58,9 +58,9 @@
                                         <div class="widget-two style--two box--shadow2 b-radius--5 bg--17">
 
                                             <div class="widget-two__content">
-                                                <h5 class="text-white">{{ $match->t1 }}</h5>
+                                                <h6 class="text-white">{{ $match->t1 }}</h6>
                                                 <p>VS</p>
-                                                <h5 class="text-white">{{ $match->t2 }}</h5>
+                                                <h6 class="text-white">{{ $match->t2 }}</h6>
                                                 <p class="text-white">@lang('Start : ') <Span
                                                         style="color: rgb(226, 218, 206)">
                                                         {{ $match->start }}</Span></p>
@@ -93,5 +93,5 @@
 @endsection
 
 @push('breadcrumb-plugins')
-    <x-back route="{{ route('admin.game.index') }}" />
+    <button>hazrat</button>
 @endpush
