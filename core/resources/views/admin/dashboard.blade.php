@@ -1,7 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('panel')
-<button id="openModalBtn" class="btn btn-primary">Open Modal</button>
+<button id="openModalBtn" class="btn btn-primary" data-bs-toggle="modal" data-display="static"
+aria-haspopup="true" aria-expanded="false">Open Modal</button>
 
 <script>
     $(document).ready(function () {
