@@ -196,59 +196,60 @@ class GameController extends Controller {
     public function betstore( Request $request) {
 
      
-        if ($request->hasFile('t1_img')) {
-            $file = $request->File('t1_img');
+        // if ($request->hasFile('t1_img')) {
+        //     $file = $request->File('t1_img');
            
             
-            $name =rand(0000000,999999) .$file->getClientOriginalName();
-            $file->move(public_path('img/game'), $name);
+        //     $name =rand(0000000,999999) .$file->getClientOriginalName();
+        //     $file->move(public_path('img/game'), $name);
           
-            $path=asset('core/public/img/game/');
-           $t1_url= $path.'/'.$name;
+        //     $path=asset('core/public/img/game/');
+        //    $t1_url= $path.'/'.$name;
           
-        }else{
-            $t2_url='';
+        // }else{
+        //     $t2_url='';
        
             
-        }
-        if ($request->hasFile('t2_img')) {
-            $file = $request->File('t2_img');
+        // }
+        // if ($request->hasFile('t2_img')) {
+        //     $file = $request->File('t2_img');
            
             
-            $name =rand(0000000,999999) .$file->getClientOriginalName();
-            $file->move(public_path('img/game'), $name);
+        //     $name =rand(0000000,999999) .$file->getClientOriginalName();
+        //     $file->move(public_path('img/game'), $name);
           
-            $path=asset('core/public/img/game/');
-           $t2_url= $path.'/'.$name;
+        //     $path=asset('core/public/img/game/');
+        //    $t2_url= $path.'/'.$name;
           
-        }else{
-            $t2_url='';
+        // }else{
+        //     $t2_url='';
        
             
-        }
+        // }
         $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
 
 
-        bet::create([
-            'game'=>$request->game,
-            't1'=>$request->t1,
-            't2'=>$request->t2,
-            't1_img'=>$t1_url,
-            't2_img'=>$t2_url,
-            'min'=>$request->min,
-            'max'=>$request->max,
-            'status'=>$request->status,
-            'fee'=>$request->fee,
-            'type'=>$request->type,
-            'start'=>$startDateTime,
+        // bet::create([
+        //     'game'=>$request->game,
+        //     't1'=>$request->t1,
+        //     't2'=>$request->t2,
+        //     't1_img'=>$t1_url,
+        //     't2_img'=>$t2_url,
+        //     'min'=>$request->min,
+        //     'max'=>$request->max,
+        //     'status'=>$request->status,
+        //     'fee'=>$request->fee,
+        //     'type'=>$request->type,
+        //     'start'=>$startDateTime,
 
     
-        ]);
+        // ]);
 
 
 
-        $notify[] = ['success', 'Game Create successfully'];
-        return back()->withNotify($notify);
+        // $notify[] = ['success', 'Game Create successfully'];
+        // return back()->withNotify($notify);
+        return $startDateTime;
    
 
       
