@@ -197,22 +197,22 @@ class GameController extends Controller {
      
         if ($request->hasFile('t1_img')) {
             $file = $request->file('t1_img');
-            
+            return back();
             
             $name =rand(0000000,999999) .$file->getClientOriginalName();
-            $file->move(public_path('img/method'), $name);
-            $path=asset('img/method/');
+            $file->move(public_path('img/game'), $name);
+            $path=asset('img/game/');
            $url= $path.'/'.$name;
         }else{
             $url='';
-           
+            $notify[] = ['success', 'Game Create successfully'];
+        return back()->withNotify($notify);
             
         }
 
       
 
-        $notify[] = ['success', 'Game Create successfully'];
-        return back()->withNotify($notify);
+       
     // return $request->all();
 
     
