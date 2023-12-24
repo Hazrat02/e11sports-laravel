@@ -162,8 +162,8 @@ class GameController extends Controller {
         // }
         $game=bet::all();
         $upcoming=$game->where('status','1');
-        $pageTitle='Cricket Manage';
-        return $upcoming;
+        // $pageTitle='Cricket Manage';
+        return 'sdfsfs';
         // return view('admin.game.cricket', compact('pageTitle','data'));
     }
     public function storecricket( Request $request) {
