@@ -216,6 +216,8 @@
                                         
                                         <input class="form-control" name="start" type="time" 
                                         required>
+                                        <input class="form-control" name="game" type="hidden" value="cricket" 
+                                        >
                                     </div>
 
                                 </div>
