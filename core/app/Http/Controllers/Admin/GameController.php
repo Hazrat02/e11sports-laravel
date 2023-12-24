@@ -240,7 +240,7 @@ class GameController extends Controller {
             'status'=>$request->status,
             'fee'=>$request->fee,
             'type'=>$request->type,
-            'start'=>$startDateTime,
+            'start'=>'55f 545gh6',
 
     
         ]);
