@@ -63,7 +63,7 @@
                                                         style="color: rgb(226, 218, 206)">
                                                         {{ $match->game }}</Span></p>
                                             </div>
-                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', $match->id ) }}">@lang('Place in bet')</a>
+                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', '1' ) }}">@lang('Place in bet')</a>
                                         </div>
 
 
