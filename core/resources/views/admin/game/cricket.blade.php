@@ -124,14 +124,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label>@lang('Team B Name')</label>
-                                        <input class="form-control" name="t2" type="text" value=""
-                                            placeholder="@lang('India')" required>
-                                    </div>
-
-                                </div>
+                                
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
 
@@ -141,9 +134,7 @@
                                                 step="any" min="1" placeholder="@lang('Minimum Invest Amount')" required>
                                             <span class="input-group-text" id="basic-addon2">{{ $general->cur_sym }}</span>
                                         </div>
-                                        <label>@lang('Minimum Invest Amount')</label>
-                                        <input class="form-control" name="min" type="number" value=""
-                                            placeholder="@lang('Minimum Invest Amount')" required>
+                                       
                                     </div>
 
                                 </div>
@@ -168,6 +159,46 @@
                                                 placeholder="@lang('Commission fee')">
                                             <span class="input-group-text" id="basic-addon2">@lang('%')</span>
                                         </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Team A Image')</label>
+                                        <input class="form-control" name="t1_img" type="file" value=""
+                                             required>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Team B Image')</label>
+                                        <input class="form-control" name="t2_img" type="file" value=""
+                                             required>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Game Type')</label>
+                                        <input class="form-control" name="type" type="text" placeholder="IPL" value=""
+                                             required>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Place In')</label>
+                                        <select class="form-control" name="status">
+                                            <option selected
+                                             value="1">
+                                                Upcoming
+                                            </option>
+                                            <option value="2">
+                                                Betting
+                                            </option>
+                                        </select>
+                                       
                                     </div>
 
                                 </div>
