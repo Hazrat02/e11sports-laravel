@@ -103,7 +103,7 @@
                     <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="POST">
+                    <form action="{{route('admin.game.betstore')}}" method="POST">
                         @csrf
                         <div class="card-body">
                             <div class="row">
@@ -199,6 +199,15 @@
                                             </option>
                                         </select>
                                        
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Match Start')</label>
+                                        
+                                        <input class="form-control" name="start" type="datetime" 
+                                        required>
                                     </div>
 
                                 </div>

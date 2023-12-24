@@ -192,4 +192,12 @@ class GameController extends Controller {
         // $pageTitle='Bet Manage';
         // return view('admin.game.store_cricket', compact('pageTitle','data'));
     }
+    public function betstore( Request $request) {
+
+     
+
+    return $request->all();
+
+    
+    }
 }
