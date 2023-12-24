@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('panel')
-<button  class="btn btn-primary" data-bs-toggle="modal" data-display="static"
+<button  class="btn btn-primary" data-bs-toggle="cronModal" data-display="static"
 aria-haspopup="true" aria-expanded="false">Open Modal</button>
 
 {{-- <script>
