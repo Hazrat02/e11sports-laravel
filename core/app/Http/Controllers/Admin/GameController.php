@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Constants\Status;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
+use App\Models\bet_log;
 use App\Models\GameLog;
 use App\Models\GuessBonus;
 use App\Rules\FileTypeValidate;
@@ -162,24 +163,28 @@ class GameController extends Controller {
         return view('admin.game.cricket', compact('pageTitle','data'));
     }
     public function storecricket( Request $request) {
-        $apiKey = '4237d025-e20f-4db8-aebc-395b63e2fe26';
+
+        $game=bet_log::get()->all();
+        // $apiKey = '4237d025-e20f-4db8-aebc-395b63e2fe26';
   
 
-        $response = Http::get('https://api.cricapi.com/v1/match_info', [
-            'apikey' => $apiKey,
-            'id' =>  $request->id,
-        ]);
+        // $response = Http::get('https://api.cricapi.com/v1/match_info', [
+        //     'apikey' => $apiKey,
+        //     'id' =>  $request->id,
+        // ]);
 
-        // Check if the request was successful (status code 200)
-        if ($response->successful()) {
-            // You can access the response data as an array or JSON
-            $data = $response->json();
+        // // Check if the request was successful (status code 200)
+        // if ($response->successful()) {
+        //     // You can access the response data as an array or JSON
+        //     $data = $response->json();
 
    
-        } else {
-           $data='';
-        }
-        return response()->json($data);
+        // } else {
+        //    $data='';
+        // }
+        // return response()->json($data);
+    return $game;
+
         // $pageTitle='Bet Manage';
         // return view('admin.game.store_cricket', compact('pageTitle','data'));
     }
