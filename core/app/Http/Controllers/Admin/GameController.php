@@ -201,15 +201,19 @@ class GameController extends Controller {
             
             $name =rand(0000000,999999) .$file->getClientOriginalName();
             $file->move(public_path('img/game'), $name);
-            $path=asset('img/game/');
+          
+            $path=asset('core/public/img/game/');
            $url= $path.'/'.$name;
-           return back();
+          
         }else{
             $url='';
-            $notify[] = ['success', 'Game Create successfully'];
-        return back()->withNotify($notify);
+       
             
         }
+
+        $notify[] = ['success', 'Game Create successfully'];
+        // return back()->withNotify($notify);
+        return $url;
 
       
 
