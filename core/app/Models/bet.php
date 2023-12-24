@@ -20,6 +20,8 @@ class bet extends Model
         'win',
         'ratios',
         'fee',
+        'start',
+
 
       
        

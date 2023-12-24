@@ -226,7 +226,7 @@ class GameController extends Controller {
        
             
         }
-        $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
+        // $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
 
 
         bet::create([
@@ -240,7 +240,7 @@ class GameController extends Controller {
             'status'=>$request->status,
             'fee'=>$request->fee,
             'type'=>$request->type,
-            'start'=>'55f 545gh6',
+            'start'=>$request->start,
 
     
         ]);
@@ -249,7 +249,7 @@ class GameController extends Controller {
 
         $notify[] = ['success', 'Game Create successfully'];
         return back()->withNotify($notify);
-        // return $startDateTime;
+     
    
 
       
