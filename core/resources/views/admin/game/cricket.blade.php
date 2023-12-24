@@ -59,11 +59,13 @@
 
                                             <div class="widget-two__content">
                                                 <h5 class="text-white">{{ $match->t1 }}</h5>
+                                                <p>VS</p>
+                                                <h5 class="text-white">{{ $match->t2 }}</h5>
                                                 <p class="text-white">@lang('Start : ') <Span
                                                         style="color: rgb(226, 218, 206)">
-                                                        {{ $match->game }}</Span></p>
+                                                        {{ $match->start }}</Span></p>
                                             </div>
-                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', '1' ) }}">@lang('Place in bet')</a>
+                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', $match->id ) }}">@lang('Place in bet')</a>
                                         </div>
 
 
