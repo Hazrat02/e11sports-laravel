@@ -11,7 +11,7 @@
 
 
                                
-                                @if (!empty($betting))
+                                @if ($betting->count()>'0')
                                 {{-- Loop through each match --}}
                                 @foreach ($betting as $betmatch)
                                 <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
