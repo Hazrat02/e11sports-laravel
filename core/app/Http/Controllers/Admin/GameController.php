@@ -226,6 +226,8 @@ class GameController extends Controller {
        
             
         }
+        $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
+
 
         bet::create([
             'game'=>$request->game,
@@ -238,7 +240,7 @@ class GameController extends Controller {
             'status'=>$request->status,
             'fee'=>$request->fee,
             'type'=>$request->type,
-            'start'=>$request->start,
+            'start'=>$startDateTime,
 
     
         ]);
