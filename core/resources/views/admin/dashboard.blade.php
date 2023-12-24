@@ -1,8 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('panel')
-<button  class="btn btn-primary" data-bs-toggle="cronModal" data-display="static"
-aria-haspopup="true" aria-expanded="false">Open Modal</button>
+<button  class="btn btn-primary" data-bs-toggle="cronModal" type="button" aria-label="Show">Open Modal</button>
 
 {{-- <script>
     $(document).ready(function () {
