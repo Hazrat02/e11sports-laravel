@@ -102,7 +102,7 @@
                         <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('admin.game.update', $game->id) }}" method="POST">
+                        <form action="" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -111,13 +111,11 @@
                                             <div class="image-upload">
                                                 <div class="thumb">
                                                     <div class="avatar-preview">
-                                                        <div class="profilePicPreview" style="background-image: url({{ getImage(getFilePath('game') . '/' . $game->image, getFileSize('game')) }})">
-                                                            <button class="remove-image" type="button"><i class="fa fa-times"></i></button>
-                                                        </div>
+                                                     
                                                         <div class="avatar-edit">
                                                             <input class="profilePicUpload" id="profilePicUpload" name="image" type="file" accept=".png, .jpg, .jpeg" requierd>
                                                             <label class="bg--primary" for="profilePicUpload">@lang('Post image')</label>
-                                                            <small class="text-facebook mt-2">@lang('Supported files:') <b>@lang('jpeg, jpg')</b>. @lang('Image will be resized into') <b>{{ getFileSize('game') }}@lang('px')</b></small>
+                                                            <small class="text-facebook mt-2">@lang('Supported files:') <b>@lang('jpeg, jpg')</b>. @lang('Image will be resized into') </small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,14 +135,14 @@
                                                         <div class="form-group">
                                                             <label>@lang('Minimum Invest Amount')</label>
                                                             <div class="input-group mb-3">
-                                                                <input class="form-control" name="min" type="number" value="{{ getAmount($game->min_limit) }}" step="any" min="1" placeholder="@lang('Minimum Invest Amount')" required>
+                                                                <input class="form-control" name="min" type="number" value="" step="any" min="1" placeholder="@lang('Minimum Invest Amount')" required>
                                                                 <span class="input-group-text" id="basic-addon2">{{ $general->cur_sym }}</span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>@lang('Maximum Invest Amount')</label>
                                                             <div class="input-group mb-3">
-                                                                <input class="form-control" name="max" type="number" value="{{ getAmount($game->max_limit) }}" step="any" min="1" placeholder="@lang('Maximum Invest Amount')" required>
+                                                                <input class="form-control" name="max" type="number" value="" step="any" min="1" placeholder="@lang('Maximum Invest Amount')" required>
                                                                 <span class="input-group-text" id="basic-addon2">{{ $general->cur_sym }}</span>
                                                             </div>
                                                         </div>
@@ -160,7 +158,7 @@
                                                                 <div class="form-group">
                                                                     <label>@lang('Winning Chance')</label>
                                                                     <div class="input-group mb-3">
-                                                                        <input class="form-control" name="probable" type="number" value="{{ getAmount($game->probable_win) }}" placeholder="@lang('Winning Chance')">
+                                                                        <input class="form-control" name="probable" type="number" value="" placeholder="@lang('Winning Chance')">
                                                                         <span class="input-group-text" id="basic-addon2">@lang('%')</span>
                                                                     </div>
                                                                 </div>
@@ -169,7 +167,7 @@
                                                                 <div class="form-group">
                                                                     <label>@lang('Win Amount')</label>
                                                                     <div class="input-group mb-3">
-                                                                        <input class="form-control" name="win" type="number" value="{{ getAmount($game->win) }}" step="any" placeholder="@lang('Win')">
+                                                                        <input class="form-control" name="win" type="number" value="" step="any" placeholder="@lang('Win')">
                                                                         <span class="input-group-text" id="basic-addon2">@lang('%')</span>
                                                                     </div>
                                                                 </div>
@@ -192,7 +190,7 @@
                                         <h5 class="card-header bg--primary">@lang(' Game Instruction')</h5>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <textarea class="form-control border-radius-5 nicEdit" name="instruction" rows="8">@php echo $game->instruction @endphp</textarea>
+                                                <textarea class="form-control border-radius-5 nicEdit" name="instruction" rows="8">fggfgfgfgf</textarea>
                                             </div>
                                         </div>
                                     </div>
