@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 
 @section('panel')
-<button id="openModalBtn" class="btn btn-primary" data-bs-toggle="modal" data-display="static"
+<button  class="btn btn-primary" data-bs-toggle="modal" data-display="static"
 aria-haspopup="true" aria-expanded="false">Open Modal</button>
 
-<script>
+{{-- <script>
     $(document).ready(function () {
         // Handle button click
         $("#openModalBtn").click(function () {
@@ -12,7 +12,7 @@ aria-haspopup="true" aria-expanded="false">Open Modal</button>
             $("#cronModal").modal('show');
         });
     });
-</script>
+</script> --}}
 
     @if (@json_decode($general->system_info)->version > systemDetails()['version'])
         <div class="row">
