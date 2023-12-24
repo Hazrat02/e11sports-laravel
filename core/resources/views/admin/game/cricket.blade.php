@@ -49,21 +49,21 @@
                 <div class="col-md-5 col-12 card pt-1 pb-3">
                     <h3>upcoming games</h3>
                     <div class="row">
-                        @if (!empty($data['data']))
+                        @if (!empty($upcoming))
                             {{-- Loop through each match --}}
-                            @foreach ($data['data'] as $match)
+                            @foreach ($upcoming as $match)
                                 <div class="col-12">
                                     <div class="row gy-4 mt-2">
 
                                         <div class="widget-two style--two box--shadow2 b-radius--5 bg--17">
 
                                             <div class="widget-two__content">
-                                                <h5 class="text-white">{{ $match['name'] }}</h5>
+                                                <h5 class="text-white">{{ $match->t1 }}</h5>
                                                 <p class="text-white">@lang('Start : ') <Span
                                                         style="color: rgb(226, 218, 206)">
-                                                        {{ $match['dateTimeGMT'] }}</Span></p>
+                                                        {{ $match->game }}</Span></p>
                                             </div>
-                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', $match['id'] ) }}">@lang('Place in bet')</a>
+                                            <a class="widget-two__btn" href="{{ route('admin.game.cricketinf', $match->id ) }}">@lang('Place in bet')</a>
                                         </div>
 
 
@@ -78,7 +78,7 @@
                                 </div> --}}
                             @endforeach
                         @else
-                            <p>Api Problem</p>
+                            <p>No Data !</p>
                         @endif
 
                     </div>
