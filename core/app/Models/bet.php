@@ -19,6 +19,7 @@ class bet extends Model
         'status',
         'win',
         'ratios',
+        'fee',
 
       
        

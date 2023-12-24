@@ -10,14 +10,18 @@
                             <div class="row gy-4 mt-2">
 
 
+                               
+                                @if (!empty($betting))
+                                {{-- Loop through each match --}}
+                                @foreach ($betting as $betmatch)
                                 <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
                                     <div class="widget-two__icon b-radius--5 bg--primary">
                                         <i class="las la-money-bill-wave-alt"></i>
                                     </div>
                                     <div class="widget-two__content">
-                                        <h3 class="text-white">Bangladesh</h3>
+                                        <h3 class="text-white">{{$betmatch->t1}}</h3>
                                         <p class="text-white">@lang('VS')</p>
-                                        <h3 class="text-white">India</h3>
+                                        <h3 class="text-white">{{$betmatch->t2}}</h3>
                                     </div>
                                     <div>
                                         <a class="widget-two__btn" href=""> Details</a>
@@ -25,6 +29,10 @@
                                     </div>
 
                                 </div>
+                                @endforeach
+                            @else
+                                <p>No Betting Games !</p>
+                            @endif
                                 <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
                                     <div class="widget-two__icon b-radius--5 bg--primary">
                                         <i class="las la-money-bill-wave-alt"></i>

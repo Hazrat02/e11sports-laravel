@@ -161,10 +161,11 @@ class GameController extends Controller {
         //    $data='';
         // }
         $game=bet::all();
-        $upcoming=$game->where('status','1');
+        $upcoming=$game->where('status','1')->where('game','cricket');
+        $betting=$game->where('status','2')->where('game','cricket');
         $pageTitle='Cricket Manage';
 
-        return view('admin.game.cricket', compact('pageTitle','upcoming'));
+        return view('admin.game.cricket', compact('pageTitle','upcoming','betting'));
     }
     public function storecricket( Request $request) {
 
@@ -203,22 +204,51 @@ class GameController extends Controller {
             $file->move(public_path('img/game'), $name);
           
             $path=asset('core/public/img/game/');
-           $url= $path.'/'.$name;
+           $t1_url= $path.'/'.$name;
           
         }else{
-            $url='';
+            $t2_url='';
+       
+            
+        }
+        if ($request->hasFile('t2_img')) {
+            $file = $request->File('t2_img');
+           
+            
+            $name =rand(0000000,999999) .$file->getClientOriginalName();
+            $file->move(public_path('img/game'), $name);
+          
+            $path=asset('core/public/img/game/');
+           $t2_url= $path.'/'.$name;
+          
+        }else{
+            $t2_url='';
        
             
         }
 
+        bet::create([
+            'game'=>$request->game,
+            't1'=>$request->t1,
+            't2'=>$request->t2,
+            't1_img'=>$request->t1_img,
+            't2_img'=>$request->t2_img,
+            'min'=>$request->min,
+            'max'=>$request->max,
+            'status'=>$request->status,
+            'fee'=>$request->fee,
+
+    
+        ]);
+
+
+
         $notify[] = ['success', 'Game Create successfully'];
-        // return back()->withNotify($notify);
-        return $url;
+        return back()->withNotify($notify);
+   
 
       
 
-       
-    // return $request->all();
 
     
     }
