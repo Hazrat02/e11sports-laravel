@@ -257,7 +257,7 @@ class GameController extends Controller {
     public function betstatus( Request $request) {
 
      
-       $bet=bet::find($request->id)->get();
+       $bet=bet::find($request->id);
         
 
        $bet->update([
