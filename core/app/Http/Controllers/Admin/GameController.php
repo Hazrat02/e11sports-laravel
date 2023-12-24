@@ -195,8 +195,25 @@ class GameController extends Controller {
     public function betstore( Request $request) {
 
      
+        if ($request->hasFile('t1_img')) {
+            $file = $request->file('t1_img');
+            
+            
+            $name =rand(0000000,999999) .$file->getClientOriginalName();
+            $file->move(public_path('img/method'), $name);
+            $path=asset('img/method/');
+           $url= $path.'/'.$name;
+        }else{
+            $url='';
+           
+            
+        }
 
-    return $request->all();
+      
+
+        $notify[] = ['success', 'Game Create successfully'];
+        return back()->withNotify($notify);
+    // return $request->all();
 
     
     }

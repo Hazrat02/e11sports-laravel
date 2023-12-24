@@ -206,7 +206,7 @@
                                     <div class="form-group">
                                         <label>@lang('Match Start')</label>
                                         
-                                        <input class="form-control" name="start" type="datetime" 
+                                        <input class="form-control" name="start" type="time" 
                                         required>
                                     </div>
 
