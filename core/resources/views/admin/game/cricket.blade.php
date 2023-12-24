@@ -93,5 +93,5 @@
 @endsection
 
 @push('breadcrumb-plugins')
-    <button>hazrat</button>
+    <x-back route="{{ route('admin.game.index') }}" />
 @endpush

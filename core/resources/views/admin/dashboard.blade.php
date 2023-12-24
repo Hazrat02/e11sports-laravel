@@ -337,7 +337,7 @@
             </div>
         </div>
     </div>
-    {{-- @if (Carbon\Carbon::parse($general->last_cron)->diffInMinutes() > 15)
+   
         <div class="modal fade" id="cronModal" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -359,7 +359,7 @@
                 </div>
             </div>
         </div>
-    @endif --}}
+   
 @endsection
 
 @push('breadcrumb-plugins')
