@@ -94,7 +94,7 @@
     <button  class="btn btn-primary" data-bs-toggle="modal" type="button"  data-bs-target="#cronModal">Open Modal</button>
 
    
-        <div class="modal fade d-none" id="cronModal" role="dialog" tabindex="-1">
+        <div class="modal fade " id="cronModal" role="dialog" tabindex="-1"  aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
