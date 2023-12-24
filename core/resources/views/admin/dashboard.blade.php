@@ -1,6 +1,18 @@
 @extends('admin.layouts.app')
 
 @section('panel')
+<button id="openModalBtn" class="btn btn-primary">Open Modal</button>
+
+<script>
+    $(document).ready(function () {
+        // Handle button click
+        $("#openModalBtn").click(function () {
+            // Show the modal
+            $("#cronModal").modal('show');
+        });
+    });
+</script>
+
     @if (@json_decode($general->system_info)->version > systemDetails()['version'])
         <div class="row">
             <div class="col-md-12">
