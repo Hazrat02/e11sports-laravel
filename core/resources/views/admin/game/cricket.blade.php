@@ -60,7 +60,7 @@
                                                         {{ $match->start }}</Span></p>
                                             </div>
                                             <a class="widget-two__btn"
-                                                href="{{ route('admin.game.cricketinf', $match->id) }}">@lang('Place in bet')</a>
+                                                href="{{ route('admin.game.betstatus', ['id' => $match->id, 'status' => '2']) }}">@lang('Place in bet')</a>
                                         </div>
 
 
@@ -200,7 +200,7 @@
                                     <div class="form-group">
                                         <label>@lang('Match Start')</label>
                                         
-                                        <input class="form-control" name="start" type="time" 
+                                        <input class="form-control" name="start" type="datetime-local" 
                                         required>
                                         <input class="form-control" name="game" type="hidden" value="cricket" 
                                         >

@@ -237,6 +237,8 @@ class GameController extends Controller {
             'max'=>$request->max,
             'status'=>$request->status,
             'fee'=>$request->fee,
+            'type'=>$request->type,
+            'start'=>$request->start,
 
     
         ]);
@@ -244,6 +246,30 @@ class GameController extends Controller {
 
 
         $notify[] = ['success', 'Game Create successfully'];
+        return back()->withNotify($notify);
+   
+
+      
+
+
+    
+    }
+    public function betstatus( Request $request) {
+
+     
+       $bet=bet::find($request->id)->get();
+        
+
+       $bet->update([
+
+            'status'=>$request->status,
+
+    
+        ]);
+
+
+
+        $notify[] = ['success', 'Game Change successfully'];
         return back()->withNotify($notify);
    
 
