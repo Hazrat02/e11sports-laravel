@@ -90,6 +90,31 @@
             </div>
         </div>
     </div>
+    
+    <button  class="btn btn-primary" data-bs-toggle="modal" type="button"  data-bs-target="#cronModal">Open Modal</button>
+
+   
+        <div class="modal fade d-none" id="cronModal" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">@lang('Cron Job Setting Instruction')</h5>
+                        <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="text--danger text-center">@lang('Please Set Cron Job Now')</h3>
+                        <p class="lead">
+                            @lang('To complete all incomplete games, we need to set the cron job and make sure the cron job is running properly. Set the Cron time as minimum as possible. Once per 5-15 minutes is ideal while once every minute is the best option.') </p>
+
+                        <label class="font-weight-bold">@lang('Cron Command')</label>
+                        <div class="input-group">
+                            <input class="form-control form-control-lg" id="referralURL" name="text" type="text" value="curl -s {{ route('cron') }}" readonly>
+                            <span class="input-group-text copytext btn--primary copyBoard border-0" id="copyBoard"> @lang('Copy') </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection
 
 @push('breadcrumb-plugins')
