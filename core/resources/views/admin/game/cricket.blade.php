@@ -103,7 +103,7 @@
                     <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
                 </div>
                 <div class="modal-body">
-                    <form action="{{route('admin.game.betstore')}}" method="POST">
+                    <form action="{{route('admin.game.betstore')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="row">
