@@ -125,7 +125,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label>@lang('Game Name')</label>
-                                            <input class="form-control" name="name" type="text" value="{{ $game->name }}" placeholder="@lang('Game Name')" required>
+                                            <input class="form-control" name="name" type="text" value="" placeholder="@lang('Game Name')" required>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-5">
@@ -175,7 +175,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>@lang('Invest')</label>
-                                                                    <input name="invest_back" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Give Back')" data-off="@lang('No Back"')" type="checkbox" @checked($game->invest_back)>
+                                                                    <input name="invest_back" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Give Back')" data-off="@lang('No Back"')" type="checkbox">
                                                                 </div>
                                                             </div>
                                                         </div>
