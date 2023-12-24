@@ -91,7 +91,7 @@
         </div>
     </div>
     
-    <button  class="btn btn-primary" data-bs-toggle="modal" type="button"  data-bs-target="#cronModal">Open Modal</button>
+   
 
    
         <div class="modal fade " id="cronModal" role="dialog" tabindex="-1"  aria-hidden="true">
@@ -118,5 +118,5 @@
 @endsection
 
 @push('breadcrumb-plugins')
-    <x-back route="{{ route('admin.game.index') }}" />
+<button  class="btn btn-outline--info" data-bs-toggle="modal" type="button"  data-bs-target="#cronModal">+ Add Game</button>
 @endpush
