@@ -14,7 +14,7 @@
                         <h3 class="text-white">{{ $general->cur_sym }}6565</h3>
                         <p class="text-white">@lang('Balance')</p>
                     </div>
-                    <a class="widget-two__btn" href="{{ route('admin.report.transaction') }}?search={{ $user->username }}">@lang('View All')</a>
+                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                         <h3 class="text-white">{{ $general->cur_sym }}sdfs</h3>
                         <p class="text-white">@lang('Deposits')</p>
                     </div>
-                    <a class="widget-two__btn" href="{{ route('admin.deposit.list') }}?search={{ $user->username }}">@lang('View All')</a>
+                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                         <h3 class="text-white">{{ $general->cur_sym }}ewwe</h3>
                         <p class="text-white">@lang('Withdrawals')</p>
                     </div>
-                    <a class="widget-two__btn" href="{{ route('admin.withdraw.log') }}?search={{ $user->username }}">@lang('View All')</a>
+                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                         <h3 class="text-white">4334</h3>
                         <p class="text-white">@lang('Total Played')</p>
                     </div>
-                    <a class="widget-two__btn" href="{{ route('admin.game.log') }}?search={{ $user->username }}">@lang('View All')</a>
+                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
