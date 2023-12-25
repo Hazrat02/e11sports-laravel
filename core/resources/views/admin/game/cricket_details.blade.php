@@ -63,15 +63,19 @@
 
         <div class="d-flex mt-4 flex-wrap gap-3">
             
-
+            <div class="flex-fill">
+                <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#addSubModal" data-act="add">
+                    <i class="las la-plus-circle"></i> @lang('Ratios Change')
+                </button>
+            </div>
             <div class="flex-fill">
                 <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="" target="_blank">
-                    <i class="las la-sign-in-alt"></i>@lang('Login as User')
+                    <i class="las la-sign-in-alt"></i>@lang('Stop Bat')
                 </a>
             </div>
             <div class="flex-fill">
                 <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="" target="_blank">
-                    <i class="las la-sign-in-alt"></i>@lang('Login as User')
+                    <i class="las la-sign-in-alt"></i>@lang('Clear Pay & End')
                 </a>
             </div>
 
