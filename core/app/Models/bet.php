@@ -14,6 +14,8 @@ class bet extends Model
         't2',
         't1_img',
         't2_img',
+        't1_ratio',
+        't2_ratio',
         'min',
         'max',
         'status',

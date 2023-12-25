@@ -207,6 +207,34 @@
                                     </div>
 
                                 </div>
+                                
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Ratio')</label>
+                                        <div class="input-group mb-3">
+                                            <input class="form-control" name="ratio_x" type="number" value=""
+                                                placeholder="@lang('Enter Ratio')">
+                                            <span class="input-group-text" id="basic-addon2">@lang('X')</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>@lang('Ratio For')</label>
+                                        <select class="form-control" name="Ratios">
+                                            <option selected
+                                             value="1">
+                                                Team A
+                                            </option>
+                                            <option value="2">
+                                                Team B
+                                            </option>
+                                        </select>
+                                       
+                                    </div>
+
+                                </div>
 
 
                             </div>

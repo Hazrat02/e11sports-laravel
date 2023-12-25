@@ -226,6 +226,14 @@ class GameController extends Controller {
        
             
         }
+        if ($request->ratios == '1') {
+            $t1_ratios=$request->ratio_x;
+            $t2_ratios= '1' / $request->ratio_x;
+        } else {
+            $t2_ratios=$request->ratio_x;
+            $t1_ratios= '1' / $request->ratio_x;
+        }
+        
         // $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
 
 
@@ -235,12 +243,16 @@ class GameController extends Controller {
             't2'=>$request->t2,
             't1_img'=>$t1_url,
             't2_img'=>$t2_url,
+            't1_ratio'=>$t1_ratios,
+            't1_ratio'=>$t1_ratios,
             'min'=>$request->min,
             'max'=>$request->max,
             'status'=>$request->status,
             'fee'=>$request->fee,
             'type'=>$request->type,
             'start'=>$request->start,
+            'ratios'=>$request->ratios,
+
 
     
         ]);
