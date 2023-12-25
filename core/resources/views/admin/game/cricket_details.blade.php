@@ -12,9 +12,9 @@
                     </div>
                     <div class="widget-two__content">
                         <h3 class="text-white">{{ $general->cur_sym }}6565</h3>
-                        <p class="text-white">@lang('Balance')</p>
+                        <p class="text-white">@lang('Team A - '){{$game->t1}} Invest</p>
                     </div>
-                    <a class="widget-two__btn" href="">@lang('View All')</a>
+                    
                 </div>
             </div>
 
