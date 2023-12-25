@@ -84,24 +84,60 @@
 
         <div class="card mt-30">
             <div class="card-header">
-                <h5 class="card-title mb-0">@lang('Information of') sdf</h5>
+                <h5 class="card-title mb-0">@lang('Information of') Bet</h5>
             </div>
-            <div class="card-body">
-                <form action="" method="POST" enctype="multipart/form-data">
-                    @csrf
-
-                    
-
-                    <div class="row mt-4">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <button class="btn btn--primary w-100 h-45" type="Update">@lang('Submit')
-                                </button>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card b-radius--10">
+                        <div class="card-body p-0">
+                            <div class="table-responsive--md table-responsive">
+                                <table class="table--light style--two table">
+                                    <thead>
+                                        <tr>
+                                            <th>@lang('Game Name')</th>
+                                            <th>@lang('Minimum Invest')</th>
+                                            <th>@lang('Maximum Invest')</th>
+                                            <th>@lang('Status')</th>
+                                            <th>@lang('Action')</th>
+                                        </tr>
+                                    </thead>
+                                    {{-- <tbody>
+                                        @forelse($games as $game)
+                                            <tr>
+                                                <td>{{ __($game->name) }}</td>
+                                                <td>{{ $general->cur_sym }}{{ showAmount($game->min_limit) }}</td>
+                                                <td>{{ $general->cur_sym }}{{ showAmount($game->max_limit) }}</td>
+                                                <td>
+                                                    @php
+                                                        echo $game->statusBadge;
+                                                    @endphp
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.game.edit', $game->id) }}">
+                                                        <i class="la la-pencil"></i> @lang('Edit')
+                                                    </a>
+                                                    @if ($game->status == Status::DISABLE)
+                                                        <button class="btn btn-sm btn-outline--success ms-1 confirmationBtn" data-action="{{ route('admin.game.status', $game->id) }}" data-question="@lang('Are you sure to enable this game?')" type="button">
+                                                            <i class="la la-eye"></i> @lang('Enable')
+                                                        </button>
+                                                    @else
+                                                        <button class="btn btn-sm btn-outline--danger confirmationBtn" data-action="{{ route('admin.game.status', $game->id) }}" data-question="@lang('Are you sure to disable this game?')" type="button">
+                                                            <i class="la la-eye-slash"></i> @lang('Disable')
+                                                        </button>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td class="text-center" colspan="100%">{{ __($emptyMessage) }}</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody> --}}
+                                </table>
                             </div>
                         </div>
-
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -141,7 +177,165 @@
         </div>
     </div>
 </div>
+<div class="modal fade " id="cronModal" role="dialog" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">@lang('Create Cricket Games')</h5>
+                <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
+            </div>
+            <div class="modal-body">
+                <form action="{{route('admin.game.betstore')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="card-body">
+                        <div class="row">
 
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Team A Name')</label>
+                                    <input class="form-control" name="t1" type="text" value=""
+                                        placeholder="@lang('Bangladesh')" required>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Team B Name')</label>
+                                    <input class="form-control" name="t2" type="text" value=""
+                                        placeholder="@lang('India')" required>
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+
+                                    <label>@lang('Minimum Invest Amount')</label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" name="min" type="number" value=""
+                                            step="any" min="1" placeholder="@lang('Minimum Invest Amount')" required>
+                                        <span class="input-group-text" id="basic-addon2">{{ $general->cur_sym }}</span>
+                                    </div>
+                                   
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Maximum Invest Amount')</label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" name="max" type="number" value=""
+                                            step="any" min="1" placeholder="@lang('Maximum Invest Amount')" required>
+                                        <span class="input-group-text"
+                                            id="basic-addon2">{{ $general->cur_sym }}</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Commission fee')</label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" name="fee" type="number" value=""
+                                            placeholder="@lang('Commission fee')">
+                                        <span class="input-group-text" id="basic-addon2">@lang('%')</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Team A Image')</label>
+                                    <input class="form-control" name="t1_img" type="file" value=""
+                                         required>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Team B Image')</label>
+                                    <input class="form-control" name="t2_img" type="file" value=""
+                                         required>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Game Type')</label>
+                                    <input class="form-control" name="type" type="text" placeholder="IPL" value=""
+                                         required>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Place In')</label>
+                                    <select class="form-control" name="status">
+                                        <option selected
+                                         value="1">
+                                            Upcoming
+                                        </option>
+                                        <option value="2">
+                                            Betting
+                                        </option>
+                                    </select>
+                                   
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Match Start')</label>
+                                    
+                                    <input class="form-control" name="start" type="datetime-local" 
+                                    required>
+                                    <input class="form-control" name="game" type="hidden" value="cricket" 
+                                    >
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Ratio')</label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" name="ratio_x" type="number" value=""
+                                            placeholder="@lang('Enter Ratio')">
+                                        <span class="input-group-text" id="basic-addon2">@lang('X')</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>@lang('Ratio For')</label>
+                                    <select class="form-control" name="ratios">
+                                        <option selected
+                                         value="1">
+                                            Team A
+                                        </option>
+                                        <option value="2">
+                                            Team B
+                                        </option>
+                                    </select>
+                                   
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('script')
@@ -171,4 +365,8 @@
 
         })(jQuery);
 </script> --}}
+@endpush
+@push('breadcrumb-plugins')
+    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#cronModal">Update
+        Game</button>
 @endpush
