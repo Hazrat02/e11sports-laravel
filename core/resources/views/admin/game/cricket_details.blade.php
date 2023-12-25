@@ -24,10 +24,9 @@
                         <i class="las la-wallet"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}sdfs</h3>
-                        <p class="text-white">@lang('Deposits')</p>
+                        <h3 class="text-white">{{ $general->cur_sym }}6545</h3>
+                        <p class="text-white">@lang('Team B - '){{$game->t2}} Invest</p>
                     </div>
-                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
@@ -37,10 +36,9 @@
                         <i class="fas fa-wallet"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}ewwe</h3>
-                        <p class="text-white">@lang('Withdrawals')</p>
+                        <h3 class="text-white">{{ $general->cur_sym }}565</h3>
+                        <p class="text-white">@lang('Team A ') Win Amount</p>
                     </div>
-                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
@@ -50,10 +48,9 @@
                         <i class="las la-gamepad"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">4334</h3>
-                        <p class="text-white">@lang('Total Played')</p>
+                        <h3 class="text-white">{{ $general->cur_sym }}565</h3>
+                        <p class="text-white">@lang('Team B ') Win Amount</p>
                     </div>
-                    <a class="widget-two__btn" href="">@lang('View All')</a>
                 </div>
             </div>
 
