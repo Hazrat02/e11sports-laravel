@@ -222,7 +222,7 @@
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label>@lang('Ratio For')</label>
-                                        <select class="form-control" name="Ratios">
+                                        <select class="form-control" name="ratios">
                                             <option selected
                                              value="1">
                                                 Team A
