@@ -23,6 +23,7 @@ class bet extends Model
         'ratios',
         'fee',
         'start',
+        'type',
 
 
       
