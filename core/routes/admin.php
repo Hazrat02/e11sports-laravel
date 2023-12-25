@@ -56,7 +56,7 @@ Route::middleware('admin')->group(function () {
         Route::get('cricket', 'cricket')->name('cricket');
         Route::post('betstore', 'betstore')->name('betstore');
         Route::get('betstatus/{id}/{status}', 'betstatus')->name('betstatus');
-        Route::get('cricketinf/{id}', 'storecricket')->name('cricketinf');
+        Route::get('cricketinf/{id}', 'cricketinf')->name('cricketinf');
         Route::get('edit/{id}', 'edit')->name('edit');
         Route::post('update/{id}', 'update')->name('update');
         Route::post('status/{id}', 'status')->name('status');

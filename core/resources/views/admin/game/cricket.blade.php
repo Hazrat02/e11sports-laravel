@@ -24,7 +24,7 @@
                                         <h3 class="text-white">{{$betmatch->t2}}</h3>
                                     </div>
                                     <div>
-                                        <a class="widget-two__btn" href=""> Details</a>
+                                        <a class="widget-two__btn" href="{{route('admin.game.cricketinf',$betmatch->id)}}"> Details</a>
 
                                     </div>
 

@@ -143,23 +143,7 @@ class GameController extends Controller {
         return back()->withNotify($notify);
     }
     public function cricket() {
-        // $apiKey = '4237d025-e20f-4db8-aebc-395b63e2fe26';
-        // $offset = 0;
-
-        // $response = Http::get('https://api.cricapi.com/v1/matches', [
-        //     'apikey' => $apiKey,
-        //     'offset' => $offset,
-        // ]);
-
-        // // Check if the request was successful (status code 200)
-        // if ($response->successful()) {
-        //     // You can access the response data as an array or JSON
-        //     $data = $response->json();
-
-   
-        // } else {
-        //    $data='';
-        // }
+    
         $game=bet::all();
         $upcoming=$game->where('status','1')->where('game','cricket');
         $betting=$game->where('status','2')->where('game','cricket');
@@ -167,31 +151,12 @@ class GameController extends Controller {
 
         return view('admin.game.cricket', compact('pageTitle','upcoming','betting'));
     }
-    public function storecricket( Request $request) {
+    public function cricketinf( Request $request) {
 
-        $game=bet_log::get()->all();
-        // $apiKey = '4237d025-e20f-4db8-aebc-395b63e2fe26';
-  
+        $game=bet::find($request->id);
+        $pageTitle='Cricket details';
+        return view('admin.game.cricket_details', compact('pageTitle','game'));
 
-        // $response = Http::get('https://api.cricapi.com/v1/match_info', [
-        //     'apikey' => $apiKey,
-        //     'id' =>  $request->id,
-        // ]);
-
-        // // Check if the request was successful (status code 200)
-        // if ($response->successful()) {
-        //     // You can access the response data as an array or JSON
-        //     $data = $response->json();
-
-   
-        // } else {
-        //    $data='';
-        // }
-        // return response()->json($data);
-    return $game;
-
-        // $pageTitle='Bet Manage';
-        // return view('admin.game.store_cricket', compact('pageTitle','data'));
     }
     public function betstore( Request $request) {
 
