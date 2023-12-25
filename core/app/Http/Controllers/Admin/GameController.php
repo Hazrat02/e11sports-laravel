@@ -244,7 +244,7 @@ class GameController extends Controller {
             't1_img'=>$t1_url,
             't2_img'=>$t2_url,
             't1_ratio'=>$t1_ratios,
-            't1_ratio'=>$t1_ratios,
+            't2_ratio'=>$t2_ratios,
             'min'=>$request->min,
             'max'=>$request->max,
             'status'=>$request->status,
