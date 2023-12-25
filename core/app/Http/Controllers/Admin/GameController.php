@@ -228,10 +228,10 @@ class GameController extends Controller {
         }
         if ($request->ratios == '1') {
             $t1_ratios=$request->ratio_x;
-            $t2_ratios= '1' / $request->ratio_x;
+            $t2_ratios= $request->ratio_x / '1';
         } else {
             $t2_ratios=$request->ratio_x;
-            $t1_ratios= '1' / $request->ratio_x;
+            $t1_ratios= $request->ratio_x / '1';
         }
         
         // $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
