@@ -141,7 +141,7 @@
 @endsection
 
 @push('script')
-<script>
+{{-- <script>
     (function($) {
             "use strict"
             $('.bal-btn').click(function() {
@@ -166,5 +166,5 @@
             mobileElement.text(`+${dialCode}`);
 
         })(jQuery);
-</script>
+</script> --}}
 @endpush
