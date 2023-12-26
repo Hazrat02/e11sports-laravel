@@ -146,7 +146,7 @@
                         </ul>
                     </div>
                 </li>
-{{-- 
+ 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.gateway*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-credit-card"></i>
@@ -155,12 +155,12 @@
                     <div class="sidebar-submenu {{ menuActive('admin.gateway*', 2) }}">
                         <ul>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.gateway.automatic.*') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.gateway.automatic.*') }}">
                                 <a class="nav-link" href="{{ route('admin.gateway.automatic.index') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Automatic Gateways')</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="sidebar-menu-item {{ menuActive('admin.gateway.manual.*') }}">
                                 <a class="nav-link" href="{{ route('admin.gateway.manual.index') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
@@ -172,7 +172,7 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
+                {{--<li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.deposit*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-file-invoice-dollar"></i>
                         <span class="menu-title">@lang('Deposits')</span>
