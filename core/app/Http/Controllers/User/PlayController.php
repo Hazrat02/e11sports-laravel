@@ -800,7 +800,7 @@ class PlayController extends Controller {
     public function gamestore(Request $request) {
 
 
-        $game=bet::where('id',$request->game_id)->get();
+        $game=bet::where('id',$request->game_id)->get()->first();
 
         if ($request->choose == $game->t1 ) {
             $winamount = $request->amount * $game->t1_ratio;
