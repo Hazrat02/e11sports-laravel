@@ -16,11 +16,11 @@
                                             src="{{$match->t1_img}}">
 
                                         <div class="" style="position: absolute;top:0%;left:33%">
-                                            <p><span class="com">commition : </span> <span style="color: #93127b"> {{$match->fee}} %</span>
+                                            <p class="com"><span >commition : </span> <span style="color: #e176ce"> {{$match->fee}} %</span>
                                                 @if ($match->isbet == '1')
-                                                <p><span>Bet : </span> <span style="color: #32874a"> Runing</span>
+                                                <p class="com"><span>Bet : </span> <span style="color: #32874a"> Runing</span>
                                                 @else
-                                                <p><span>Bet : </span> <span style="color: #be0439"> Stop</span>
+                                                <p class="com"><span>Bet : </span> <span style="color: #be0439"> Stop</span>
                                                 @endif 
                                             </div>
 
@@ -291,7 +291,7 @@
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
             .com{
-                font-size: 10px;
+                font-size: 13px;
                 font-family: bebas, Verdana, Geneva, sans-serif;
             }
             
