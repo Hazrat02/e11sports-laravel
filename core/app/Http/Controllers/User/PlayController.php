@@ -734,6 +734,7 @@ class PlayController extends Controller {
 
             if ($game->invest_back == 1) {
                 $investBack = $gameLog->invest;
+                
                 $user->balance += $gameLog->invest;
                 $user->save();
 
@@ -799,7 +800,9 @@ class PlayController extends Controller {
 
     }
     public function gamestore(Request $request) {
-        $user=User::find(auth()->user()->id)->get()->first();
+        $user = auth()->user();
+               
+        // $user=User::find(auth()->user()->id)->get()->first();
         if ($user >$request->amount ) {
             $game=bet::where('id',$request->game_id)->get()->first();
 
@@ -834,11 +837,12 @@ class PlayController extends Controller {
         return back()->withNotify($notify);
         }
 
-
+        $user->balance -= $request->amount;
+        $user->save();
         
-        $user->update([
-            'Balance' => $user->balance - $request->amount,
-        ]);
+        // $user->update([
+        //     'Balance' => $user->balance - $request->amount,
+        // ]);
        
         $notify[] = ['success', 'Bet Start successfully'];
         return back()->withNotify($notify);
