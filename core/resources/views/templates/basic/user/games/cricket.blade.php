@@ -10,21 +10,17 @@
                                 <div class="panel panel-superior">
                                     <div class="equipo-superior izquierdo"><img alt="nombreEquipo"
                                             class="float-izquierda"
-                                            src="
-                                    https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                    ">
+                                            src="{{$game->t1_img}}">
 
                                         <div class="" style="position: absolute;top:0%;left:33%">
                                             <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
-                                            <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
+                                            <p><span>commition : </span> <span style="color: #b658a5"> {{$game->fee}}%</span>
                                         </div>
 
                                     </div>
                                     <div class="equipo-superior derecho"><img alt="nombreEquipo"
                                             class="float-derecha"
-                                            src='
-                                    https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                    '>
+                                            src='{{$game->t2_img}}'>
 
 
                                     </div>
@@ -32,13 +28,13 @@
                                 <div class="panel marcadores">
                                     <div class="equipo-marcador  izquierdo">
                                         <p class="float-izquierda">{{$game->t1}}</p><br>
-                                        <p class="float-izquierda"> 140/2  </p>
+                                        
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
                                     <div class="equipo-marcador  derecho">
                                         <p class="">{{$game->t2}}</p> <br>
-                                        <p class="">350/5</p>
+                                       
                                     </div>
                                 </div>
             
