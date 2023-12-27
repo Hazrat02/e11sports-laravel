@@ -43,9 +43,21 @@
                                 </div>
             
                             </div>
-                            <div>
+                            <div class="p-2">
 
-                                <h4>Match Details:</h4>
+                                <h4 >Match Details:</h4>
+                                <div>
+                                    <b>team-A : </b> <span>{{$game->t1}}</span>
+                                    <b>Ratio : </b> <span>{{$game->t1_retio}}</span>
+                                    <b>score : </b> <span></span>
+                                </div>
+                                <hr>
+                                <div>
+                                    <b>team-A : </b> <span>{{$game->t2}}</span>
+                                    <b>Ratio : </b> <span>{{$game->t2_retio}}</span>
+                                    <b>score : </b> <span></span>
+                                </div>
+
     
                             </div>
                         </div>
