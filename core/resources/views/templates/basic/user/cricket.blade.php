@@ -3,7 +3,7 @@
     <section class="mt-5 pb-120">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                {{-- <div class="col-lg-6">
 
 
 
@@ -53,7 +53,7 @@
                     @endforeach
 
 
-                </div>
+                </div> --}}
                 <div class="col-lg-6">
                     
 
