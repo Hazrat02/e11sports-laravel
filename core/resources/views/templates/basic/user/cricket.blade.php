@@ -50,71 +50,64 @@
 
                 </div>
                 <div class="col-lg-6">
-                    Upcoming..
+                    
 
+                    <div class="card mt-4">
+                        <div class="card-body p-0">
+                            <div class="table--responsive">
+                                <table class="style--two table">
+                                    <thead>
+                                        <tr>
+                                            <th>@lang('Upcoming..')</th>
 
-                    @foreach ($upcoming as $match)
-                    <div class="contenedorEquipo">
-                        <div class="base">
-                          <div class="panel panel-superior">
-                            <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda" src="
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                ">
-                                
-                              <div class="estadisticas float-izquierda">
-                                <p>ATT:</p>
-                                <p>85</p>
-                              </div>
-                              <div class="estadisticas float-izquierda">
-                                <p>MID:</p>
-                                <p>65</p>
-                              </div>
-                              <div class="estadisticas float-izquierda">
-                                <p>DEF:</p>
-                                <p>70</p>
-                              </div>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($upcoming as $match)
+                                            <tr>
+                                                <td>
+                                                    
+                                                        {{$match->t1 }}  VS {{$match->t1 }}
+            
+                                                </td>
+                                                <td>
+                                                    
+                                                    {{$match->t1 }}
+                                                </td>
+                                                
+                                                <td>
+                                                    
+                                                    {{$match->t1 }} X
+            
+                                                </td>
+                                                
+                                                <td>
+                                                 
+                                                    {{$match->t1 }}  
+                                                       
+                                                </td>
+                                                <td>
+                                                    {{$match->t1 }}
+                                                </td>
+                                              
+            
+                                                <td>
+                                                    {{$match->t1 }}
+                                                </td>
+                                               
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td class="text-muted text-center" colspan="100%">Upcoming data not found !</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha" src='
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                '>
-                              <div class="estadisticas float-derecha">
-                                <p>DEF:</p>
-                                <p>85</p>
-                              </div>
-                              <div class="estadisticas float-derecha">
-                                <p>MID:</p>
-                                <p>65</p>
-                              </div>
-                              <div class="estadisticas float-derecha">
-                                <p>ATT:</p>
-                                <p>70</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel marcadores">
-                            <div class="equipo-marcador nombre izquierdo">
-                              <p class="float-izquierda">Betis</p>
-                              <div class="marcador-goles float-derecha">0</div>
-                            </div>
-                            <div class="marcador-tiempo"><time>66:66</time></div>
-                            <div class="equipo-marcador nombre derecho">
-                              <p class="float-derecha">Malaga</p>
-                              <div class="marcador-goles float-izquierda">1</div>
-                            </div>
-                          </div>
-                          <div class="panel panel-inferior">
-                            <div class="equipo-inferor izquierdo float-izquierda">
-                              
-                            </div>
-                            <div class="inferior-boton float-izquierda"><a href="#"><button>Enter</button></a></div>
-                            <div class="equipo-inferor derecho float-izquierda">
-
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                </div>
-                    @endforeach
+                        
+                    </div>
+                   
 
 
                 </div>
