@@ -112,8 +112,8 @@
                 </div>
                 <div class="card mt-4">
                     <div class="card-body p-0">
-                        <div class="table--responsive">
-                            <table class="style--two table">
+                        <div class="table-responsive">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <th>@lang('Team')</th>
