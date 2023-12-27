@@ -163,12 +163,12 @@
                                         </td>
                                         <td>
                                             @if ($bet->status == '1')
-                                                <span class="btn btn-primary">Pending</span>
+                                                <span class=" btn-primary">Pending</span>
                                             @else
                                                 @if ($bet->status == '2')
-                                                <span class="btn btn-success">Success</span>
+                                                <span class=" btn-success">Success</span>
                                                 @else
-                                                <span class="btn btn-danger">Rejected</span>
+                                                <span class=" btn-danger">Rejected</span>
                                                 @endif
                                             @endif
                                         </td>
