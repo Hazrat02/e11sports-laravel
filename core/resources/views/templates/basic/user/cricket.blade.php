@@ -54,48 +54,66 @@
 
 
                     @foreach ($upcoming as $match)
-                        <div class="contenedorEquipo">
-                            <div class="base">
-
-                                <div class="panel panel-superior">
-                                    <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
-                                            src="
+                    <div class="contenedorEquipo">
+                        <div class="base">
+                          <div class="panel panel-superior">
+                            <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda" src="
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 ">
-
-                                        <div class="" style="position: absolute;top:0%;left:33%">
-                                            <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
-                                            <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
-                                        </div>
-
-                                    </div>
-                                    <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
-                                            src='
+                                
+                              <div class="estadisticas float-izquierda">
+                                <p>ATT:</p>
+                                <p>85</p>
+                              </div>
+                              <div class="estadisticas float-izquierda">
+                                <p>MID:</p>
+                                <p>65</p>
+                              </div>
+                              <div class="estadisticas float-izquierda">
+                                <p>DEF:</p>
+                                <p>70</p>
+                              </div>
+                            </div>
+                            <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha" src='
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 '>
-
-
-                                    </div>
-                                </div>
-                                <div class="panel marcadores">
-                                    <div class="equipo-marcador  izquierdo">
-                                        <p class="float-izquierda">india</p>
-
-                                    </div>
-                                    <div class="marcador-tiempo"><time>VS</time></div>
-                                    <div class="equipo-marcador  derecho">
-                                        <p class="">Bangladesh</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-center">
-
-                                    <div class="inferior-boton  float-izquierda"><a
-                                            href="{{ route('user.play.cricketbet',$match->id) }}"><button>Bet Now</button></a>
-                                    </div>
-
-                                </div>
+                              <div class="estadisticas float-derecha">
+                                <p>DEF:</p>
+                                <p>85</p>
+                              </div>
+                              <div class="estadisticas float-derecha">
+                                <p>MID:</p>
+                                <p>65</p>
+                              </div>
+                              <div class="estadisticas float-derecha">
+                                <p>ATT:</p>
+                                <p>70</p>
+                              </div>
                             </div>
+                          </div>
+                          <div class="panel marcadores">
+                            <div class="equipo-marcador nombre izquierdo">
+                              <p class="float-izquierda">Betis</p>
+                              <div class="marcador-goles float-derecha">0</div>
+                            </div>
+                            <div class="marcador-tiempo"><time>66:66</time></div>
+                            <div class="equipo-marcador nombre derecho">
+                              <p class="float-derecha">Malaga</p>
+                              <div class="marcador-goles float-izquierda">1</div>
+                            </div>
+                          </div>
+                          <div class="panel panel-inferior">
+                            <div class="equipo-inferor izquierdo float-izquierda">
+                              
+                            </div>
+                            <div class="inferior-boton float-izquierda"><a href="#"><button>Enter</button></a></div>
+                            <div class="equipo-inferor derecho float-izquierda">
+
+                            </div>
+                          </div>
                         </div>
+                      </div>
+                </div>
                     @endforeach
 
 
