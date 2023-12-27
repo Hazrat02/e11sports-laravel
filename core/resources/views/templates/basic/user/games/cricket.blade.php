@@ -161,7 +161,7 @@
                                     <td>
 
                                     <td>
-                                       {{ showDateTime($bet->created_at) }}</span>
+                                       {{ $bet->created_at }}</span>
                                     </td>
                                     <td>
                                         dsd
