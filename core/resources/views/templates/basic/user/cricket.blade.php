@@ -13,32 +13,27 @@
 
                                 <div class="panel panel-superior">
                                     <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
-                                            src="
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                ">
+                                            src="{{$match->t1_img}}">
 
                                         <div class="" style="position: absolute;top:0%;left:33%">
-                                            <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
                                             <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
                                         </div>
 
                                     </div>
                                     <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
-                                            src='
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                '>
+                                            src='{{$match->t2_img}}'>
 
 
                                     </div>
                                 </div>
                                 <div class="panel marcadores">
                                     <div class="equipo-marcador  izquierdo">
-                                        <p class="float-izquierda">india</p>
+                                        <p class="float-izquierda">{{$match->t1}}</p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
                                     <div class="equipo-marcador  derecho">
-                                        <p class="">Bangladesh</p>
+                                        <p class="">{{$match->t2}}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
@@ -58,7 +53,7 @@
                     Upcoming..
 
 
-                    @foreach ($game as $match)
+                    @foreach ($upcoming as $match)
                         <div class="contenedorEquipo">
                             <div class="base">
 
