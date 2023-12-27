@@ -82,7 +82,12 @@
                                 </div>
                                 <input type="hidden" name="game_id" value="{{$game->id}}">
                             <div class="mt-5 text-center">
+                                @if ($game->isbet == '1')
                                 <button class="cmn-btn w-100 game text-center" id="flip" type="submit">@lang('Play Now')</button>
+                                @else
+                                <button class="cmn-btn-danger w-100 game text-center"  type="submit">@lang('Bet not start')</button>
+                                @endif
+                                
                             </div>
                            
                         </form>
