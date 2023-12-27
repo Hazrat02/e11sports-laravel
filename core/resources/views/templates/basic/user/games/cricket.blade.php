@@ -110,83 +110,83 @@
                         </form>
                     </div>
                 </div>
-
-
-            </div>
-            
-        </div>
-        <div class="card mt-4">
-            <div class="card-body p-0">
-                <div class="table--responsive">
-                    <table class="style--two table">
-                        <thead>
-                            <tr>
-                                <th>@lang('Team')</th>
-                                <th>@lang('Amount')</th>
-                                <th>@lang('Ratios')</th>
-                                <th>@lang('Win amount')</th>
-                                <th>@lang('Fee')</th>
-                                <th>@lang('Date')</th>
-                                <th>@lang('Status')</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($bets as $bet)
-                                <tr>
-                                    <td>
-                                        
-                                            {{$bet->choose }}
-
-                                    </td>
-                                    <td>
-                                        
-                                        {{ __($general->cur_sym) }} {{ $bet->amount  }}
-
-                                    </td>
-                                    
-                                    <td>
-                                        
-                                        {{ $bet->ratios  }}$
-
-                                    </td>
-                                    
-                                    <td>
-                                     
-                                            {{ __($general->cur_sym) }}{{$bet->winamount }} 
-                                           
-                                    </td>
-                                    <td>
-                                        {{ __($general->cur_sym) }}{{$bet->fee }}
-                                    </td>
-                                    <td>
-
-                                    <td>
-                                       {{ $bet->created_at }}</span>
-                                    </td>
-                                    <td>
-                                        dsd
-                                        {{-- @if ($bet->status == '1')
-                                            <span class="btn btn-primary">Pending</span>
-                                        @else
-                                            @if ($bet->status == '2')
-                                            <span class="btn btn-success">Success</span>
-                                            @else
-                                            <span class="btn btn-danger">Rejected</span>
-                                            @endif
-                                        @endif --}}
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
-                                </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                <div class="card mt-4">
+                    <div class="card-body p-0">
+                        <div class="table--responsive">
+                            <table class="style--two table">
+                                <thead>
+                                    <tr>
+                                        <th>@lang('Team')</th>
+                                        <th>@lang('Amount')</th>
+                                        <th>@lang('Ratios')</th>
+                                        <th>@lang('Win amount')</th>
+                                        <th>@lang('Fee')</th>
+                                        <th>@lang('Date')</th>
+                                        <th>@lang('Status')</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($bets as $bet)
+                                        <tr>
+                                            <td>
+                                                
+                                                    {{$bet->choose }}
+        
+                                            </td>
+                                            <td>
+                                                
+                                                {{ __($general->cur_sym) }} {{ $bet->amount  }}
+        
+                                            </td>
+                                            
+                                            <td>
+                                                
+                                                {{ $bet->ratios  }}X
+        
+                                            </td>
+                                            
+                                            <td>
+                                             
+                                                    {{ __($general->cur_sym) }}{{$bet->winamount }} 
+                                                   
+                                            </td>
+                                            <td>
+                                                {{ __($general->cur_sym) }}{{$bet->fee }}
+                                            </td>
+                                            <td>
+        
+                                            <td>
+                                               {{ $bet->created_at }}
+                                            </td>
+                                            <td>
+                                               
+                                                @if ($bet->status == '1')
+                                                    <span class="btn btn-primary">Pending</span>
+                                                @else
+                                                    @if ($bet->status == '2')
+                                                    <span class="btn btn-success">Success</span>
+                                                    @else
+                                                    <span class="btn btn-danger">Rejected</span>
+                                                    @endif
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
                 </div>
+
             </div>
             
         </div>
+        
     </section>
 
 @endsection
