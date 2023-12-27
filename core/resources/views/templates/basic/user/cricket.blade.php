@@ -57,10 +57,7 @@
                             <div class="table--responsive">
                                 <table class="style--two table">
                                     <thead>
-                                        <tr>
-                                            <th>@lang('Upcoming..')</th>
-
-                                        </tr>
+                                        Upcoming..
                                     </thead>
                                     <tbody>
                                         @forelse($upcoming as $match)

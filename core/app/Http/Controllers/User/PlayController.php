@@ -796,7 +796,7 @@ class PlayController extends Controller {
        $game=bet::where('id',$request->id)->get()->first();
        $bets=bet_log::where('user_id',auth()->user()->id)->where('game_id',$request->id)->orderBy('id', 'desc')->get();
 
-       $pageTitle= $game->game. 'Bet';
+       $pageTitle= $game->game.' '. 'Bet';
 
         return view($this->activeTemplate . 'user.games.cricket', compact('game', 'pageTitle','bets'));
 
