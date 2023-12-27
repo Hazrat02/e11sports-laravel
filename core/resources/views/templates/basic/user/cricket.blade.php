@@ -17,7 +17,12 @@
 
                                         <div class="" style="position: absolute;top:0%;left:33%">
                                             <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
-                                        </div>
+                                                @if ($game->isbet == '1')
+                                                <p><span>Bet : </span> <span style="color: #32874a"> Runing</span>
+                                                @else
+                                                <p><span>Bet : </span> <span style="color: #be0439"> Stop</span>
+                                                @endif 
+                                            </div>
 
                                     </div>
                                     <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
