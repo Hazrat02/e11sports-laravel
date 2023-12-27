@@ -52,12 +52,12 @@
                 <div class="col-lg-6">
                     
 
-                    <div class="card mt-4">
+                    <div class="card">
                         <div class="card-body p-0">
                             <div class="table--responsive">
                                 <table class="style--two table">
                                     <thead>
-                                        Upcoming..
+                                       <h4> Upcoming..</h4>
                                     </thead>
                                     <tbody>
                                         @forelse($upcoming as $match)
