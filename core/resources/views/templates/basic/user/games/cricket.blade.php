@@ -125,7 +125,7 @@
                                         <th>@lang('Status')</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @forelse($bets as $bet)
                                         <tr>
                                             <td>
@@ -176,7 +176,7 @@
                                             <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
                                         </tr>
                                     @endforelse
-                                </tbody>
+                                </tbody> --}}
                             </table>
                         </div>
                     </div>
