@@ -125,7 +125,7 @@
                                         <th>@lang('Status')</th>
                                     </tr>
                                 </thead>
-                                {{-- <tbody>
+                                <tbody>
                                     @forelse($bets as $bet)
                                         <tr>
                                             <td>
@@ -141,22 +141,22 @@
                                             
                                             <td>
                                                 
-                                                {{ $bet->ratios  }}X
+                                                {{-- {{ $bet->ratios  }} X --}}asas
         
                                             </td>
                                             
                                             <td>
                                              
-                                                    {{ __($general->cur_sym) }}{{$bet->winamount }} 
+                                                    {{-- {{ __($general->cur_sym) }}{{$bet->winamount }}  sda --}}
                                                    
                                             </td>
                                             <td>
-                                                {{ __($general->cur_sym) }}{{$bet->fee }}
+                                                {{-- {{ __($general->cur_sym) }}{{$bet->fee }} --}}sds
                                             </td>
                                             <td>
         
                                             <td>
-                                               {{ $bet->created_at }}
+                                               {{-- {{ $bet->created_at }} --}} sds
                                             </td>
                                             <td>
                                                
@@ -176,7 +176,7 @@
                                             <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
                                         </tr>
                                     @endforelse
-                                </tbody> --}}
+                                </tbody>
                             </table>
                         </div>
                     </div>
