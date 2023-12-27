@@ -60,7 +60,7 @@
                     <div class="card">
                         <div class="card-body p-0">
                             <div class="table--responsive">
-                                <table class="style--two table">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>@lang('Match')</th>
