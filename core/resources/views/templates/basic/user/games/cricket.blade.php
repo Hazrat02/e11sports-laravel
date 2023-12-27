@@ -13,7 +13,12 @@
                                             src="{{$game->t1_img}}">
 
                                         <div class="mb-1" style="position: absolute;top:0%;left:33%">
-                                            <p><span>commition : </span> <span style="color: #b658a5"> {{$game->fee}}%</span>
+                                            <p><span>Commition : </span> <span style="color: #b658a5"> {{$game->fee}}%</span>
+                                           @if ($game->isbet == '1')
+                                           <p><span>Bet : </span> <span style="color: #32874a"> Runing</span>
+                                           @else
+                                           <p><span>Bet : </span> <span style="color: #be0439"> Stop</span>
+                                           @endif 
                                         </div>
 
                                     </div>

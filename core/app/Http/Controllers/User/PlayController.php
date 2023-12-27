@@ -804,6 +804,7 @@ class PlayController extends Controller {
 
         $request->validate([
             'amount' => 'numeric|min:' . $game->min . '|max:'. $game->max ,
+            'game_id' => 'require',
         ]);
         $user = auth()->user();
                
