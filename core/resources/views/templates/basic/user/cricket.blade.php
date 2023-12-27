@@ -291,7 +291,7 @@
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
             .com{
-                font-size: 20px;
+                font-size: 10px;
                 font-family: bebas, Verdana, Geneva, sans-serif;
             }
             
