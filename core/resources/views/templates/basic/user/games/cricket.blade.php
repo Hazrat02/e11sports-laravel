@@ -44,7 +44,11 @@
             
                             </div>
                         </div>
-                 
+                        <div>
+
+                            <h3>Match Details:</h3>
+                            
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
