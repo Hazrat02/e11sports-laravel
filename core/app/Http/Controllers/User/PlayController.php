@@ -793,10 +793,11 @@ class PlayController extends Controller {
     }
     public function cricketbet(request $request) {
        $game=bet::where('id',$request->id)->get()->first();
+       $bets=bet_log::where('user_id',auth()->user()->id)->where('game_id','$request->id')->get();
 
        $pageTitle='Cricket Bet';
 
-        return view($this->activeTemplate . 'user.games.cricket', compact('game', 'pageTitle'));
+        return view($this->activeTemplate . 'user.games.cricket', compact('game', 'pageTitle','bets'));
 
     }
     public function gamestore(Request $request) {

@@ -47,14 +47,14 @@
 
                                 <h4 >Match Details:</h4>
                                 <div>
-                                    <b>team-A : </b> <span>{{$game->t1}}</span>
-                                    <b>Ratio : </b> <span>{{$game->t1_retio}}</span>
+                                    <b>team-A : </b> <span>{{$game->t1}}</span><br>
+                                    <b>Ratio : </b> <span>{{$game->t1_retio}}</span><br>
                                     <b>score : </b> <span></span>
                                 </div>
                                 <hr>
                                 <div>
-                                    <b>team-A : </b> <span>{{$game->t2}}</span>
-                                    <b>Ratio : </b> <span>{{$game->t2_retio}}</span>
+                                    <b>team-B : </b> <span>{{$game->t2}}</span><br>
+                                    <b>Ratio : </b> <span>{{$game->t2_retio}}</span><br>
                                     <b>score : </b> <span></span>
                                 </div>
 
@@ -110,6 +110,78 @@
                         </form>
                     </div>
                 </div>
+
+
+            </div>
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="table--responsive">
+                        <table class="style--two table">
+                            <thead>
+                                <tr>
+                                    <th>@lang('Team')</th>
+                                    <th>@lang('Amount')</th>
+                                    <th>@lang('Ratios')</th>
+                                    <th>@lang('Win amount')</th>
+                                    <th>@lang('Fee')</th>
+                                    <th>@lang('Status')</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($bets as $bet)
+                                    <tr>
+                                        <td>
+                                            
+                                                {{$bet->choose }}
+
+                                        </td>
+                                        <td>
+                                            
+                                            {{ __($general->cur_sym) }} {{ $bet->amount  }}
+
+                                        </td>
+                                        
+                                        <td>
+                                            
+                                            {{ $bet->ratios  }}$
+
+                                        </td>
+                                        
+                                        <td>
+                                         
+                                                {{ __($general->cur_sym) }}{{$bet->winamount }} 
+                                               
+                                        </td>
+                                        <td>
+                                            {{ __($general->cur_sym) }}{{$bet->fee }}
+                                        </td>
+                                        <td>
+
+                                        <td>
+                                           {{ showDateTime($bet->created_at) }}</span>
+                                        </td>
+                                        <td>
+                                            @if ($bet->status == '1')
+                                                <span class="btn btn--primary">Pending</span>
+                                            @else
+                                                @if ($bet->status == '2')
+                                                <span class="btn btn--success">Success</span>
+                                                @else
+                                                <span class="btn btn--danger">Rejected</span>
+                                                @endif
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
