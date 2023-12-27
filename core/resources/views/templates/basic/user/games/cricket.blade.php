@@ -85,7 +85,7 @@
                                 @if ($game->isbet == '1')
                                 <button class="cmn-btn w-100 game text-center" id="flip" type="submit">@lang('Play Now')</button>
                                 @else
-                                <button class="cmn-btn-danger w-100 game text-center"  type="submit">@lang('Bet not start')</button>
+                                <button class="cmn-btn w-100 game text-center"  type="submit" disabled>@lang('Bet not start')</button>
                                 @endif
                                 
                             </div>
