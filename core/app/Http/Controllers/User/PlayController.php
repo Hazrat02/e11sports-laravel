@@ -803,7 +803,7 @@ class PlayController extends Controller {
         $user = auth()->user();
                
         // $user=User::find(auth()->user()->id)->get()->first();
-        if ($user >$request->amount ) {
+        if ($user->balance >$request->amount ) {
             $game=bet::where('id',$request->game_id)->get()->first();
 
         if ($request->choose == $game->t1 ) {
