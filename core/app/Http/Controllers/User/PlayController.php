@@ -819,7 +819,7 @@ class PlayController extends Controller {
             $winamount = $request->amount * $game->t2_ratio;
             $ratios= $game->t2_ratio;
         }
-        $fee = ($request->amount /100)*$game->fee;
+        $fee = ($winamount /100)*$game->fee;
 
 
        $game_log=bet_log::create([
