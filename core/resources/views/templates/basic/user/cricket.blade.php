@@ -72,29 +72,10 @@
                                                 </td>
                                                 <td>
                                                     
-                                                    {{$match->t1 }}
+                                                   <b> Start: </b> {{$match->created_at }}
                                                 </td>
                                                 
-                                                <td>
-                                                    
-                                                    {{$match->t1 }} X
-            
-                                                </td>
                                                 
-                                                <td>
-                                                 
-                                                    {{$match->t1 }}  
-                                                       
-                                                </td>
-                                                <td>
-                                                    {{$match->t1 }}
-                                                </td>
-                                              
-            
-                                                <td>
-                                                    {{$match->t1 }}
-                                                </td>
-                                               
                                             </tr>
                                         @empty
                                             <tr>
