@@ -800,6 +800,11 @@ class PlayController extends Controller {
 
     }
     public function gamestore(Request $request) {
+        $request->validate([
+           
+            'amount' => 'min:5',
+            
+            ]);
         $user = auth()->user();
                
         // $user=User::find(auth()->user()->id)->get()->first();
