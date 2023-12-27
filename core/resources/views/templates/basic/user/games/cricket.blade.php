@@ -43,12 +43,13 @@
                                 </div>
             
                             </div>
-                        </div>
-                        <div>
+                            <div>
 
-                            <h3>Match Details:</h3>
-                            
+                                <h4>Match Details:</h4>
+    
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
