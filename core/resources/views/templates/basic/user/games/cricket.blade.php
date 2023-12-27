@@ -69,7 +69,7 @@
                            
                                 <div class="form-group">
                                     <label>@lang('Select Team')</label>
-                                    <select class="form-control" name="ratios">
+                                    <select class="form-control" name="choose">
                                         <option selected
                                          value="{{$game->t1}}">
                                          {{$game->t1}} ({{$game->t1_ratio}}X)
