@@ -789,7 +789,7 @@ class PlayController extends Controller {
        $upcoming=bet::where('game','cricket')->where('status','1')->orderBy('id', 'desc')->get();
        $pageTitle='Cricket';
 
-        return view($this->activeTemplate . 'user.cricket', compact('game', 'pageTitle'));
+        return view($this->activeTemplate . 'user.cricket', compact('game', 'pageTitle','upcoming'));
 
     }
     public function cricketbet(request $request) {
