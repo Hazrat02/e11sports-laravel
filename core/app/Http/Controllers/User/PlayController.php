@@ -800,15 +800,16 @@ class PlayController extends Controller {
 
     }
     public function gamestore(Request $request) {
+        $game=bet::where('id',$request->game_id)->get()->first();
+
         $request->validate([
-            'amount' => 'numeric|min:5',
+            'amount' => 'numeric|min:' . $game->min . '|max:'. $game->max ,
         ]);
         $user = auth()->user();
                
         // $user=User::find(auth()->user()->id)->get()->first();
         if ($user->balance >$request->amount ) {
-            $game=bet::where('id',$request->game_id)->get()->first();
-
+           
         if ($request->choose == $game->t1 ) {
             $winamount = $request->amount * $game->t1_ratio;
             $ratios= $game->t1_ratio;
