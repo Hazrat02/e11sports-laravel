@@ -12,8 +12,7 @@
                                             class="float-izquierda"
                                             src="{{$game->t1_img}}">
 
-                                        <div class="" style="position: absolute;top:0%;left:33%">
-                                            <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
+                                        <div class="mb-1" style="position: absolute;top:0%;left:33%">
                                             <p><span>commition : </span> <span style="color: #b658a5"> {{$game->fee}}%</span>
                                         </div>
 
@@ -79,7 +78,6 @@
                                 <input type="hidden" name="game_id" value="{{$game->id}}">
                             <div class="mt-5 text-center">
                                 <button class="cmn-btn w-100 game text-center" id="flip" type="submit">@lang('Play Now')</button>
-                                <a class="game-instruction mt-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">@lang('Game Instruction') <i class="las la-info-circle"></i></a>
                             </div>
                            
                         </form>
@@ -89,21 +87,6 @@
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content section--bg">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Game Rule')</h5>
-                    <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    yfhgfhfghfghfghfghfghfhgfg
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @push('style-lib')
