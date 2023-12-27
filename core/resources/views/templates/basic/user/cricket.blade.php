@@ -16,7 +16,7 @@
                                             src="{{$match->t1_img}}">
 
                                         <div class="" style="position: absolute;top:0%;left:33%">
-                                            <p><span>commition : </span> <span style="color: #93127b"> {{$match->fee}}</span>
+                                            <p><span class="float-izquierda">commition : </span> <span style="color: #93127b"> {{$match->fee}} %</span>
                                                 @if ($match->isbet == '1')
                                                 <p><span>Bet : </span> <span style="color: #32874a"> Runing</span>
                                                 @else
