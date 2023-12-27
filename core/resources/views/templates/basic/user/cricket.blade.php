@@ -7,137 +7,56 @@
 
 
 
+                    @foreach ($game as $match)
+                        <div class="contenedorEquipo">
+                            <div class="base">
 
-                    <div class="contenedorEquipo">
-                        <div class="base">
-                            <div class="panel panel-superior">
-                                <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
-                                        src="
+                                <div class="panel panel-superior">
+                                    <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
+                                            src="
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 ">
 
-                                    <div class="" style="position: absolute;top:0%;left:33%">
-                                        <p><span>Retio : </span> <span style="color: #93127b">2X</span></p> 
-                                        <p><span>commition : </span> <span  style="color: #93127b"> 10%</span>
-                                    </div>
+                                        <div class="" style="position: absolute;top:0%;left:33%">
+                                            <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
+                                            <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
+                                        </div>
 
-                                </div>
-                                <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
-                                        src='
+                                    </div>
+                                    <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
+                                            src='
                                 https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
                                 '>
 
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="panel marcadores">
-                                <div class="equipo-marcador  izquierdo">
-                                    <p class="float-izquierda">india</p>
+                                <div class="panel marcadores">
+                                    <div class="equipo-marcador  izquierdo">
+                                        <p class="float-izquierda">india</p>
 
+                                    </div>
+                                    <div class="marcador-tiempo"><time>VS</time></div>
+                                    <div class="equipo-marcador  derecho">
+                                        <p class="">Bangladesh</p>
+                                    </div>
                                 </div>
-                                <div class="marcador-tiempo"><time>VS</time></div>
-                                <div class="equipo-marcador  derecho">
-                                    <p class="">Bangladesh</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
 
-                                <div class="inferior-boton  float-izquierda"><a href="{{ route('user.play.cricketbet') }}"><button>Bet Now</button></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contenedorEquipo">
-                        <div class="base">
-                            <div class="panel panel-superior">
-                                <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
-                                        src="
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                ">
-
-                                    <div class="" style="position: absolute;top:0%;left:33%">
-                                        <p><span>Retio : </span> <span style="color: #93127b">2X</span></p> 
-                                        <p><span>commition : </span> <span  style="color: #93127b"> 10%</span>
+                                    <div class="inferior-boton  float-izquierda"><a
+                                            href="{{ route('user.play.cricketbet',$match->id) }}"><button>Bet Now</button></a>
                                     </div>
 
                                 </div>
-                                <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
-                                        src='
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                '>
-
-
-                                </div>
-                            </div>
-                            <div class="panel marcadores">
-                                <div class="equipo-marcador  izquierdo">
-                                    <p class="float-izquierda">india</p>
-
-                                </div>
-                                <div class="marcador-tiempo"><time>VS</time></div>
-                                <div class="equipo-marcador  derecho">
-                                    <p class="">Bangladesh</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center">
-
-                                <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-                    <div class="contenedorEquipo">
-                        <div class="base">
-                            <div class="panel panel-superior">
-                                <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
-                                        src="
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                ">
-
-                                    <div class="" style="position: absolute;top:0%;left:33%">
-                                        <p><span>Retio : </span> <span style="color: #93127b">2X</span></p> 
-                                        <p><span>commition : </span> <span  style="color: #93127b"> 10%</span>
-                                    </div>
-
-                                </div>
-                                <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
-                                        src='
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                '>
+                    @endforeach
 
 
-                                </div>
-                            </div>
-                            <div class="panel marcadores">
-                                <div class="equipo-marcador  izquierdo">
-                                    <p class="float-izquierda">india</p>
-
-                                </div>
-                                <div class="marcador-tiempo"><time>VS</time></div>
-                                <div class="equipo-marcador  derecho">
-                                    <p class="">Bangladesh</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center">
-
-                                <div class="inferior-boton  float-izquierda"><a href="#"><button>Bet Now</button></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-lg-0 mt-5">
-                   
-                    <div class="game-details-right mt-0 pt-0 ">
-                       <h3> Upcoming game.....</h3>
-
-                    </div>
                 </div>
             </div>
         </div>
+        
     </section>
 
     <!-- Modal -->

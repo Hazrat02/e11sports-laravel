@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Constants\Status;
 use App\Http\Controllers\Controller;
+use App\Models\bet;
+use App\Models\bet_log;
 use App\Models\Game;
 use App\Models\GameLog;
 use App\Models\GuessBonus;
@@ -781,17 +783,56 @@ class PlayController extends Controller {
         return $res;
     }
     public function cricket() {
-       $game='';
+       $game=bet::where('game','cricket')->where('status','2')->get();
        $pageTitle='Cricket';
 
         return view($this->activeTemplate . 'user.cricket', compact('game', 'pageTitle'));
 
     }
-    public function cricketbet() {
-       $game='';
+    public function cricketbet(request $request) {
+       $game=bet::where('id',$request->id)->get()->first();
+
        $pageTitle='Cricket Bet';
 
         return view($this->activeTemplate . 'user.games.cricket', compact('game', 'pageTitle'));
+
+    }
+    public function gamestore(Request $request) {
+
+
+        $game=bet::where('id',$request->game_id);
+
+        if ($request->choose == $game->t1 ) {
+            $winamount = $request->amount * $game->t1_ratio;
+            $ratios= $game->t1_ratio;
+        } else {
+            $winamount = $request->amount * $game->t2_ratio;
+            $ratios= $game->t2_ratio;
+        }
+        $fee = ($request->amount /100)*$game->fee;
+
+
+       $game_log=bet_log::create([
+                
+        'user_id'=>auth()->user()->id,
+        'game_id'=>$request->game_id,
+        't2'=>$game->t1,
+        't1'=>$game->t2,
+        'winorloss'=>'pending',
+        'choose'=>$request->choose,
+        'amount'=>$request->amount,
+        'winamount'=>$winamount,
+        'fee'=>$fee,
+        'ratios'=>$ratios,
+
+        'status'=>'1',
+       ]);
+
+
+       
+        $notify[] = ['success', 'Bet Start successfully'];
+        return back()->withNotify($notify);
+     
 
     }
 

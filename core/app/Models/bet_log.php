@@ -16,6 +16,9 @@ class bet_log extends Model
         'winorloss',
         'choose',
         'amount',
+        'winamount',
+        'fee',
+        'ratios',
 
         'status',
 
