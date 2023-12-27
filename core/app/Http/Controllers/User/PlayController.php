@@ -10,6 +10,7 @@ use App\Models\Game;
 use App\Models\GameLog;
 use App\Models\GuessBonus;
 use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -798,9 +799,9 @@ class PlayController extends Controller {
 
     }
     public function gamestore(Request $request) {
-
-
-        $game=bet::where('id',$request->game_id)->get()->first();
+        $user=User::find(auth()->user()->id)->get()->first();
+        if ($user >$request->amount ) {
+            $game=bet::where('id',$request->game_id)->get()->first();
 
         if ($request->choose == $game->t1 ) {
             $winamount = $request->amount * $game->t1_ratio;
@@ -828,7 +829,16 @@ class PlayController extends Controller {
         'status'=>'1',
        ]);
 
+        } else {
+            $notify[] = ['error', 'Your Balance is too Short '];
+        return back()->withNotify($notify);
+        }
 
+
+        
+        $user->update([
+            'Balance' => $user->balance - $request->amount,
+        ]);
        
         $notify[] = ['success', 'Bet Start successfully'];
         return back()->withNotify($notify);
