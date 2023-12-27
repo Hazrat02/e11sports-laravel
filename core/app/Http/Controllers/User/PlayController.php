@@ -793,7 +793,7 @@ class PlayController extends Controller {
     }
     public function cricketbet(request $request) {
        $game=bet::where('id',$request->id)->get()->first();
-       $bets=bet_log::where('user_id',auth()->user()->id)->where('game_id','$request->id')->get();
+       $bets=bet_log::where('user_id',auth()->user()->id)->where('game_id',$request->id)->get();
 
        $pageTitle='Cricket Bet';
 
