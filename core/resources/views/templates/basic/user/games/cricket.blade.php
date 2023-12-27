@@ -164,7 +164,8 @@
                                        {{ showDateTime($bet->created_at) }}</span>
                                     </td>
                                     <td>
-                                        @if ($bet->status == '1')
+                                        dsd
+                                        {{-- @if ($bet->status == '1')
                                             <span class="btn btn-primary">Pending</span>
                                         @else
                                             @if ($bet->status == '2')
@@ -172,7 +173,7 @@
                                             @else
                                             <span class="btn btn-danger">Rejected</span>
                                             @endif
-                                        @endif
+                                        @endif --}}
                                     </td>
                                 </tr>
                             @empty
