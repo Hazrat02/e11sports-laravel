@@ -54,26 +54,64 @@
 
 
                 </div>
+                <div class="col-lg-6">
+                    Upcoming..
+
+
+                    @foreach ($game as $match)
+                        <div class="contenedorEquipo">
+                            <div class="base">
+
+                                <div class="panel panel-superior">
+                                    <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
+                                            src="
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
+                                ">
+
+                                        <div class="" style="position: absolute;top:0%;left:33%">
+                                            <p><span>Retio : </span> <span style="color: #93127b">2X</span></p>
+                                            <p><span>commition : </span> <span style="color: #93127b"> 10%</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
+                                            src='
+                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
+                                '>
+
+
+                                    </div>
+                                </div>
+                                <div class="panel marcadores">
+                                    <div class="equipo-marcador  izquierdo">
+                                        <p class="float-izquierda">india</p>
+
+                                    </div>
+                                    <div class="marcador-tiempo"><time>VS</time></div>
+                                    <div class="equipo-marcador  derecho">
+                                        <p class="">Bangladesh</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+
+                                    <div class="inferior-boton  float-izquierda"><a
+                                            href="{{ route('user.play.cricketbet',$match->id) }}"><button>Bet Now</button></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                </div>
             </div>
         </div>
         
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content section--bg">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Game Rule')</h5>
-                    <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    dfsdfsdfsdsdfsdfsfsdfsdf
-                </div>
-            </div>
-        </div>
-    </div>
+   
 @endsection
 
 @push('style-lib')
