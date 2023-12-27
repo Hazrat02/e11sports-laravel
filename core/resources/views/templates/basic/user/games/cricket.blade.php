@@ -130,7 +130,7 @@
                                         <tr>
                                             <td>
                                                 
-                                                    {{$bet->choose }}
+                                                    {{$bet->choose }} 
         
                                             </td>
                                             <td>
@@ -141,22 +141,22 @@
                                             
                                             <td>
                                                 
-                                                {{-- {{ $bet->ratios  }} X --}}asas
+                                                {{ $bet->ratios  }} X
         
                                             </td>
                                             
                                             <td>
                                              
-                                                    {{-- {{ __($general->cur_sym) }}{{$bet->winamount }}  sda --}}
+                                                    {{ __($general->cur_sym) }}{{$bet->winamount }}  
                                                    
                                             </td>
                                             <td>
-                                                {{-- {{ __($general->cur_sym) }}{{$bet->fee }} --}}sds
+                                                {{ __($general->cur_sym) }}{{$bet->fee }}
                                             </td>
-                                            <td>
+                                          
         
                                             <td>
-                                               {{-- {{ $bet->created_at }} --}} sds
+                                               {{ $bet->created_at }} 
                                             </td>
                                             <td>
                                                
