@@ -16,7 +16,7 @@
                                             src="{{$match->t1_img}}">
 
                                         <div class="" style="position: absolute;top:0%;left:31%">
-                                            <p class="com"><span >commition : </span> <span style="color: #e176ce"> {{$match->fee}} %</span>
+                                            <p class="com"><span >Commition : </span> <span style="color: #e176ce"> {{$match->fee}}%</span>
                                                 @if ($match->isbet == '1')
                                                 <p class="com"><span>Bet : </span> <span style="color: #32874a"> Runing</span>
                                                 @else
@@ -62,7 +62,11 @@
                             <div class="table--responsive">
                                 <table class="style--two table">
                                     <thead>
-                                       <h4> Upcoming..</h4>
+                                        <tr>
+                                            <th>@lang('Match')</th>
+                                            <th>@lang('Start Time')</th>
+                                      
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         @forelse($upcoming as $match)
@@ -74,7 +78,7 @@
                                                 </td>
                                                 <td>
                                                     
-                                                   <b> Start: </b> {{$match->created_at }}
+                                                   {{$match->created_at }}
                                                 </td>
                                                 
                                                 
