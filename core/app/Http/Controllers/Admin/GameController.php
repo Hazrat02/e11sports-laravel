@@ -268,15 +268,6 @@ class GameController extends Controller {
     
     }
     public function gamestatus( Request $request) {
-        // $withdraw = Withdrawal::where('id', $request->id)->where('status', Status::PAYMENT_PENDING)->with('user')->firstOrFail();
-
-        // $withdraw->status         = 3;
-        // $withdraw->admin_feedback = $request->details;
-        // $withdraw->save();
-
-        // $user = $withdraw->user;
-        // $user->balance += $withdraw->amount;
-        // $user->save();
 
      
        $bet=bet_log::where('id',$request->id);
@@ -327,6 +318,37 @@ class GameController extends Controller {
 
 
         $notify[] = ['success', 'Betting stop/start successfully'];
+        return back()->withNotify($notify);
+   
+
+      
+
+
+    
+    }
+    public function ratios( Request $request) {
+
+     
+       $bet=bet::where('id',$request->game_id);
+       if ($request->ratios == '1') {
+        $t1_ratios = $request->ratio_x;
+        $t2_ratios = 1 / $request->ratio_x;
+    } else {
+        $t2_ratios = $request->ratio_x;
+        $t1_ratios = 1 / $request->ratio_x;
+    }
+
+       $bet->update([
+
+            't1_ratio'=>$t1_ratios,
+            't2_ratio'=>$t2_ratios,
+
+    
+        ]);
+
+
+
+        $notify[] = ['success', 'Ratios Change successfully'];
         return back()->withNotify($notify);
    
 

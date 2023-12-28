@@ -180,30 +180,54 @@
                     <i class="las la-times"></i>
                 </button>
             </div>
-            <form action="" method="POST">
+            <form action="{{route('admin.game.ratios')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input name="act" type="hidden">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>@lang('Amount')</label>
-                        <div class="input-group">
-                            <input class="form-control" name="amount" type="number" step="any" placeholder="@lang('Please provide positive amount')" required>
-                            <div class="input-group-text">{{ __($general->cur_text) }}</div>
+                <div class="card-body">
+                    <div class="row">
+
+                        
+                        
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label>@lang('Ratio')</label>
+                                <div class="input-group mb-3">
+                                    <input class="form-control" name="ratio_x" type="number" value=""
+                                        placeholder="@lang('Enter Ratio')">
+                                    <span class="input-group-text" id="basic-addon2">@lang('X')</span>
+                                </div>
+                            </div>
+
                         </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label>@lang('Ratio For')</label>
+                                <select class="form-control" name="ratios">
+                                    <option selected
+                                     value="1">
+                                        Team A
+                                    </option>
+                                    <option value="2">
+                                        Team B
+                                    </option>
+                                </select>
+                               
+                            </div>
+
+                        </div>
+
+
                     </div>
-                    <div class="form-group">
-                        <label>@lang('Remark')</label>
-                        <textarea class="form-control" name="remark" placeholder="@lang('Remark')" rows="4" required></textarea>
+                    <input type="hidden" name="game_id" value="{{$game->id}}">
+
+                    <div class="mt-3">
+                        <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn--primary h-45 w-100" type="submit">@lang('Submit')</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<div class="modal fade " id="cronModal" role="dialog" tabindex="-1" aria-hidden="true">
+{{-- <div class="modal fade " id="cronModal" role="dialog" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -361,38 +385,13 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
 
 @push('script')
-{{-- <script>
-    (function($) {
-            "use strict"
-            $('.bal-btn').click(function() {
-                var act = $(this).data('act');
-                $('#addSubModal').find('input[name=act]').val(act);
-                if (act == 'add') {
-                    $('.type').text('Add');
-                } else {
-                    $('.type').text('Subtract');
-                }
-            });
-            let mobileElement = $('.mobile-code');
-            $('select[name=country]').change(function() {
-                mobileElement.text(`+${$('select[name=country] :selected').data('mobile_code')}`);
-            });
 
-            $('select[name=country]').val('{{ @$user->country_code }}');
-            let dialCode = $('select[name=country] :selected').data('mobile_code');
-            let mobileNumber = `{{ $user->mobile }}`;
-            mobileNumber = mobileNumber.replace(dialCode, '');
-            $('input[name=mobile]').val(mobileNumber);
-            mobileElement.text(`+${dialCode}`);
-
-        })(jQuery);
-</script> --}}
 @endpush
 @push('breadcrumb-plugins')
-    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#cronModal">Update
-        Game</button>
+    {{-- <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#cronModal">Update
+        Game</button> --}}
 @endpush
