@@ -802,6 +802,7 @@ class PlayController extends Controller {
 
     }
     public function gamestore(Request $request) {
+
         $game=bet::where('id',$request->game_id)->get()->first();
 
         $request->validate([
@@ -827,8 +828,8 @@ class PlayController extends Controller {
                 
         'user_id'=>auth()->user()->id,
         'game_id'=>$request->game_id,
-        't2'=>$game->t1,
-        't1'=>$game->t2,
+        't1'=>$game->t1,
+        't2'=>$game->t2,
         'winorloss'=>'pending',
         'choose'=>$request->choose,
         'amount'=>$request->amount,

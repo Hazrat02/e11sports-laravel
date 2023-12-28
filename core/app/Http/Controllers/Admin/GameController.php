@@ -176,7 +176,7 @@ class GameController extends Controller {
            $t1_url= $path.'/'.$name;
           
         }else{
-            $t2_url='';
+            $t1_url='';
        
             
         }
