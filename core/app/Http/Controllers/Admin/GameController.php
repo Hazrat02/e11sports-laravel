@@ -158,8 +158,8 @@ class GameController extends Controller {
 
      
         $gamelog=$log->get();
-        $teamAsuccess=$log->where('status','2')->where('choose',$game->t1)->get();
-        $success=$log->where('status','2')->where('choose',$game->t2)->get();
+        $teamAsuccess=$log->where('status','2')->where('choose',$game->t2)->get();
+        $success=$log->where('status','2')->where('choose',$game->t1)->get();
         $teamBsuccess=$log->where('status','2')->where('choose','india')->get();
         // dd($teamBsuccess);
         $pageTitle=$game->game.' '.'details';
