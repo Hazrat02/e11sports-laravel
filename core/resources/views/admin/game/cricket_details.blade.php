@@ -37,7 +37,7 @@
                     </div>
                     <div class="widget-two__content">
                         <h3 class="text-white">{{ $general->cur_sym }}{{ $teamAsuccess->sum('winamount') }}</h3>
-                        <p class="text-white">@lang('Team A ') Win Amount</p>
+                        <p class="text-white">@lang('Team A ')- Win Amount</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="widget-two__content">
                         <h3 class="text-white">{{ $general->cur_sym }}{{ $teamBsuccess->sum('winamount') }}</h3>
-                        <p class="text-white">@lang('Team B ') Win Amount</p>
+                        <p class="text-white">@lang('Team B ')- Win Amount</p>
                     </div>
                 </div>
             </div>

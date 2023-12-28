@@ -157,7 +157,7 @@ class GameController extends Controller {
         $log=bet_log::where('game_id',$request->id);
         $gamelog=$log->get();
         $teamAsuccess=$log->where('status','2')->where('choose',$game->t1)->get();
-        $teamBsuccess=$log->where('status','2')->where('choose',$game->t2)->get();
+        $teamBsuccess=$log->where('status','2')->where('choose','india')->get();
         $pageTitle=$game->game.' '.'details';
         return view('admin.game.cricket_details', compact('pageTitle','game','gamelog','teamAsuccess','teamBsuccess'));
 
