@@ -91,45 +91,67 @@
                                 <table class="table--light style--two table">
                                     <thead>
                                         <tr>
-                                            <th>@lang('Game Name')</th>
-                                            <th>@lang('Minimum Invest')</th>
-                                            <th>@lang('Maximum Invest')</th>
-                                            <th>@lang('Status')</th>
-                                            <th>@lang('Action')</th>
+                                        <th>@lang('Team')</th>
+                                        <th>@lang('Amount')</th>
+                                        <th>@lang('Ratios')</th>
+                                        <th>@lang('Win amount')</th>
+                                        <th>@lang('Fee')</th>
+                                        <th>@lang('Date')</th>
+                                        <th>@lang('Status')</th>
                                         </tr>
                                     </thead>
-                                    {{-- <tbody>
-                                        @forelse($games as $game)
-                                            <tr>
-                                                <td>{{ __($game->name) }}</td>
-                                                <td>{{ $general->cur_sym }}{{ showAmount($game->min_limit) }}</td>
-                                                <td>{{ $general->cur_sym }}{{ showAmount($game->max_limit) }}</td>
-                                                <td>
-                                                    @php
-                                                        echo $game->statusBadge;
-                                                    @endphp
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.game.edit', $game->id) }}">
-                                                        <i class="la la-pencil"></i> @lang('Edit')
-                                                    </a>
-                                                    @if ($game->status == Status::DISABLE)
-                                                        <button class="btn btn-sm btn-outline--success ms-1 confirmationBtn" data-action="{{ route('admin.game.status', $game->id) }}" data-question="@lang('Are you sure to enable this game?')" type="button">
-                                                            <i class="la la-eye"></i> @lang('Enable')
-                                                        </button>
+                                    <tbody>
+                                        @forelse($gamelog as $bet)
+                                        <tr>
+                                            <td>
+                                                
+                                                    {{$bet->choose }} 
+        
+                                            </td>
+                                            <td>
+                                                
+                                                {{ __($general->cur_sym) }} {{ $bet->amount  }}
+        
+                                            </td>
+                                            
+                                            <td>
+                                                
+                                                {{ $bet->ratios  }} X
+        
+                                            </td>
+                                            
+                                            <td>
+                                             
+                                                    {{ __($general->cur_sym) }}{{$bet->winamount }}  
+                                                   
+                                            </td>
+                                            <td>
+                                                {{ __($general->cur_sym) }}{{$bet->fee }}
+                                            </td>
+                                          
+        
+                                            <td>
+                                               {{ $bet->created_at }} 
+                                            </td>
+                                            <td>
+                                               
+                                                @if ($bet->status == '1')
+                                                    <span class="btn btn-primary">Pending</span>
+                                                @else
+                                                    @if ($bet->status == '2')
+                                                    <span class="btn btn-success">Success</span>
                                                     @else
-                                                        <button class="btn btn-sm btn-outline--danger confirmationBtn" data-action="{{ route('admin.game.status', $game->id) }}" data-question="@lang('Are you sure to disable this game?')" type="button">
-                                                            <i class="la la-eye-slash"></i> @lang('Disable')
-                                                        </button>
+                                                    <span class="btn btn-danger">Rejected</span>
                                                     @endif
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td class="text-center" colspan="100%">{{ __($emptyMessage) }}</td>
-                                            </tr>
-                                        @endforelse
-                                    </tbody> --}}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                        </tr>
+                                    @endforelse
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

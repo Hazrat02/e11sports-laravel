@@ -153,9 +153,11 @@ class GameController extends Controller {
     }
     public function cricketinf( Request $request) {
 
-        $game=bet::find($request->id);
-        $pageTitle='Cricket details';
-        return view('admin.game.cricket_details', compact('pageTitle','game'));
+        $game=bet::find($request->id)->get()->first();
+        $gamelog=bet_log::where('game_id',$request->id);
+        $gamesuccess=$gamelog->where('status','2')->get();
+        $pageTitle=$game->game.''.'details';
+        return view('admin.game.cricket_details', compact('pageTitle','game','gamelog','gamesuccess'));
 
     }
     public function betstore( Request $request) {
