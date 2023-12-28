@@ -67,11 +67,11 @@
             </div>
             <div class="flex-fill">
                 @if ($game->isbet == '1')
-                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '2']) }}" target="_blank">
+                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '2']) }}" >
                     <i class="las la-sign-in-alt"></i>@lang('Stop Bet')
                 </a>
                 @else
-                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '1']) }}" target="_blank">
+                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '1']) }}" >
                     <i class="las la-sign-in-alt"></i>@lang('Start Bet')
                 </a>
                 @endif
