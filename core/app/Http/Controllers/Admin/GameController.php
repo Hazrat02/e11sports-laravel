@@ -145,9 +145,9 @@ class GameController extends Controller {
     }
     public function cricket() {
     
-        $game=bet::orderBy('id', 'desc')->all();
-        $upcoming=$game->where('status','1')->where('game','cricket')->get();
-        $betting=$game->where('status','2')->where('game','cricket')->get();
+        $game=bet::orderBy('id', 'desc')->get();
+        $upcoming=$game->where('status','1')->where('game','cricket');
+        $betting=$game->where('status','2')->where('game','cricket');
         $pageTitle='Cricket Manage';
 
         return view('admin.game.cricket', compact('pageTitle','upcoming','betting'));
