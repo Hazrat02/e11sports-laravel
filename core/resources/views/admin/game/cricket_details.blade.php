@@ -66,9 +66,16 @@
                 </button>
             </div>
             <div class="flex-fill">
-                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="" target="_blank">
-                    <i class="las la-sign-in-alt"></i>@lang('Stop Bat')
+                @if ($game->isbet == '1')
+                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '2']) }}" target="_blank">
+                    <i class="las la-sign-in-alt"></i>@lang('Stop Bet')
                 </a>
+                @else
+                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '1']) }}" target="_blank">
+                    <i class="las la-sign-in-alt"></i>@lang('Start Bet')
+                </a>
+                @endif
+                
             </div>
             <div class="flex-fill">
                 <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="" target="_blank">
@@ -131,10 +138,10 @@
                                             <td>
                                                
                                                 @if ($bet->status == '1')
-                                                <div class="d-flex justify-content-between">
-                                                    <a style="color: rgb(146, 9, 9)"  href=""><i class="fa fa-window-close"></i></a>
+                                                <div class="d-flex justify-content-evenly">
+                                                    <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
-                                                    <a style="color: rgb(23, 167, 50)"  href=""><i class="fa fa-check"></i></a>
+                                                    <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
                                                 </div>
                                                     
                                                 @else

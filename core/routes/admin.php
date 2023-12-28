@@ -58,6 +58,8 @@ Route::middleware('admin')->group(function () {
         Route::get('betstatus/{id}/{status}', 'betstatus')->name('betstatus');
         Route::get('cricketinf/{id}', 'cricketinf')->name('cricketinf');
         Route::get('edit/{id}', 'edit')->name('edit');
+        Route::get('gamestatus/{id}/{status}', 'gamestatus')->name('gamestatus');
+        Route::get('isbet/{id}/{status}', 'isbet')->name('isbet');
         Route::post('update/{id}', 'update')->name('update');
         Route::post('status/{id}', 'status')->name('status');
         Route::post('chance-create', 'chanceCreate')->name('chance.create');

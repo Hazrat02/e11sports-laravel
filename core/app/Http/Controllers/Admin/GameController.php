@@ -262,4 +262,52 @@ class GameController extends Controller {
 
     
     }
+    public function gamestatus( Request $request) {
+
+     
+       $bet=bet_log::find($request->id);
+        
+
+       $bet->update([
+
+            'status'=>$request->status,
+
+    
+        ]);
+
+
+
+        $notify[] = ['success', 'Betting data Change successfully'];
+        return back()->withNotify($notify);
+   
+
+      
+
+
+    
+    }
+    public function isbet( Request $request) {
+
+     
+       $bet=bet::find($request->id);
+        
+
+       $bet->update([
+
+            'isbet'=>$request->status,
+
+    
+        ]);
+
+
+
+        $notify[] = ['success', 'Betting stop/start successfully'];
+        return back()->withNotify($notify);
+   
+
+      
+
+
+    
+    }
 }
