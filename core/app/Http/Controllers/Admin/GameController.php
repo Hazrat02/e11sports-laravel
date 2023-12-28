@@ -268,12 +268,26 @@ class GameController extends Controller {
     
     }
     public function gamestatus( Request $request) {
+        // $withdraw = Withdrawal::where('id', $request->id)->where('status', Status::PAYMENT_PENDING)->with('user')->firstOrFail();
+
+        // $withdraw->status         = 3;
+        // $withdraw->admin_feedback = $request->details;
+        // $withdraw->save();
+
+        // $user = $withdraw->user;
+        // $user->balance += $withdraw->amount;
+        // $user->save();
 
      
        $bet=bet_log::where('id',$request->id);
        if ($request->status == '3') {
-        $bet2=$bet;
+        $bet2=$bet->with('user')->get()->first();
         $user=User::where('id',$bet2->user_id);
+
+        
+        $user = $bet2->user;
+   
+
         $user->balance += $bet2->amount;
         $user->save();
        }

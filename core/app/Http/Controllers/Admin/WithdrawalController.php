@@ -94,16 +94,16 @@ class WithdrawalController extends Controller {
         $withdraw->admin_feedback = $request->details;
         $withdraw->save();
 
-        notify($withdraw->user, 'WITHDRAW_APPROVE', [
-            'method_name'     => $withdraw->method->name,
-            'method_currency' => $withdraw->currency,
-            'method_amount'   => showAmount($withdraw->final_amount),
-            'amount'          => showAmount($withdraw->amount),
-            'charge'          => showAmount($withdraw->charge),
-            'rate'            => showAmount($withdraw->rate),
-            'trx'             => $withdraw->trx,
-            'admin_details'   => $request->details,
-        ]);
+        // notify($withdraw->user, 'WITHDRAW_APPROVE', [
+        //     'method_name'     => $withdraw->method->name,
+        //     'method_currency' => $withdraw->currency,
+        //     'method_amount'   => showAmount($withdraw->final_amount),
+        //     'amount'          => showAmount($withdraw->amount),
+        //     'charge'          => showAmount($withdraw->charge),
+        //     'rate'            => showAmount($withdraw->rate),
+        //     'trx'             => $withdraw->trx,
+        //     'admin_details'   => $request->details,
+        // ]);
 
         $notify[] = ['success', 'Withdrawal approved successfully'];
         return to_route('admin.withdraw.pending')->withNotify($notify);
@@ -133,17 +133,17 @@ class WithdrawalController extends Controller {
         $transaction->trx          = $withdraw->trx;
         $transaction->save();
 
-        notify($user, 'WITHDRAW_REJECT', [
-            'method_name'     => $withdraw->method->name,
-            'method_currency' => $withdraw->currency,
-            'method_amount'   => showAmount($withdraw->final_amount),
-            'amount'          => showAmount($withdraw->amount),
-            'charge'          => showAmount($withdraw->charge),
-            'rate'            => showAmount($withdraw->rate),
-            'trx'             => $withdraw->trx,
-            'post_balance'    => showAmount($user->balance),
-            'admin_details'   => $request->details,
-        ]);
+        // notify($user, 'WITHDRAW_REJECT', [
+        //     'method_name'     => $withdraw->method->name,
+        //     'method_currency' => $withdraw->currency,
+        //     'method_amount'   => showAmount($withdraw->final_amount),
+        //     'amount'          => showAmount($withdraw->amount),
+        //     'charge'          => showAmount($withdraw->charge),
+        //     'rate'            => showAmount($withdraw->rate),
+        //     'trx'             => $withdraw->trx,
+        //     'post_balance'    => showAmount($user->balance),
+        //     'admin_details'   => $request->details,
+        // ]);
 
         $notify[] = ['success', 'Withdrawal rejected successfully'];
         return to_route('admin.withdraw.pending')->withNotify($notify);
