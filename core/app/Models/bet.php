@@ -24,6 +24,7 @@ class bet extends Model
         'fee',
         'start',
         'type',
+        'isbet'
 
 
       
