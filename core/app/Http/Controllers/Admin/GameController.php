@@ -158,13 +158,12 @@ class GameController extends Controller {
 
      
         $gamelog=$log->get();
-        $success=$log->where('status','2')->where('choose',$game->t1)->get();
-        $teamAsuccess=$log->where('status','2')->where('choose',$game->t2)->get();
+        $teamAsuccess=$log->where('status','2')->where('choose',$game->t1)->get();
         
-        $teamBsuccess=$log->where('status','2')->where('choose','india')->get();
+        $teamBsuccess=bet_log::where('game_id',$request->id)->where('status','2')->where('choose',$game->t2)->get();
         // dd($teamBsuccess);
         $pageTitle=$game->game.' '.'details';
-        return view('admin.game.cricket_details', compact('pageTitle','success','game','gamelog','teamAsuccess','teamBsuccess'));
+        return view('admin.game.cricket_details', compact('pageTitle','game','gamelog','teamAsuccess','teamBsuccess'));
 
     }
     public function betstore( Request $request) {

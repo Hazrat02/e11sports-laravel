@@ -48,7 +48,7 @@
                         <i class="las la-gamepad"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}{{ $success->sum('winamount') }}</h3>
+                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamBsuccess->sum('winamount') }}</h3>
                         <p class="text-white">@lang('Team B ')- Win Amount</p>
                     </div>
                 </div>
