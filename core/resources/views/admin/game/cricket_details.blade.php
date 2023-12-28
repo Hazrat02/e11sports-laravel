@@ -11,7 +11,7 @@
                         <i class="las la-money-bill-wave-alt"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}6565</h3>
+                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamAsuccess->sum('amount') }}</h3>
                         <p class="text-white">@lang('Team A - '){{$game->t1}} Invest</p>
                     </div>
                     
@@ -24,7 +24,7 @@
                         <i class="las la-wallet"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}6545</h3>
+                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamBsuccess->sum('amount') }}</h3>
                         <p class="text-white">@lang('Team B - '){{$game->t2}} Invest</p>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <i class="fas fa-wallet"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}565</h3>
+                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamAsuccess->sum('winamount') }}</h3>
                         <p class="text-white">@lang('Team A ') Win Amount</p>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                         <i class="las la-gamepad"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}565</h3>
+                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamBsuccess->sum('winamount') }}</h3>
                         <p class="text-white">@lang('Team B ') Win Amount</p>
                     </div>
                 </div>
