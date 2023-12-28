@@ -132,7 +132,7 @@
                                                
                                                 @if ($bet->status == '1')
                                                 <div class="d-flex justify-content-between">
-                                                    <a style="color: rgb(146, 9, 9)"  href=""><i class="fa fa-close"></i></a>
+                                                    <a style="color: rgb(146, 9, 9)"  href=""><i class="fa fa-window-close"></i></a>
 
                                                     <a style="color: rgb(23, 167, 50)"  href=""><i class="fa fa-check"></i></a>
                                                 </div>
