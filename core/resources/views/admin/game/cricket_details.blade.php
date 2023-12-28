@@ -36,7 +36,7 @@
                         <i class="fas fa-wallet"></i>
                     </div>
                     <div class="widget-two__content">
-                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamAsuccess->sum('winamount') }}</h3>
+                        <h3 class="text-white">{{ $general->cur_sym }}{{ $teamBsuccess->sum('winamount') }}</h3>
                         <p class="text-white">@lang('Team A ')- Win Amount</p>
                     </div>
                 </div>
