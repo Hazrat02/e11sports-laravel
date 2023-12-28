@@ -131,8 +131,11 @@
                                             <td>
                                                
                                                 @if ($bet->status == '1')
-                                                <a  href=""><i class="fa fa-cloud"></i></a>
-                                                    {{-- <span class="btn btn-primary">Pending</span> --}}
+                                                <div class="d-flex justify-content-between">
+                                                    <a style="color: rgb(23, 167, 50)"  href=""><i class="fa fa-check"></i></a>
+                                                <a style="color: rgb(146, 9, 9)"  href=""><i class="fa fa-close"></i></a>
+                                                </div>
+                                                    
                                                 @else
                                                     @if ($bet->status == '2')
                                                     <span class="btn btn-success">Success</span>
