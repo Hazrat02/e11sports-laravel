@@ -272,7 +272,7 @@ class GameController extends Controller {
      
        $bet=bet_log::where('id',$request->id);
        if ($request->status == '3') {
-        $bet2=$bet->get()->first();
+        $bet2=$bet;
         $user=User::where('id',$bet2->user_id);
         $user->balance += $bet2->amount;
         $user->save();
