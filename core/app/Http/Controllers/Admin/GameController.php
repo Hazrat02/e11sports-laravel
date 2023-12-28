@@ -9,6 +9,7 @@ use App\Models\Game;
 use App\Models\bet_log;
 use App\Models\GameLog;
 use App\Models\GuessBonus;
+use App\Models\User;
 use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -269,7 +270,13 @@ class GameController extends Controller {
     public function gamestatus( Request $request) {
 
      
-       $bet=bet_log::find($request->id);
+       $bet=bet_log::where('id',$request->id)->get();
+       if ($request->status == '3') {
+
+        $user=User::where('id',$bet->user_id);
+        $user->balance += $bet->amount;
+            $user->save();
+       }
         
 
        $bet->update([
