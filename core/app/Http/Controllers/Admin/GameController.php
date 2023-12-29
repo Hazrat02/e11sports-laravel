@@ -373,13 +373,13 @@ class GameController extends Controller {
 
             $user->balance += $amount;
             $user->save();
-            $winorloss ='win';
+            $status ='win';
         } else {
-            $winorloss ='loss';
+            $status ='loss';
         }
         
-        $betData->update([
-            'winorloss'=> $winorloss,
+        $item->update([
+            'winorloss'=> $status,
         ]);
     }
     $bet->update(
