@@ -388,7 +388,7 @@ class GameController extends Controller {
         ]
         );
         $notify[] = ['success', 'Betting Pay  successfully'];
-        return redirect()->route('cricket')->withNotify($notify);
+        return redirect()->route('admin.game.cricket')->withNotify($notify);
     
         // return back()->withNotify($notify);
    
