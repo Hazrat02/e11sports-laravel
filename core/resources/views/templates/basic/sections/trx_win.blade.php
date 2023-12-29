@@ -1,4 +1,4 @@
-{{-- @php
+@php
 $content = getContent('trx_win.content', true);
 $latestWinners = \App\Models\GameLog::where('win_status', '!=', 0)
 ->where('win_amo', '>', '0')
@@ -75,4 +75,4 @@ $transactions = \App\Models\Transaction::with('user')
             </div>
         </div>
     </div>
-</section> --}}
+</section>
