@@ -305,7 +305,7 @@ class GameController extends Controller {
     public function isbet( Request $request) {
 
      
-       $bet=bet::find($request->id);
+       $bet=bet::where('id',$request->id);
         
 
        $bet->update([
@@ -350,6 +350,47 @@ class GameController extends Controller {
 
         $notify[] = ['success', 'Ratios Change successfully'];
         return back()->withNotify($notify);
+   
+
+      
+
+
+    
+    }
+    public function betend( Request $request) {
+
+     
+       $bet=bet::where('id',$request->game_id);
+
+       $betData=bet_log::where('game_id',$request->id)->where('status','2')->with('user')->get();
+
+       foreach ($betData as $item) {
+
+        if ($item->choose == $request->win) {
+            $user = $item->user;
+            $amount= ($item->amount + $item->winamount) - $item->fee;
+   
+
+            $user->balance += $amount;
+            $user->save();
+            $winorloss ='win';
+        } else {
+            $winorloss ='loss';
+        }
+        
+        $betData->update([
+            'winorloss'=> $winorloss,
+        ]);
+    }
+    $bet->update(
+        [
+            'status'=>'3',
+        ]
+        );
+        $notify[] = ['success', 'Betting Pay  successfully'];
+        return redirect()->route('cricket')->withNotify($notify);
+    
+        // return back()->withNotify($notify);
    
 
       

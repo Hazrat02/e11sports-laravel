@@ -78,9 +78,9 @@
                 
             </div>
             <div class="flex-fill">
-                <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="" target="_blank">
-                    <i class="las la-sign-in-alt"></i>@lang('Clear Pay & End')
-                </a>
+                <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#entModal" data-act="add">
+                    <i class="las la-plus-circle"></i> @lang('Ratios Change')
+                </button>
             </div>
 
           
@@ -187,7 +187,7 @@
 
                         
                         
-                        <div class="col-md-6 col-12">
+                        <div class="col-12">
                             <div class="form-group">
                                 <label>@lang('Ratio')</label>
                                 <div class="input-group mb-3">
@@ -198,7 +198,7 @@
                             </div>
 
                         </div>
-                        <div class="col-md-6 col-12">
+                        <div class=" col-12">
                             <div class="form-group">
                                 <label>@lang('Ratio For')</label>
                                 <select class="form-control" name="ratios">
@@ -218,6 +218,51 @@
 
                     </div>
                     <input type="hidden" name="game_id" value="{{$game->id}}">
+
+                    <div class="mt-3">
+                        <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="entModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span class="type"></span> <span>@lang('Game End')</span></h5>
+                <button class="close" data-bs-dismiss="modal" type="button" aria-label="Close">
+                    <i class="las la-times"></i>
+                </button>
+            </div>
+            <form action="{{route('admin.game.betend')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                    <div class="row">
+
+                        
+                     
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@lang('Team Win')</label>
+                                <select class="form-control" name="win">
+                                    <option selected
+                                     value="{{$game->t1}}">
+                                        {{$game->t1}}
+                                    </option>
+                                    <option value="{{$game->t2}}">
+                                        {{$game->t2}}
+                                    </option>
+                                </select>
+                               
+                            </div>
+
+                        </div>
+                        <input type="hidden" name="game_id" value="{{$game->id}}">
+
+
+                    </div>
 
                     <div class="mt-3">
                         <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')</button>
