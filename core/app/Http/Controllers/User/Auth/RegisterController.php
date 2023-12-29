@@ -109,7 +109,7 @@ class RegisterController extends Controller {
             return back()->withNotify($notify)->withInput();
         }
 
-        new Registered($user = $this->create($request->all()));
+        event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
 
