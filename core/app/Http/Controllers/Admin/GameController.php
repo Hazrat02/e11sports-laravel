@@ -362,12 +362,13 @@ class GameController extends Controller {
      
        $bet=bet::where('id',$request->game_id);
 
-       $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user');
+       $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user')->get();
 
        foreach ($betData as $item) {
 
         if ($item->choose == $request->win) {
             $user = $item->user;
+
             $amount= ($item->amount + $item->winamount) - $item->fee;
    
 
