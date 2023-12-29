@@ -386,6 +386,7 @@ class GameController extends Controller {
     $bet->update(
         [
             'status'=>'3',
+            'win'=>$request->win,
         ]
         );
         $notify[] = ['success', 'Betting Pay  successfully'];
