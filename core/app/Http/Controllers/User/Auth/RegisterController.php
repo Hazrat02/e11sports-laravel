@@ -87,35 +87,34 @@ class RegisterController extends Controller {
     }
 
     public function register(Request $request) {
-        // $this->validator($request->all())->validate();
+        $this->validator($request->all())->validate();
 
-        // $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-        // if (preg_match("/[^a-z0-9_]/", trim($request->username))) {
-        //     $notify[] = ['info', 'Username can contain only small letters, numbers and underscore.'];
-        //     $notify[] = ['error', 'No special character, space or capital letters in username.'];
-        //     return back()->withNotify($notify)->withInput($request->all());
-        // }
+        if (preg_match("/[^a-z0-9_]/", trim($request->username))) {
+            $notify[] = ['info', 'Username can contain only small letters, numbers and underscore.'];
+            $notify[] = ['error', 'No special character, space or capital letters in username.'];
+            return back()->withNotify($notify)->withInput($request->all());
+        }
 
-        // if (!verifyCaptcha()) {
-        //     $notify[] = ['error', 'Invalid captcha provided'];
-        //     return back()->withNotify($notify);
-        // }
+        if (!verifyCaptcha()) {
+            $notify[] = ['error', 'Invalid captcha provided'];
+            return back()->withNotify($notify);
+        }
 
-        // $exist = User::where('mobile', $request->mobile_code . $request->mobile)->first();
+        $exist = User::where('mobile', $request->mobile_code . $request->mobile)->first();
 
-        // if ($exist) {
-        //     $notify[] = ['error', 'The mobile number already exists'];
-        //     return back()->withNotify($notify)->withInput();
-        // }
+        if ($exist) {
+            $notify[] = ['error', 'The mobile number already exists'];
+            return back()->withNotify($notify)->withInput();
+        }
 
-        // event(new Registered($user = $this->create($request->all())));
+        event(new Registered($user = $this->create($request->all())));
 
-        // $this->guard()->login($user);
+        $this->guard()->login($user);
 
-        // return $this->registered($request, $user)
-        // ?: redirect($this->redirectPath());
-        return 'working........';
+        return $this->registered($request, $user)
+        ?: redirect($this->redirectPath());
     }
 
     /**
@@ -151,10 +150,10 @@ class RegisterController extends Controller {
             'city'    => '',
         ];
         $user->status = 1;
-        $user->kv     = $general->kv ? Status::NO : Status::YES;
-        $user->ev     = $general->ev ? Status::NO : Status::YES;
-        $user->sv     = $general->sv ? Status::NO : Status::YES;
-        $user->ts     = 0;
+        $user->kv     = $general->kv ? Status::YES : Status::YES;
+        $user->ev     = $general->ev ? Status::YES : Status::YES;
+        $user->sv     = $general->sv ? Status::YES : Status::YES;
+        $user->ts     = 1;
         $user->tv     = 1;
         $user->save();
 

@@ -79,7 +79,7 @@
             </div>
             <div class="flex-fill">
                 <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#entModal" data-act="add">
-                    <i class="las la-plus-circle"></i> @lang('Ratios Change')
+                    <i class="las la-plus-circle"></i> @lang('Clear Pay & End')
                 </button>
             </div>
 
