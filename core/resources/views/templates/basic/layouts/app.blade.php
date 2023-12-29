@@ -26,6 +26,10 @@
 <body>
     @stack('fbComment')
 
+
+
+    
+
     <div class="preloader">
         <div class="preloader__inner">
             <div class="preloader__thumb">
