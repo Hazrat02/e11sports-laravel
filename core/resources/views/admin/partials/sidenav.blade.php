@@ -173,7 +173,7 @@
                 </li> --}}
 
                 <li class="sidebar-menu-item sidebar-dropdown">
-                    <a class="{{ menuActive('admin.deposit*', 3) }}" href="javascript:void(0)">
+                    <a class="{{ menuActive('admin.deposit*', 3) }}{{ menuActive('admin.gateway*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-file-invoice-dollar"></i>
                         <span class="menu-title">@lang('Deposits')</span>
                         @if (0 < $pendingDepositsCount) <span class="menu-badge pill bg--danger ms-auto">
