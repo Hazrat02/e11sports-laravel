@@ -66,10 +66,11 @@
                     @endif
                     @if($withdrawal->withdraw_information)
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        @lang('{{$withdrawal->withdraw_information->name}}')
+                        {{$withdrawal->withdraw_information->name}}
                         <p>{{$withdrawal->withdraw_information->value}}</p>
                     </li>
-                    @endif
+                @endif
+                
                 </ul>
             </div>
         </div>
