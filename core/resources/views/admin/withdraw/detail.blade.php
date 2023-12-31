@@ -67,14 +67,16 @@
                                 <p>{{ $withdrawal->admin_feedback }}</p>
                             </li>
                         @endif
-                        @if ($withdrawal->withdraw_information)
+                        @if (
+                            $withdrawal->withdraw_information &&
+                                isset($withdrawal->withdraw_information['name']) &&
+                                isset($withdrawal->withdraw_information['value']))
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                @if (isset($withdrawal->withdraw_information['name']))
-                                    {{ $withdrawal->withdraw_information['name'] }}
-                                @endif
+                                {{ $withdrawal->withdraw_information['name'] }}
                                 <p>{{ $withdrawal->withdraw_information['value'] }}</p>
                             </li>
                         @endif
+
 
 
 
