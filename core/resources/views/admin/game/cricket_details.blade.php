@@ -1,6 +1,14 @@
 @extends('admin.layouts.app')
 
 @section('panel')
+
+
+
+
+
+
+
+
 <div class="row">
     <div class="col-12">
         <div class="row gy-4">

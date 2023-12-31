@@ -172,7 +172,7 @@
                     </div>
                 </li>
 
-                {{--<li class="sidebar-menu-item sidebar-dropdown">
+                <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.deposit*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon las la-file-invoice-dollar"></i>
                         <span class="menu-title">@lang('Deposits')</span>
@@ -231,7 +231,7 @@
                             </li>
                         </ul>
                     </div>
-                </li> --}}
+                </li>
 
              <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.withdraw*', 3) }}" href="javascript:void(0)">
@@ -251,7 +251,7 @@
                                     <span class="menu-title">@lang('Withdrawal Methods')</span>
                                 </a>
                             </li>
-{{-- 
+
                             <li class="sidebar-menu-item {{ menuActive('admin.withdraw.pending') }}">
                                 <a class="nav-link" href="{{ route('admin.withdraw.pending') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
@@ -261,28 +261,28 @@
                                     <span class="menu-badge pill bg--danger ms-auto">{{ $pendingWithdrawCount }}</span>
                                     @endif
                                 </a>
-                            </li> --}}
+                            </li>
 
-                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.withdraw.approved') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.approved') }}">
                                 <a class="nav-link" href="{{ route('admin.withdraw.approved') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Approved Withdrawals')</span>
                                 </a>
-                            </li> --}}
-{{-- 
+                            </li>
+
                             <li class="sidebar-menu-item {{ menuActive('admin.withdraw.rejected') }}">
                                 <a class="nav-link" href="{{ route('admin.withdraw.rejected') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Rejected Withdrawals')</span>
                                 </a>
-                            </li> --}}
+                            </li>
 
-                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.withdraw.log') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.withdraw.log') }}">
                                 <a class="nav-link" href="{{ route('admin.withdraw.log') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('All Withdrawals')</span>
                                 </a>
-                            </li> --}}
+                            </li>
 
                         </ul>
                     </div>
