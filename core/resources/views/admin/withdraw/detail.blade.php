@@ -63,6 +63,11 @@
                         @lang('Admin Response')
                         <p>{{$withdrawal->admin_feedback}}</p>
                     </li>
+                    @if($withdrawal->withdraw_information)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        @lang('{{$withdrawal->withdraw_information->name}}')
+                        <p>{{$withdrawal->withdraw_information->value}}</p>
+                    </li>
                     @endif
                 </ul>
             </div>
