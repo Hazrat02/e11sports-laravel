@@ -68,17 +68,14 @@
                             </li>
                         @endif
                         @if ($withdrawal->withdraw_information)
-                            @php
-                                $withdrawInfo = json_decode($withdrawal->withdraw_information);
-                            @endphp
-
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                @if (isset($withdrawInfo->name))
-                                    {{ $withdrawInfo->name }}
+                                @if (isset($withdrawal->withdraw_information['name']))
+                                    {{ $withdrawal->withdraw_information['name'] }}
                                 @endif
-                                <p>{{ $withdrawInfo->value }}</p>
+                                <p>{{ $withdrawal->withdraw_information['value'] }}</p>
                             </li>
                         @endif
+
 
 
                     </ul>
