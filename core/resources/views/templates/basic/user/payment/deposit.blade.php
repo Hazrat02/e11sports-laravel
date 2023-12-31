@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 {{-- {{route('user.deposit.insert')}} --}}
-                <form action="#" method="post">
+                <form action="{{route('user.deposit.insert')}}" method="post">
                     @csrf
                     <input type="hidden" name="method_code">
                     <input type="hidden" name="currency">

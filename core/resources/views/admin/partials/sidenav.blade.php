@@ -222,13 +222,13 @@
                                 </a>
                             </li>
 
-                            <li class="sidebar-menu-item {{ menuActive('admin.deposit.initiated') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.deposit.initiated') }}">
 
                                 <a class="nav-link" href="{{ route('admin.deposit.initiated') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Initiated Deposits')</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="sidebar-menu-item {{ menuActive('admin.deposit.list') }}">
                                 <a class="nav-link" href="{{ route('admin.deposit.list') }}">
