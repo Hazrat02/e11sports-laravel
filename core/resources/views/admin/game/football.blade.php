@@ -183,7 +183,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                        <td class="text-muted text-center" colspan="100%">You have not any {{$inf}} data!</td>
                                     </tr>
                                 @endforelse
                                 </tbody>
@@ -200,7 +200,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Create Cricket Games')</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Create {{$inf}}')</h5>
                     <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
                 </div>
                 <div class="modal-body">
