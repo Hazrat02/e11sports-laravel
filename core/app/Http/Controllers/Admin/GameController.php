@@ -154,7 +154,7 @@ class GameController extends Controller {
     }
     public function basketball(Request $request) {
     
-        $game=bet::orderBy('id', 'desc')->where('game','basketball')->where('status',$request->status)->get();
+        $game=bet::orderBy('id', 'desc')->where('game','basketball')->where('status',$request->status)->paginate(getPaginate());
         if ($request->status == '1') {
             $inf="Upcoming Game";
         } else {
@@ -172,7 +172,7 @@ class GameController extends Controller {
     }
     public function football(Request $request) {
     
-        $game=bet::orderBy('id', 'desc')->where('game','football')->where('status',$request->status)->get();
+        $game=bet::orderBy('id', 'desc')->where('game','football')->where('status',$request->status)->paginate(getPaginate());
        
         if ($request->status == '1') {
             $inf="Upcoming Game";

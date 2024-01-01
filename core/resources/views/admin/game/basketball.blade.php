@@ -172,7 +172,7 @@
                                         
                                        
                                         <td>
-                                            {{ __($general->cur_sym) }}{{$bet->fee }}
+                                            {{$bet->fee }}%
                                         </td>
 
                                         <td>
@@ -190,6 +190,11 @@
                             </table>
                         </div>
                     </div>
+                    @if ($game->hasPages())
+                    <div class="card-footer py-4">
+                        {{ paginateLinks($game) }}
+                    </div>
+                @endif
                 </div>
             </div>
         </div>

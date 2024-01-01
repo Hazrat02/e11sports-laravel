@@ -172,7 +172,7 @@
                                         
                                        
                                         <td>
-                                            {{ __($general->cur_sym) }}{{$bet->fee }}
+                                            {{$bet->fee }}%
                                         </td>
 
                                         <td>
