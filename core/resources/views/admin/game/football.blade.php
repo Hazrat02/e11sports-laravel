@@ -82,20 +82,20 @@
     <div class="d-flex mt-4 flex-wrap gap-3">
             
         <div class="flex-fill">
-            <a class="btn btn--success btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.basketball', ['status' => '2']) }}" >
+            <a class="btn btn--success btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.football', ['status' => '2']) }}" >
                 <i class="las la-sign-in-alt"></i>@lang('Betting')
             </a>
         </div>
         <div class="flex-fill">
  
-            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.basketball', ['status' => '1']) }}" >
+            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.football', ['status' => '1']) }}" >
                 <i class="las la-sign-in-alt"></i>@lang('Upcoming')
             </a>
        
             
         </div>
         <div class="flex-fill">
-            <a class="btn btn--secondary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.basketball', ['status' => '3']) }}" >
+            <a class="btn btn--secondary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.football', ['status' => '3']) }}" >
                 <i class="las la-sign-in-alt"></i>@lang('Success')
             </a>
         </div>
@@ -105,7 +105,7 @@
 
     <div class="card mt-30">
         <div class="card-header">
-            <h5 class="card-title mb-0">@lang('Information of'){{$inf}}
+            <h5 class="card-title mb-0">@lang('Information of') {{$inf}}
                 
          </h5>
         </div>
@@ -117,66 +117,75 @@
                             <table class="table--light style--two table">
                                 <thead>
                                     <tr>
-                                    <th>@lang('Team')</th>
-                                    <th>@lang('Amount')</th>
-                                    <th>@lang('Ratios')</th>
-                                    <th>@lang('Win amount')</th>
+                                    <th>@lang('match')</th>
+                                    <th>@lang('Min')</th>
+                                    <th>@lang('Max')</th>
+                                    <th>@lang('T1 Ratios')</th>
+                                    <th>@lang('T2 Ratios')</th>
+                                    @if ($inf == 'Upcoming Game')
+                                        
+                                    <th>@lang('Start')</th>
+                                        
+                                    @endif
                                     <th>@lang('Fee')</th>
-                                    <th>@lang('Status')</th>
+                                    <th>@lang('Action')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @forelse($game as $bet)
+                                    @forelse($game as $bet)
                                     <tr>
                                         <td>
                                             
-                                                {{$bet->choose }} 
+                                                {{$bet->t1 }} vs {{$bet->t2}}
     
                                         </td>
                                         <td>
                                             
-                                            {{ __($general->cur_sym) }} {{ $bet->amount  }}
+                                            {{ __($general->cur_sym) }} {{ $bet->min  }}
+    
+                                        </td>
+                                        <td>
+                                            
+                                            {{ __($general->cur_sym) }} {{ $bet->max  }}
     
                                         </td>
                                         
                                         <td>
                                             
-                                            {{ $bet->ratios  }} X
+                                            {{ $bet->t1_ratio  }} X
+    
+                                        </td>
+                                        <td>
+                                            
+                                            {{ $bet->t2_ratio  }} X
+    
+                                        </td>
+                                        @if ($inf == 'Upcoming Game')
+                                        
+                                        <td>
+                                            
+                                            {{ $bet->start  }}
     
                                         </td>
                                         
-                                        <td>
-                                         
-                                                {{ __($general->cur_sym) }}{{$bet->winamount }}  
-                                               
-                                        </td>
+                                    @endif
+                                        
+                                       
                                         <td>
                                             {{ __($general->cur_sym) }}{{$bet->fee }}
                                         </td>
 
                                         <td>
-                                           
-                                            @if ($bet->status == '1')
-                                            <div class="d-flex justify-content-evenly">
-                                                <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
-
-                                                <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
-                                            </div>
-                                                
-                                            @else
-                                                @if ($bet->status == '2')
-                                                <span class="btn btn-success">Success</span>
-                                                @else
-                                                <span class="btn btn-danger">Rejected</span>
-                                                @endif
-                                            @endif
+                                            <a class="btn btn-sm btn-outline--primary" href="{{route('admin.game.cricketinf',$bet->id)}}">
+                                                <i class="las la-desktop"></i> @lang('Details')
+                                            </a>
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
                                         <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
                                     </tr>
-                                @endforelse --}}
+                                @endforelse
                                 </tbody>
                             </table>
                         </div>
