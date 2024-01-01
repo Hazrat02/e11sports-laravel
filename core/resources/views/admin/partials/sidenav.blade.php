@@ -36,13 +36,13 @@
                                 </a>
                             </li>
                             <li class="sidebar-menu-item {{ menuActive('admin.game.football') }}">
-                                <a class="nav-link" href="{{ route('admin.game.basketball', ['status' => '2']) }}">
+                                <a class="nav-link" href="{{ route('admin.game.football', ['status' => '2']) }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Football')</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item {{ menuActive('admin.game.basketball') }}">
-                                <a class="nav-link" href="{{ route('admin.game.basketball') }}">
+                                <a class="nav-link" href="{{ route('admin.game.basketball', ['status' => '2']) }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Basketball')</span>
                                 </a>
