@@ -161,14 +161,24 @@ class GameController extends Controller {
 
         return view('admin.game.basketball', compact('pageTitle','upcoming','betting'));
     }
-    public function football() {
+    public function football(Request $request) {
     
-        $game=bet::orderBy('id', 'desc')->get();
-        $upcoming=$game->where('status','1')->where('game','football');
-        $betting=$game->where('status','2')->where('game','football');
+        $game=bet::orderBy('id', 'desc')->where('game','football')->where('status','1')->get();
+       
+        if ($request->status == '1') {
+            $inf="Upcoming Game";
+        } else {
+            if ($request->status == '2') {
+                $inf="Betting Game";
+            } else {
+                $inf="Success Game";
+            }
+            
+        }
+        
         $pageTitle='Football Manage';
 
-        return view('admin.game.football', compact('pageTitle','upcoming','betting'));
+        return view('admin.game.football', compact('pageTitle','game','inf'));
     }
     public function cricketinf( Request $request) {
 

@@ -82,20 +82,20 @@
     <div class="d-flex mt-4 flex-wrap gap-3">
             
         <div class="flex-fill">
-            <a class="btn btn--success btn--gradi btn--shadow w-100 btn-lg" href="#" >
+            <a class="btn btn--success btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.basketball', ['status' => '2']) }}" >
                 <i class="las la-sign-in-alt"></i>@lang('Betting')
             </a>
         </div>
         <div class="flex-fill">
  
-            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="#" >
+            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.basketball', ['status' => '1']) }}" >
                 <i class="las la-sign-in-alt"></i>@lang('Upcoming')
             </a>
        
             
         </div>
         <div class="flex-fill">
-            <a class="btn btn--secondary btn--gradi btn--shadow w-100 btn-lg" href="#" >
+            <a class="btn btn--secondary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.basketball', ['status' => '3']) }}" >
                 <i class="las la-sign-in-alt"></i>@lang('Success')
             </a>
         </div>
@@ -105,7 +105,9 @@
 
     <div class="card mt-30">
         <div class="card-header">
-            <h5 class="card-title mb-0">@lang('Information of') Bet</h5>
+            <h5 class="card-title mb-0">@lang('Information of'){{$inf}}
+                
+         </h5>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -124,7 +126,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @forelse($gamelog as $bet)
+                                    {{-- @forelse($game as $bet)
                                     <tr>
                                         <td>
                                             
