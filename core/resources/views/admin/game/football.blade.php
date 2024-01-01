@@ -176,9 +176,15 @@
                                         </td>
 
                                         <td>
+                                            @if ($bet->status == '1')
+                                            <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.game.betstatus', ['id' => $bet->id, 'status' => '2']) }}">
+                                                <i class="las la-hand-pointer"></i> @lang('place in Bet')
+                                            </a>
+                                            @else
                                             <a class="btn btn-sm btn-outline--primary" href="{{route('admin.game.cricketinf',$bet->id)}}">
                                                 <i class="las la-desktop"></i> @lang('Details')
                                             </a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty
@@ -190,6 +196,11 @@
                             </table>
                         </div>
                     </div>
+                    @if ($game->hasPages())
+                    <div class="card-footer py-4">
+                        {{ paginateLinks($game) }}
+                    </div>
+                @endif
                 </div>
             </div>
         </div>
