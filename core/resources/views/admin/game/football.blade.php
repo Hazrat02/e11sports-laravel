@@ -82,26 +82,22 @@
     <div class="d-flex mt-4 flex-wrap gap-3">
             
         <div class="flex-fill">
-            <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#addSubModal" data-act="add">
-                <i class="las la-plus-circle"></i> @lang('Ratios Change')
-            </button>
+            <a class="btn btn--success btn--gradi btn--shadow w-100 btn-lg" href="#" >
+                <i class="las la-sign-in-alt"></i>@lang('Betting')
+            </a>
         </div>
         <div class="flex-fill">
-            @if ($game->isbet == '1')
-            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '2']) }}" >
-                <i class="las la-sign-in-alt"></i>@lang('Stop Bet')
+ 
+            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="#" >
+                <i class="las la-sign-in-alt"></i>@lang('Upcoming')
             </a>
-            @else
-            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '1']) }}" >
-                <i class="las la-sign-in-alt"></i>@lang('Start Bet')
-            </a>
-            @endif
+       
             
         </div>
         <div class="flex-fill">
-            <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#entModal" data-act="add">
-                <i class="las la-plus-circle"></i> @lang('Clear Pay & End')
-            </button>
+            <a class="btn btn--secondary btn--gradi btn--shadow w-100 btn-lg" href="#" >
+                <i class="las la-sign-in-alt"></i>@lang('Success')
+            </a>
         </div>
 
       
