@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('panel')
-    <div class="col-12">
+    {{-- <div class="col-12">
         <div class="">
             <div class="row justify-content-between ">
                 <div class="col-md-6 col-12 card pt-1 pb-3">
@@ -12,7 +12,6 @@
 
                                
                                 @if ($betting->count()>'0')
-                                {{-- Loop through each match --}}
                                 @foreach ($betting as $betmatch)
                                 <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
                                     <div class="widget-two__icon b-radius--5 bg--primary">
@@ -44,7 +43,6 @@
                     <h3>upcoming games</h3>
                     <div class="row">
                         @if (!empty($upcoming))
-                            {{-- Loop through each match --}}
                             @foreach ($upcoming as $match)
                                 <div class="col-12">
                                     <div class="row gy-4 mt-2">
@@ -67,12 +65,7 @@
                                     </div>
 
                                 </div>
-                                {{-- <div>
-                                    <h2>{{ $match['name'] }}</h2>
-                                    <p>ID: {{ $match['id'] }}</p>
-                                    <p>Type: {{ $match['matchType'] }}</p>
-                                    <p>Status: {{ $match['status'] }}</p>
-                                </div> --}}
+                   
                             @endforeach
                         @else
                             <p>No Data !</p>
@@ -84,9 +77,116 @@
 
             </div>
         </div>
+    </div> --}}
+
+    <div class="d-flex mt-4 flex-wrap gap-3">
+            
+        <div class="flex-fill">
+            <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#addSubModal" data-act="add">
+                <i class="las la-plus-circle"></i> @lang('Ratios Change')
+            </button>
+        </div>
+        <div class="flex-fill">
+            @if ($game->isbet == '1')
+            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '2']) }}" >
+                <i class="las la-sign-in-alt"></i>@lang('Stop Bet')
+            </a>
+            @else
+            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.isbet', ['id' => $game->id, 'status' => '1']) }}" >
+                <i class="las la-sign-in-alt"></i>@lang('Start Bet')
+            </a>
+            @endif
+            
+        </div>
+        <div class="flex-fill">
+            <button class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#entModal" data-act="add">
+                <i class="las la-plus-circle"></i> @lang('Clear Pay & End')
+            </button>
+        </div>
+
+      
     </div>
 
+    <div class="card mt-30">
+        <div class="card-header">
+            <h5 class="card-title mb-0">@lang('Information of') Bet</h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card b-radius--10">
+                    <div class="card-body p-0">
+                        <div class="table-responsive--md table-responsive">
+                            <table class="table--light style--two table">
+                                <thead>
+                                    <tr>
+                                    <th>@lang('Team')</th>
+                                    <th>@lang('Amount')</th>
+                                    <th>@lang('Ratios')</th>
+                                    <th>@lang('Win amount')</th>
+                                    <th>@lang('Fee')</th>
+                                    <th>@lang('Status')</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{-- @forelse($gamelog as $bet)
+                                    <tr>
+                                        <td>
+                                            
+                                                {{$bet->choose }} 
+    
+                                        </td>
+                                        <td>
+                                            
+                                            {{ __($general->cur_sym) }} {{ $bet->amount  }}
+    
+                                        </td>
+                                        
+                                        <td>
+                                            
+                                            {{ $bet->ratios  }} X
+    
+                                        </td>
+                                        
+                                        <td>
+                                         
+                                                {{ __($general->cur_sym) }}{{$bet->winamount }}  
+                                               
+                                        </td>
+                                        <td>
+                                            {{ __($general->cur_sym) }}{{$bet->fee }}
+                                        </td>
 
+                                        <td>
+                                           
+                                            @if ($bet->status == '1')
+                                            <div class="d-flex justify-content-evenly">
+                                                <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
+
+                                                <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
+                                            </div>
+                                                
+                                            @else
+                                                @if ($bet->status == '2')
+                                                <span class="btn btn-success">Success</span>
+                                                @else
+                                                <span class="btn btn-danger">Rejected</span>
+                                                @endif
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                    </tr>
+                                @endforelse --}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="modal fade " id="cronModal" role="dialog" tabindex="-1" aria-hidden="true">
