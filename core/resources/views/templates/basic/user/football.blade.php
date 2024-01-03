@@ -1,97 +1,110 @@
 @extends($activeTemplate . 'layouts.master')
 @section('content')
-    <section class="pt-50 pb-120">
+    <section class="mt-5 pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
 
 
 
+                    @foreach ($game as $match)
+                        <div class="contenedorEquipo">
+                            <div class="base">
 
-                    <div class="contenedorEquipo">
-                        <div class="base">
-                          <div class="panel panel-superior">
-                            <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda" src="
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                ">
-                                
-                              <div class="estadisticas float-izquierda">
-                                <p>ATT:</p>
-                                <p>85</p>
-                              </div>
-                              <div class="estadisticas float-izquierda">
-                                <p>MID:</p>
-                                <p>65</p>
-                              </div>
-                              <div class="estadisticas float-izquierda">
-                                <p>DEF:</p>
-                                <p>70</p>
-                              </div>
-                            </div>
-                            <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha" src='
-                                https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/1200px-Flag_of_Bangladesh.svg.png
-                                '>
-                              <div class="estadisticas float-derecha">
-                                <p>DEF:</p>
-                                <p>85</p>
-                              </div>
-                              <div class="estadisticas float-derecha">
-                                <p>MID:</p>
-                                <p>65</p>
-                              </div>
-                              <div class="estadisticas float-derecha">
-                                <p>ATT:</p>
-                                <p>70</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel marcadores">
-                            <div class="equipo-marcador nombre izquierdo">
-                              <p class="float-izquierda">Betis</p>
-                              <div class="marcador-goles float-derecha">0</div>
-                            </div>
-                            <div class="marcador-tiempo"><time>66:66</time></div>
-                            <div class="equipo-marcador nombre derecho">
-                              <p class="float-derecha">Malaga</p>
-                              <div class="marcador-goles float-izquierda">1</div>
-                            </div>
-                          </div>
-                          <div class="panel panel-inferior">
-                            <div class="equipo-inferor izquierdo float-izquierda">
-                              
-                            </div>
-                            <div class="inferior-boton float-izquierda"><a href="#"><button>Enter</button></a></div>
-                            <div class="equipo-inferor derecho float-izquierda">
+                                <div class="panel panel-superior">
+                                    <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
+                                            src="{{$match->t1_img}}">
 
+                                        <div class="" style="position: absolute;top:0%;left:31%">
+                                            <p class="com"><span >Commition : </span> <span style="color: #e176ce"> {{$match->fee}}%</span>
+                                                @if ($match->isbet == '1')
+                                                <p class="com"><span>Bet : </span> <span style="color: #32874a"> Runing</span>
+                                                @else
+                                                <p class="com"><span>Bet : </span> <span style="color: #be0439"> Stop</span>
+                                                @endif 
+                                            </div>
+
+                                    </div>
+                                    <div class="equipo-superior derecho"><img alt="nombreEquipo" class="float-derecha"
+                                            src='{{$match->t2_img}}'>
+
+
+                                    </div>
+                                </div>
+                                <div class="panel marcadores">
+                                    <div class="equipo-marcador  izquierdo">
+                                        <p class="float-izquierda">{{$match->t1}}</p>
+
+                                    </div>
+                                    <div class="marcador-tiempo"><time>VS</time></div>
+                                    <div class="equipo-marcador  derecho">
+                                        <p class="">{{$match->t2}}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+
+                                    <div class="inferior-boton  float-izquierda"><a
+                                            href="{{ route('user.play.cricketbet',$match->id) }}"><button>Bet Now</button></a>
+                                    </div>
+
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    @endforeach
+
+
                 </div>
-                <div class="col-lg-6 mt-lg-0 mt-5">
-                    <div class="game-details-right">
-                        gfffgfg
+                <div class="col-lg-6">
+                    
+
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>@lang('Match')</th>
+                                            <th>@lang('Start Time')</th>
+                                      
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($upcoming as $match)
+                                            <tr>
+                                                <td>
+                                                    
+                                                        {{$match->t1 }}  VS {{$match->t1 }}
+            
+                                                </td>
+                                                <td>
+                                                    
+                                                   {{$match->created_at }}
+                                                </td>
+                                                
+                                                
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td class="text-muted text-center" colspan="100%">Upcoming data not found !</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
                     </div>
+                   
+
+
                 </div>
             </div>
         </div>
+        
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content section--bg">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Game Rule')</h5>
-                    <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    dfsdfsdfsdsdfsdfsfsdfsdf
-                </div>
-            </div>
-        </div>
-    </div>
+   
 @endsection
 
 @push('style-lib')
@@ -107,16 +120,17 @@
         }
 
         .base {
-          
+
             width: 90%;
             margin: 0px auto;
             box-shadow: 1px 1px 1px 1px black;
             border-radius: 10px;
             background: rgba(0, 0, 0, 1);
             overflow: hidden;
-            border: 5px solid white;
+            border: 2px solid white;
             font-family: bebas, Verdana, Geneva, sans-serif;
             color: white;
+            padding-bottom: 10px;
         }
 
         .panel {
@@ -208,13 +222,13 @@
         }
 
         .equipo-marcador {
-            width: 33%;
+            width: 40%;
         }
 
         .marcador-tiempo {
-            width: 34%;
+            width: 20%;
             font-size: 26px;
-            //padding: 20px
+
             line-height: 50px !important;
         }
 
@@ -242,16 +256,13 @@
             text-align: center;
         }
 
-        .inferior-boton {
-            width: 34%;
-        }
-
         .imagen-estrella {
             width: 30px;
             margin: 20px 0px 0px 1px;
         }
 
         .inferior-boton {
+
             text-align: center;
         }
 
@@ -259,7 +270,7 @@
             background-color: #e8065b;
             border: 2px solid #fff;
             border-radius: 30px;
-            padding: 5px 50px;
+            padding: 5px 15px;
             box-shadow: 0px 0px 10px 2px black inset;
             color: #fff;
             font-weight: 600;
@@ -283,15 +294,19 @@
         }
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .com{
+                font-size: 13px;
+                font-family: bebas, Verdana, Geneva, sans-serif;
+            }
+            
             .base {
-                //width: 75%;
                 width: 90%;
                 margin: 0px auto;
                 box-shadow: 1px 1px 1px 1px black;
-                border-radius: 50px;
+                border-radius: 10px;
                 background: rgba(0, 0, 0, 1);
                 overflow: hidden;
-                border: 5px solid white;
+                border: 2px solid white;
                 font-family: bebas, Verdana, Geneva, sans-serif;
                 color: white;
             }
@@ -379,17 +394,17 @@
 
             .marcadores div p {
                 margin: 0px 0px 0px 5px;
-     
+
                 width: 60%;
                 font-size: 10px;
             }
 
             .equipo-marcador {
-                width: 33%;
+                width: 40%;
             }
 
             .marcador-tiempo {
-                width: 34%;
+                width: 20%;
                 font-size: 16px;
                 line-height: 35px !important;
             }
@@ -398,17 +413,7 @@
                 line-height: 35px !important;
             }
 
-            .marcador-goles {
-                background: white;
-                width: 25%;
-                height: 25px !important;
-                margin: 7px 5px;
-                box-shadow: 0px 0px 0px 1px black;
-                color: #000;
-                line-height: 22px !important;
-                text-align: center;
-                font-size: 16px;
-            }
+
 
             .equipo-inferor {
                 width: 33%;
@@ -417,9 +422,7 @@
                 text-align: center;
             }
 
-            .inferior-boton {
-                width: 34%;
-            }
+
 
             .imagen-estrella {
                 width: 16px;
@@ -434,7 +437,7 @@
                 background-color: #e8065b;
                 border: 2px solid #fff;
                 border-radius: 30px;
-                padding: 2px 20px;
+                padding: 2px 15px;
                 box-shadow: 0px 0px 10px 2px black inset;
                 color: #fff;
                 font-weight: 600;
