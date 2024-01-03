@@ -1,99 +1,139 @@
 @extends('admin.layouts.app')
 @section('panel')
-    <div class="col-12">
-        <div class="">
-            <div class="row justify-content-between ">
-                <div class="col-md-6 col-12 card pt-1 pb-3">
-                    <h3>Betting games</h3>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row gy-4 mt-2">
 
+    <div class="d-flex mt-4 flex-wrap gap-3">
+            
+        <div class="flex-fill">
+            <a class="btn btn--success btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.cricket', ['status' => '2']) }}" >
+                <i class="las la-sign-in-alt"></i>@lang('Betting')
+            </a>
+        </div>
+        <div class="flex-fill">
+ 
+            <a class="btn btn--primary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.cricket', ['status' => '1']) }}" >
+                <i class="las la-sign-in-alt"></i>@lang('Upcoming')
+            </a>
+       
+            
+        </div>
+        <div class="flex-fill">
+            <a class="btn btn--secondary btn--gradi btn--shadow w-100 btn-lg" href="{{ route('admin.game.cricket', ['status' => '3']) }}" >
+                <i class="las la-sign-in-alt"></i>@lang('Success')
+            </a>
+        </div>
 
-                               
-                                @if ($betting->count()>'0')
-                                {{-- Loop through each match --}}
-                                @foreach ($betting as $betmatch)
-                                <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
-                                    <div class="widget-two__icon b-radius--5 bg--primary">
-                                        <i class="las la-money-bill-wave-alt"></i>
-                                    </div>
-                                    <div class="widget-two__content">
-                                        <h3 class="text-white">{{$betmatch->t1}}</h3>
-                                        <p class="text-white">@lang('VS')</p>
-                                        <h3 class="text-white">{{$betmatch->t2}}</h3>
-                                    </div>
-                                    <div>
-                                        <a class="widget-two__btn" href="{{route('admin.game.cricketinf',$betmatch->id)}}"> Details</a>
+      
+    </div>
 
-                                    </div>
+    <div class="card mt-30">
+        <div class="card-header">
+            <h5 class="card-title mb-0">@lang('Information of') {{$inf}}
+                
+         </h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card b-radius--10">
+                    <div class="card-body p-0">
+                        <div class="table-responsive--md table-responsive">
+                            <table class="table--light style--two table">
+                                <thead>
+                                    <tr>
+                                    <th>@lang('match')</th>
+                                    <th>@lang('Min')</th>
+                                    <th>@lang('Max')</th>
+                                    <th>@lang('T1 Ratios')</th>
+                                    <th>@lang('T2 Ratios')</th>
+                                    @if ($inf == 'Upcoming Game')
+                                        
+                                    <th>@lang('Start')</th>
+                                        
+                                    @endif
+                                    <th>@lang('Fee')</th>
+                                    <th>@lang('Action')</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($game as $bet)
+                                    <tr>
+                                        <td>
+                                            
+                                                {{$bet->t1 }} vs {{$bet->t2}}
+    
+                                        </td>
+                                        <td>
+                                            
+                                            {{ __($general->cur_sym) }} {{ $bet->min  }}
+    
+                                        </td>
+                                        <td>
+                                            
+                                            {{ __($general->cur_sym) }} {{ $bet->max  }}
+    
+                                        </td>
+                                        
+                                        <td>
+                                            
+                                            {{ $bet->t1_ratio  }} X
+    
+                                        </td>
+                                        <td>
+                                            
+                                            {{ $bet->t2_ratio  }} X
+    
+                                        </td>
+                                        @if ($inf == 'Upcoming Game')
+                                        
+                                        <td>
+                                            
+                                            {{ $bet->start  }}
+    
+                                        </td>
+                                        
+                                    @endif
+                                        
+                                       
+                                        <td>
+                                            {{$bet->fee }}%
+                                        </td>
 
-                                </div>
-                                @endforeach
-                            @else
-                                <p>No Betting Games !</p>
-                            @endif
-                              
-
-                            </div>
+                                        <td>
+                                            @if ($bet->status == '1')
+                                            <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.game.betstatus', ['id' => $bet->id, 'status' => '2']) }}">
+                                                <i class="las la-hand-pointer"></i> @lang('place in Bet')
+                                            </a>
+                                            @else
+                                            <a class="btn btn-sm btn-outline--primary" href="{{route('admin.game.cricketinf',$bet->id)}}">
+                                                <i class="las la-desktop"></i> @lang('Details')
+                                            </a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="text-muted text-center" colspan="100%">You have not any {{$inf}} data!</td>
+                                    </tr>
+                                @endforelse
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-md-5 col-12 card pt-1 pb-3">
-                    <h3>upcoming games</h3>
-                    <div class="row">
-                        @if (!empty($upcoming))
-                            {{-- Loop through each match --}}
-                            @foreach ($upcoming as $match)
-                                <div class="col-12">
-                                    <div class="row gy-4 mt-2">
-
-                                        <div class="widget-two style--two box--shadow2 b-radius--5 bg--17">
-
-                                            <div class="widget-two__content">
-                                                <h6 class="text-white">{{ $match->t1 }}</h6>
-                                                <p>VS</p>
-                                                <h6 class="text-white">{{ $match->t2 }}</h6>
-                                                <p class="text-white">@lang('Start : ') <Span
-                                                        style="color: rgb(226, 218, 206)">
-                                                        {{ $match->start }}</Span></p>
-                                            </div>
-                                            <a class="widget-two__btn"
-                                                href="{{ route('admin.game.betstatus', ['id' => $match->id, 'status' => '2']) }}">@lang('Place in bet')</a>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                {{-- <div>
-                                    <h2>{{ $match['name'] }}</h2>
-                                    <p>ID: {{ $match['id'] }}</p>
-                                    <p>Type: {{ $match['matchType'] }}</p>
-                                    <p>Status: {{ $match['status'] }}</p>
-                                </div> --}}
-                            @endforeach
-                        @else
-                            <p>No Data !</p>
-                        @endif
-
+                    @if ($game->hasPages())
+                    <div class="card-footer py-4">
+                        {{ paginateLinks($game) }}
                     </div>
-
+                @endif
                 </div>
-
             </div>
         </div>
     </div>
-
-
 
 
     <div class="modal fade " id="cronModal" role="dialog" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Create Cricket Games')</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">@lang('Create ') {{$inf}}</h5>
                     <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
                 </div>
                 <div class="modal-body">
