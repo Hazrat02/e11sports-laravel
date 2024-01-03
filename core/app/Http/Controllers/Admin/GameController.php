@@ -407,6 +407,7 @@ class GameController extends Controller {
 
      
        $bet=bet::where('id',$request->game_id)->get();
+       $bet2=$bet->get();
 
        $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user')->get();
 
@@ -436,7 +437,7 @@ class GameController extends Controller {
         ]
         );
         $notify[] = ['success', 'Betting Pay  successfully'];
-        return redirect()->route('admin.game.'.$bet->game)->withNotify($notify);
+        return redirect()->route('admin.game.'.$bet2->game)->withNotify($notify);
     
         // return back()->withNotify($notify);
    
