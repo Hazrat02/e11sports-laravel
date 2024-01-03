@@ -406,7 +406,7 @@ class GameController extends Controller {
     public function betend( Request $request) {
 
      
-       $bet=bet::where('id',$request->game_id)->get();
+       $bet=bet::where('id',$request->game_id);
        $bet2=$bet->get();
 
        $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user')->get();
