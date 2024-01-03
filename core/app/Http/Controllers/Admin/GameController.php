@@ -143,14 +143,23 @@ class GameController extends Controller {
         $game->save();
         return back()->withNotify($notify);
     }
-    public function cricket() {
-    
-        $game=bet::orderBy('id', 'desc')->get();
-        $upcoming=$game->where('status','1')->where('game','cricket');
-        $betting=$game->where('status','2')->where('game','cricket');
+    public function cricket(Request $request) {
+        $game=bet::orderBy('id', 'desc')->where('game','cricket')->where('status',$request->status)->paginate(getPaginate());
+       
+        if ($request->status == '1') {
+            $inf="Upcoming Game";
+        } else {
+            if ($request->status == '2') {
+                $inf="Betting Game";
+            } else {
+                $inf="Success Game";
+            }
+            
+        }
+        
         $pageTitle='Cricket Manage';
 
-        return view('admin.game.cricket', compact('pageTitle','upcoming','betting'));
+        return view('admin.game.cricket', compact('pageTitle','game','inf'));
     }
     public function basketball(Request $request) {
     
@@ -397,7 +406,7 @@ class GameController extends Controller {
     public function betend( Request $request) {
 
      
-       $bet=bet::where('id',$request->game_id);
+       $bet=bet::where('id',$request->game_id)->get();
 
        $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user')->get();
 
@@ -427,7 +436,7 @@ class GameController extends Controller {
         ]
         );
         $notify[] = ['success', 'Betting Pay  successfully'];
-        return redirect()->route('admin.game.cricket')->withNotify($notify);
+        return redirect()->route('admin.game.'.$bet->game)->withNotify($notify);
     
         // return back()->withNotify($notify);
    
