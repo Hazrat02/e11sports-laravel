@@ -792,6 +792,22 @@ class PlayController extends Controller {
         return view($this->activeTemplate . 'user.cricket', compact('game', 'pageTitle','upcoming'));
 
     }
+    public function football() {
+       $game=bet::where('game','football')->where('status','2')->orderBy('id', 'desc')->get();
+       $upcoming=bet::where('game','football')->where('status','1')->orderBy('id', 'desc')->get();
+       $pageTitle='Football';
+
+        return view($this->activeTemplate . 'user.football', compact('game', 'pageTitle','upcoming'));
+
+    }
+    public function basketball() {
+       $game=bet::where('game','basketball')->where('status','2')->orderBy('id', 'desc')->get();
+       $upcoming=bet::where('game','basketball')->where('status','1')->orderBy('id', 'desc')->get();
+       $pageTitle='Basketball';
+
+        return view($this->activeTemplate . 'user.basketball', compact('game', 'pageTitle','upcoming'));
+
+    }
     public function cricketbet(request $request) {
        $game=bet::where('id',$request->id)->get()->first();
        $bets=bet_log::where('user_id',auth()->user()->id)->where('game_id',$request->id)->orderBy('id', 'desc')->get();
