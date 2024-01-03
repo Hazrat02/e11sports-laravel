@@ -407,7 +407,7 @@ class GameController extends Controller {
 
      
        $bet=bet::where('id',$request->game_id);
-       $bet2=$bet->get();
+       $bet2=$bet->get()->first();
 
        $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user')->get();
 
