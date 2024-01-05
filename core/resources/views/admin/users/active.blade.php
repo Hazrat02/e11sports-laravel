@@ -8,56 +8,79 @@
                         <table class="table--light style--two table">
                             <thead>
                                 <tr>
+                                    <th>@lang('Team')</th>
                                     <th>@lang('User')</th>
-                                    <th>@lang('Email-Phone')</th>
-                                    <th>@lang('Country')</th>
-                                    <th>@lang('Joined At')</th>
-                                    <th>@lang('Balance')</th>
+                                    <th>@lang('ID')</th>
+                                    <th>@lang('Amount')</th>
+                                    <th>@lang('Ratios')</th>
+                                    <th>@lang('Win amount')</th>
+                                    <th>@lang('Fee')</th>
+
                                     <th>@lang('Action')</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                werwe
-                                {{-- @forelse($users as $user)
-                                    <tr>
-                                        <td>
-                                            <span class="fw-bold">{{ $user->fullname }}</span>
-                                            <br>
-                                            <span class="small">
-                                                <a href="{{ route('admin.users.detail', $user->id) }}"><span>@</span>{{ $user->username }}</a>
-                                            </span>
-                                        </td>
+                                @forelse($bets as $bet)
+                                        <tr>
+                                            <td>
+                                                
+                                                    {{$bet->choose }} 
+        
+                                            </td>
+                                            <td>
+                                                
+                                                    {{$bet->user->fullname }} 
+        
+                                            </td>
+                                            <td>
+                                                
+                                                    {{$bet->user_id }} 
+        
+                                            </td>
+                                            <td>
+                                                
+                                                {{ __($general->cur_sym) }} {{ $bet->amount  }}
+        
+                                            </td>
+                                            
+                                            <td>
+                                                
+                                                {{ $bet->ratios  }} X
+        
+                                            </td>
+                                            
+                                            <td>
+                                             
+                                                    {{ __($general->cur_sym) }}{{$bet->winamount }}  
+                                                   
+                                            </td>
+                                            <td>
+                                                {{ __($general->cur_sym) }}{{$bet->fee }}
+                                            </td>
+ 
+                                            <td>
+                                               
+                                                @if ($bet->status == '1')
+                                                <div class="d-flex justify-content-evenly">
+                                                    <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
-                                        <td>
-                                            {{ $user->email }}<br>{{ $user->mobile }}
-                                        </td>
-                                        <td>
-                                            <span class="fw-bold" title="{{ @$user->address->country }}">{{ $user->country_code }}</span>
-                                        </td>
-
-                                        <td>
-                                            {{ showDateTime($user->created_at) }} <br> {{ diffForHumans($user->created_at) }}
-                                        </td>
-
-                                        <td>
-                                            <span class="fw-bold">
-
-                                                {{ $general->cur_sym }}{{ showAmount($user->balance) }}
-                                            </span>
-                                        </td>
-
-                                        <td>
-                                            <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.users.detail', $user->id) }}">
-                                                <i class="las la-desktop"></i> @lang('Details')
-                                            </a>
-                                        </td>
-
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td class="text-muted text-center" colspan="100%">{{ __($emptyMessage) }}</td>
-                                    </tr>
-                                @endforelse --}}
+                                                    <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
+                                                </div>
+                                                    
+                                                @else
+                                                    @if ($bet->status == '2')
+                                                    <span class="btn btn-success">Success</span>
+                                                    @else
+                                                    <span class="btn btn-danger">Rejected</span>
+                                                    @endif
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                        </tr>
+                                    @endforelse
 
                             </tbody>
                         </table><!-- table end -->
@@ -74,6 +97,4 @@
     </div>
 @endsection
 
-@push('breadcrumb-plugins')
-    <x-search-form placeholder="Username / Email" />
-@endpush
+
