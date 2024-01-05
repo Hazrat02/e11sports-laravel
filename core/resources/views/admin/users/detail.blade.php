@@ -141,7 +141,7 @@
                 </a>
             </div>
             <div class="flex-fill">
-                <button class="btn btn--danger btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#updateModal" data-act="sub">
+                <button class="btn btn--secondary btn--shadow w-100 btn-lg bal-btn" data-bs-toggle="modal" data-bs-target="#updateModal" data-act="sub">
                     <i class="las la-minus-circle"></i> @lang('Update')
                 </button>
             </div>
@@ -183,117 +183,124 @@
                     <i class="las la-times"></i>
                 </button>
             </div>
-            <form action="{{ route('admin.users.update', [$user->id]) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>@lang('First Name')</label>
-                            <input class="form-control" name="firstname" type="text" value="{{ $user->firstname }}" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-control-label">@lang('Last Name')</label>
-                            <input class="form-control" name="lastname" type="text" value="{{ $user->lastname }}" required>
-                        </div>
-                    </div>
+            <div class="card mt-30">
+                <div class="card-header">
+                    <h5 class="card-title mb-0"></h5>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>@lang('Email') </label>
-                            <input class="form-control" name="email" type="email" value="{{ $user->email }}" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>@lang('Mobile Number') </label>
-                            <div class="input-group">
-                                <span class="input-group-text mobile-code"></span>
-                                <input class="form-control checkUser" id="mobile" name="mobile" type="number" value="{{ old('mobile') }}" required>
+                <div class="card-body">
+                    <form action="{{ route('admin.users.update', [$user->id]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('First Name')</label>
+                                    <input class="form-control" name="firstname" type="text" value="{{ $user->firstname }}" required>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">@lang('Last Name')</label>
+                                    <input class="form-control" name="lastname" type="text" value="{{ $user->lastname }}" required>
+                                </div>
                             </div>
                         </div>
-                    </div>
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('Email') </label>
+                                    <input class="form-control" name="email" type="email" value="{{ $user->email }}" required>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('Mobile Number') </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text mobile-code"></span>
+                                        <input class="form-control checkUser" id="mobile" name="mobile" type="number" value="{{ old('mobile') }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>@lang('Address')</label>
+                                    <input class="form-control" name="address" type="text" value="{{ @$user->address->address }}">
+                                </div>
+                            </div>
+    
+                            <div class="col-xl-3 col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('City')</label>
+                                    <input class="form-control" name="city" type="text" value="{{ @$user->address->city }}">
+                                </div>
+                            </div>
+    
+                            <div class="col-xl-3 col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('State')</label>
+                                    <input class="form-control" name="state" type="text" value="{{ @$user->address->state }}">
+                                </div>
+                            </div>
+    
+                            <div class="col-xl-3 col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('Zip/Postal')</label>
+                                    <input class="form-control" name="zip" type="text" value="{{ @$user->address->zip }}">
+                                </div>
+                            </div>
+    
+                            <div class="col-xl-3 col-md-6">
+                                <div class="form-group">
+                                    <label>@lang('Country')</label>
+                                    <select class="form-control" name="country">
+                                        @foreach ($countries as $key => $country)
+                                        <option data-mobile_code="{{ $country->dial_code }}" value="{{ $key }}">{{ __($country->country) }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        {{-- <div class="row">
+                            <div class="form-group col-xl-3 col-md-6 col-12">
+                                <label>@lang('Email Verification')</label>
+                                <input name="ev" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->ev) checked @endif>
+    
+                            </div>
+    
+                            <div class="form-group col-xl-3 col-md-6 col-12">
+                                <label>@lang('Mobile Verification')</label>
+                                <input name="sv" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->sv) checked @endif>
+    
+                            </div>
+                            <div class="form-group col-xl-3 col-md- col-12">
+                                <label>@lang('2FA Verification') </label>
+                                <input name="ts" data-width="100%" data-height="50" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Enable')" data-off="@lang('Disable')" type="checkbox" @if ($user->ts) checked @endif>
+                            </div>
+                            <div class="form-group col-xl-3 col-md- col-12">
+                                <label>@lang('KYC') </label>
+                                <input name="kv" data-width="100%" data-height="50" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->kv == 1) checked @endif>
+                            </div>
+                        </div> --}}
+    
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')
+                                    </button>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </form>
                 </div>
-
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>@lang('Address')</label>
-                            <input class="form-control" name="address" type="text" value="{{ @$user->address->address }}">
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="form-group">
-                            <label>@lang('City')</label>
-                            <input class="form-control" name="city" type="text" value="{{ @$user->address->city }}">
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="form-group">
-                            <label>@lang('State')</label>
-                            <input class="form-control" name="state" type="text" value="{{ @$user->address->state }}">
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="form-group">
-                            <label>@lang('Zip/Postal')</label>
-                            <input class="form-control" name="zip" type="text" value="{{ @$user->address->zip }}">
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="form-group">
-                            <label>@lang('Country')</label>
-                            <select class="form-control" name="country">
-                                @foreach ($countries as $key => $country)
-                                <option data-mobile_code="{{ $country->dial_code }}" value="{{ $key }}">{{ __($country->country) }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- <div class="row">
-                    <div class="form-group col-xl-3 col-md-6 col-12">
-                        <label>@lang('Email Verification')</label>
-                        <input name="ev" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->ev) checked @endif>
-
-                    </div>
-
-                    <div class="form-group col-xl-3 col-md-6 col-12">
-                        <label>@lang('Mobile Verification')</label>
-                        <input name="sv" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->sv) checked @endif>
-
-                    </div>
-                    <div class="form-group col-xl-3 col-md- col-12">
-                        <label>@lang('2FA Verification') </label>
-                        <input name="ts" data-width="100%" data-height="50" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Enable')" data-off="@lang('Disable')" type="checkbox" @if ($user->ts) checked @endif>
-                    </div>
-                    <div class="form-group col-xl-3 col-md- col-12">
-                        <label>@lang('KYC') </label>
-                        <input name="kv" data-width="100%" data-height="50" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" type="checkbox" @if ($user->kv == 1) checked @endif>
-                    </div>
-                </div> --}}
-
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
