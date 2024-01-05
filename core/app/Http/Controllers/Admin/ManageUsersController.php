@@ -174,29 +174,7 @@ class ManageUsersController extends Controller {
             'zip'     => $request->zip,
             'country' => @$country,
         ];
-        $user->ev = $request->ev ? 1 : 0;
-        $user->sv = $request->sv ? 1 : 0;
-        $user->ts = $request->ts ? 1 : 0;
-
-        if (!$request->kv) {
-            $user->kv = 0;
-
-            if ($user->kyc_data) {
-
-                foreach ($user->kyc_data as $kycData) {
-
-                    if ($kycData->type == 'file') {
-                        fileManager()->removeFile(getFilePath('verify') . '/' . $kycData->value);
-                    }
-
-                }
-
-            }
-
-            $user->kyc_data = null;
-        } else {
-            $user->kv = 1;
-        }
+ 
 
         $user->save();
 
