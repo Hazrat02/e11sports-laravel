@@ -78,7 +78,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td class="text-muted text-center" colspan="100%">You have not any Bet data!</td>
+                                            <td class="text-muted text-center" colspan="100%">You have not any today Bet data!</td>
                                         </tr>
                                     @endforelse
 

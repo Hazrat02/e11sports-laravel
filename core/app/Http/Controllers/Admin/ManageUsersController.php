@@ -29,7 +29,7 @@ class ManageUsersController extends Controller {
 
         $pageTitle = 'Active Bet Users';
         $today = Carbon::today();
-        $bets     = bet_log::orderBy('id','desc')->where('created_at',$today)->with('user')->paginate(getPaginate());
+        $bets     = bet_log::orderBy('id','desc')->whereDate('created_at',$today)->with('user')->paginate(getPaginate());
         return view('admin.users.active', compact('pageTitle', 'bets'));
     }
 
