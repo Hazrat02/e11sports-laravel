@@ -59,21 +59,9 @@
                                             </td>
  
                                             <td>
-                                               
-                                                @if ($bet->status == '1')
-                                                <div class="d-flex justify-content-evenly">
-                                                    <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
-
-                                                    <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
-                                                </div>
-                                                    
-                                                @else
-                                                    @if ($bet->status == '2')
-                                                    <span class="btn btn-success">Success</span>
-                                                    @else
-                                                    <span class="btn btn-danger">Rejected</span>
-                                                    @endif
-                                                @endif
+                                                <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.users.detail', $bet->user_id) }}">
+                                                    <i class="las la-desktop"></i> @lang('Details')
+                                                </a>
                                             </td>
                                         </tr>
                                     @empty
