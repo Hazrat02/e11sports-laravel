@@ -201,7 +201,7 @@ class GameController extends Controller {
     public function cricketinf( Request $request) {
 
         $game=bet::where('id',$request->id)->get()->first();
-        $log=bet_log::where('game_id',$request->id);
+        $log=bet_log::where('game_id',$request->id)->with('user');
 
      
         $gamelog=$log->orderBy('id', 'desc')->get();

@@ -107,6 +107,7 @@
                                     <thead>
                                         <tr>
                                         <th>@lang('Team')</th>
+                                        <th>@lang('User')</th>
                                         <th>@lang('Amount')</th>
                                         <th>@lang('Ratios')</th>
                                         <th>@lang('Win amount')</th>
@@ -120,6 +121,11 @@
                                             <td>
                                                 
                                                     {{$bet->choose }} 
+        
+                                            </td>
+                                            <td>
+                                                
+                                                    {{$bet->user->fullname }} 
         
                                             </td>
                                             <td>
