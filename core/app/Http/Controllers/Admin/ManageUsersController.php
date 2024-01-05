@@ -3,6 +3,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Constants\Status;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+
+use App\Models\bet;
+use App\Models\bet_log;
 use App\Models\Deposit;
 use App\Models\GameLog;
 use App\Models\NotificationLog;
@@ -22,9 +26,11 @@ class ManageUsersController extends Controller {
     }
 
     public function activeUsers() {
-        $pageTitle = 'Active Users';
-        $users     = $this->userData('active');
-        return view('admin.users.list', compact('pageTitle', 'users'));
+
+        $pageTitle = 'Active Bet Users';
+        $today = Carbon::today();
+        $bet     = bet_log::orderBy('id','desk')->where('created_at',$today)->paginate(getPaginate());
+        return view('admin.users.active', compact('pageTitle', 'bet'));
     }
 
     public function bannedUsers() {
