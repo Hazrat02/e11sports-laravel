@@ -307,7 +307,7 @@
                     </div>
                 </li>
 
-             {{--   <li class="sidebar-menu-item sidebar-dropdown">
+<li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.ticket*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon la la-ticket"></i>
                         <span class="menu-title">@lang('Support Ticket') </span>
@@ -349,7 +349,7 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
+                            {{--    <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.report*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon la la-list"></i>
                         <span class="menu-title">@lang('Report') </span>
