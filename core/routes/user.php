@@ -5,24 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace ('User\Auth')->name('user.')->group(function () {
-    Route::get('/op', function () {
-    \Illuminate\Support\Facades\Artisan::call('optimize');
-    return 'done';
-});
-Route::get('/oc', function () {
-    \Illuminate\Support\Facades\Artisan::call('optimize:clear');
-    return 'done';
-});
-Route::get('/rc', function () {
-    \Illuminate\Support\Facades\Artisan::call('route:clear');
-        $notify[] = ['success','Cache cleared successfully'];
-        return back()->withNotify($notify);
-});
-Route::get('/vc', function () {
-    \Illuminate\Support\Facades\Artisan::call('view:clear');
-   
-        return 'view';
-});
+
 
     Route::get('/working', function () {
 
