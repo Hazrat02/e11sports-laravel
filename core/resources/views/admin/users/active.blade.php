@@ -86,9 +86,9 @@
                         </table><!-- table end -->
                     </div>
                 </div>
-                @if ($bet->hasPages())
+                @if ($bets->hasPages())
                     <div class="card-footer py-4">
-                        {{ paginateLinks($bet) }}
+                        {{ paginateLinks($bets) }}
                     </div>
                 @endif
             </div>
