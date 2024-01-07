@@ -70,7 +70,7 @@
                                                         <div class="form-group">
                                                             <label>@lang('Win Amount')</label>
                                                             <div class="input-group mb-3">
-                                                                <input class="form-control" name="win" type="text" value="{{ getAmount($game->win) }}" step="any" placeholder="@lang('Win')">
+                                                                <input class="form-control" name="win" type="number" value="{{ getAmount($game->win) }}" step="any" placeholder="@lang('Win')">
                                                                 <span class="input-group-text" id="basic-addon2">@lang('%')</span>
                                                             </div>
                                                         </div>

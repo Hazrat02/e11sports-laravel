@@ -64,7 +64,7 @@
                         </div>
                         <div class="col-8 text-end">
                             <span class="text--small text-white">@lang('Active Bet')</span>
-                            <h2 class="text-white">{{ $widget['verified_users'] }}</h2>
+                            <h2 class="text-white">{{ $widget['active_bet'] }}</h2>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                     <h3>{{ $deposit['total_deposit_pending'] }}</h3>
                     <p>@lang('Pending Deposits')</p>
                 </div>
-                {{-- {{ route('admin.deposit.pending') }} --}}
+               
                 <a class="widget-two__btn border--warning btn-outline--warning border" href="#">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
@@ -141,11 +141,10 @@
                     <i class="fas fa-spinner"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3>{{ $deposit['total_deposit_pending'] }}</h3>
+                    <h3>{{ $deposit['today_deposit_amount'] }}</h3>
                     <p>@lang('Current Deposits')</p>
                 </div>
-                {{-- {{ route('admin.deposit.pending') }} --}}
-                <a class="widget-two__btn border--warning btn-outline--warning border" href="#">@lang('View All')</a>
+          
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -158,8 +157,8 @@
                     <h3>{{ $deposit['total_deposit_rejected'] }}</h3>
                     <p>@lang('Rejected Deposits')</p>
                 </div>
-                {{-- {{ route('admin.deposit.rejected') }} --}}
-                <a class="widget-two__btn border--danger btn-outline--danger border" href="">@lang('View All')</a>
+                <a class="widget-two__btn border--danger btn-outline--danger border" href="{{ route('admin.deposit.rejected') }}
+                ">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -169,11 +168,10 @@
                     <i class="fas fa-percentage"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3>{{ $general->cur_sym }}{{ showAmount($deposit['total_deposit_charge']) }}</h3>
+                    <h3>{{ $general->cur_sym }}{{ $widget['all_ravenue'] }}</h3>
                     <p>@lang('Lifetime Revenue')</p>
                 </div>
-                {{-- {{ route('admin.deposit.list') }} --}}
-                <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
+               
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -183,11 +181,10 @@
                     <i class="las la-percent"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_charge']) }}</h3>
+                    <h3>{{ $general->cur_sym }}{{ $widget['today_ravenue'] }}</h3>
                     <p>@lang('Today’s Revenue')</p>
                 </div>
-                {{-- {{ route('admin.withdraw.log') }} --}}
-                <a class="widget-two__btn border--primary btn-outline--primary border" href="#">@lang('View All')</a>
+              
             </div>
         </div>
     </div><!-- row end-->
@@ -203,8 +200,8 @@
                     <h3>{{ $general->cur_sym }}{{ showAmount($withdrawals['total_withdraw_amount']) }}</h3>
                     <p>@lang('Total Withdrawan')</p>
                 </div>
-                {{-- {{ route('admin.withdraw.log') }} --}}
-                <a class="widget-two__btn border--success btn-outline--success border" href="">@lang('View All')</a>
+               
+                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.withdraw.log') }}">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -231,8 +228,8 @@
                     <h3>{{ $withdrawals['total_withdraw_rejected'] }}</h3>
                     <p>@lang('Rejected Withdrawals')</p>
                 </div>
-                {{-- {{ route('admin.withdraw.rejected') }} --}}
-                <a class="widget-two__btn border--danger btn-outline--danger border" href="">@lang('View All')</a>
+             
+                <a class="widget-two__btn border--danger btn-outline--danger border" href="{{ route('admin.withdraw.rejected') }}">@lang('View All')</a>
             </div>
         </div>
         

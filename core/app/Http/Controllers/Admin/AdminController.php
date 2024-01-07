@@ -6,6 +6,8 @@ use App\Constants\Status;
 use App\Http\Controllers\Controller;
 use App\Lib\CurlRequest;
 use App\Models\AdminNotification;
+use App\Models\bet;
+use App\Models\bet_log;
 use App\Models\Deposit;
 use App\Models\Game;
 use App\Models\GameLog;
@@ -23,10 +25,13 @@ class AdminController extends Controller {
     public function dashboard() {
 
         $pageTitle = 'Dashboard';
-
+        $today = Carbon::today();
         // User Info
         $widget['total_users']             = User::count();
         $widget['verified_users']          = User::where('status', Status::USER_ACTIVE)->where('ev', 1)->where('sv', 1)->count();
+        $widget['active_bet']          = bet::whereDate('created_at',$today)->count();
+        $widget['today_ravenue']          = bet_log::whereDate('created_at',$today)->where('status', '2')->sum('fee');
+        $widget['all_ravenue']          = bet_log::where('status', '2')->sum('fee');
         $widget['email_unverified_users']  = User::emailUnverified()->count();
         $widget['mobile_unverified_users'] = User::mobileUnverified()->count();
         $widget['total_games']             = Game::count();
@@ -50,6 +55,7 @@ class AdminController extends Controller {
         })->sort()->reverse()->take(5);
 
         $deposit['total_deposit_amount']   = Deposit::successful()->sum('amount');
+        $deposit['today_deposit_amount']   = Deposit::successful()->whereDate('created_at',$today)->sum('amount');
         $deposit['total_deposit_pending']  = Deposit::pending()->count();
         $deposit['total_deposit_rejected'] = Deposit::rejected()->count();
         $deposit['total_deposit_charge']   = Deposit::successful()->sum('charge');
