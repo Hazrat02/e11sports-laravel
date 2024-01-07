@@ -66,7 +66,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label>@lang('Win Amount')</label>
                                                             <div class="input-group mb-3">
@@ -75,12 +75,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    {{-- <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>@lang('Invest')</label>
                                                             <input name="invest_back" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Give Back')" data-off="@lang('No Back"')" type="checkbox" @checked($game->invest_back)>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>
