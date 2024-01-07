@@ -30,8 +30,8 @@ class AdminController extends Controller {
         $widget['total_users']             = User::count();
         $widget['verified_users']          = User::where('status', Status::USER_ACTIVE)->where('ev', 1)->where('sv', 1)->count();
         $widget['active_bet']          = bet::whereDate('created_at',$today)->count();
-        $widget['today_ravenue']          = bet_log::whereDate('created_at',$today)->where('status', '2')->sum('fee');
-        $widget['all_ravenue']          = bet_log::where('status', '2')->sum('fee');
+        $widget['today_ravenue']          = bet_log::whereDate('created_at',$today)->where('winorloss', 'win')->sum('fee');
+        $widget['all_ravenue']          = bet_log::where('winorloss', 'win')->sum('fee');
         $widget['email_unverified_users']  = User::emailUnverified()->count();
         $widget['mobile_unverified_users'] = User::mobileUnverified()->count();
         $widget['total_games']             = Game::count();
