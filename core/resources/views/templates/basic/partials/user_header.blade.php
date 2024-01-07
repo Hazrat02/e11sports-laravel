@@ -25,8 +25,8 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li><a href="{{ route('user.referrals') }}">@lang('Referrals')</a></li>
-                        <li class="menu_has_children">
+                      <li><a href="{{ route('user.referrals') }}">@lang('Referrals')</a></li>
+                          {{-- <li class="menu_has_children">
                             <a href="#">@lang('Reports')</a>
                             <ul class="sub-menu">
                                 <li><a href="{{ route('user.game.log') }}">@lang('Game Log')</a></li>

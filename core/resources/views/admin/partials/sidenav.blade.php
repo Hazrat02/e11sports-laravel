@@ -14,12 +14,12 @@
                     </a>
                 </li>
 
-                {{-- <li class="sidebar-menu-item {{ menuActive('admin.referral.index') }}">
+                <li class="sidebar-menu-item {{ menuActive('admin.referral.index') }}">
                     <a class="nav-link" href="{{ route('admin.referral.index') }}">
                         <i class="menu-icon la la-link"></i>
                         <span class="menu-title">@lang('Referral') </span>
                     </a>
-                </li> --}}
+                </li>
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.game*', 3) }}" href="javascript:void(0)">
@@ -47,13 +47,13 @@
                                     <span class="menu-title">@lang('Basketball')</span>
                                 </a>
                             </li>
-                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.game.index') }}">
                                 <a class="nav-link" href="{{ route('admin.game.index') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Games')</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item {{ menuActive('admin.game.log') }}">
+                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.game.log') }}">
                                 <a class="nav-link" href="{{ route('admin.game.log') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Game Log')</span>
