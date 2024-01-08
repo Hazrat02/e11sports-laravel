@@ -216,7 +216,7 @@ class GameController extends Controller {
     public function betinf( Request $request) {
 
         // $game=bet::where('id',$request->id)->get()->first();
-        $game_log=bet_log::where('status',$request->status)->orderBy('id','desc')->with('user')->with('game')->paginate(getPaginate());
+        $game_log=bet_log::where('status',$request->status)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
 
      
       
