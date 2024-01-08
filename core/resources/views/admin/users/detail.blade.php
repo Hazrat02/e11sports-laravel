@@ -202,7 +202,7 @@
                                             </td>
                                             <td>
                                                 @if ($bet->winorloss == 'win')
-                                                    <span class="badge badge-success">Win</span>
+                                                    <span class="badge badge-secondary">Win</span>
                                                     @else
                                                     @if ($bet->winorloss == 'loss')
 
