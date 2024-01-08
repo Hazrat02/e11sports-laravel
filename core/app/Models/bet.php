@@ -30,5 +30,8 @@ class bet extends Model
       
        
     ];
+    // protected $casts = [
+    //     'betdata' => 'object', // or 'array' depending on your data structure
+    // ];
 
 }
