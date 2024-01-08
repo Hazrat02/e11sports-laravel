@@ -24,12 +24,16 @@ class bet_log extends Model
 
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function betdata() {
-        return $this->belongsTo(bet::class,'game_id');
+
+    public function betdata()
+    {
+        return $this->belongsTo(bet::class, 'game_id');
     }
+    
     protected $casts = [
         'betdata' => 'object', // or 'array' depending on your data structure
     ];

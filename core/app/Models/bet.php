@@ -8,7 +8,7 @@ class bet extends Model
 {
     protected $table = "bet";
     protected $fillable = [
-        
+        'id',
         'game',
         't1',
         't2',
@@ -30,8 +30,6 @@ class bet extends Model
       
        
     ];
-    protected $casts = [
-        'betdata' => 'object', // or 'array' depending on your data structure
-    ];
+  
 
 }
