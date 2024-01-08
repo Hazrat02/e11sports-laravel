@@ -167,7 +167,7 @@
                 @endif
             </div> --}}
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 mt-4">
             <div class="card b-radius--10">
                 <div class="card-body p-0">
                     <div class="table-responsive--md table-responsive">
@@ -176,13 +176,14 @@
                                 <tr>
                                     <th>@lang('Team')</th>
                                     <th>@lang('Game')</th>
+                                    <th>@lang('Win or Loss')</th>
                                
                                     <th>@lang('Amount')</th>
                                     <th>@lang('Ratios')</th>
                                     <th>@lang('Win amount')</th>
                                     <th>@lang('Fee')</th>
 
-                                    <th>@lang('Action')</th>
+                                    <th>@lang('Status')</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -197,6 +198,23 @@
                                                 {{ optional($bet->betdata)->game }}
                                                 
                                                 {{-- {{ $bet->betdata->game }} --}}
+        
+                                            </td>
+                                            <td>
+                                                @if ($bet->winorloss == 'win')
+                                                    <span class="btn btn-success">Win</span>
+                                                    @else
+                                                    @if ($bet->winorloss == 'loss')
+
+                                                    <span class="btn btn-danger">Loss</span>
+
+                                                    @else
+                                                    <span class="btn btn-primary">Pending</span>
+
+                                                    @endif
+
+                                                    
+                                                    @endif
         
                                             </td>
                                         
@@ -222,9 +240,21 @@
                                             </td>
  
                                             <td>
-                                                <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.users.detail', $bet->user_id) }}">
-                                                    <i class="las la-desktop"></i> @lang('Details')
-                                                </a>
+                                               
+                                                @if ($bet->status == '1')
+                                                <div class="d-flex justify-content-evenly">
+                                                    <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
+
+                                                    <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
+                                                </div>
+                                                    
+                                                @else
+                                                    @if ($bet->status == '2')
+                                                    <span class="btn btn-success">Success</span>
+                                                    @else
+                                                    <span class="btn btn-danger">Rejected</span>
+                                                    @endif
+                                                @endif
                                             </td>
                                         </tr>
                                     @empty
