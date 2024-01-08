@@ -9,6 +9,7 @@
                             <thead>
                                 <tr>
                                     <th>@lang('Team')</th>
+                                    <th>@lang('Game')</th>
                                     <th>@lang('User')</th>
                                     <th>@lang('ID')</th>
                                     <th>@lang('Amount')</th>
@@ -25,6 +26,11 @@
                                             <td>
                                                 
                                                     {{$bet->choose }} 
+        
+                                            </td>
+                                            <td>
+                                                
+                                                    {{$bet->game->game }} 
         
                                             </td>
                                             <td>
