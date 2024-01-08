@@ -11,6 +11,7 @@ use App\Models\GameLog;
 use App\Models\GuessBonus;
 use App\Models\User;
 use App\Rules\FileTypeValidate;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 class GameController extends Controller {
@@ -214,9 +215,8 @@ class GameController extends Controller {
 
     }
     public function betinf( Request $request) {
-
-        // $game=bet::where('id',$request->id)->get()->first();
-        $game_log=bet_log::where('status',$request->status)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
+        $today=Carbon::today();
+        $game_log=bet_log::where('status',$request->status)->whereDate('created_at',$today)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
 
      
       

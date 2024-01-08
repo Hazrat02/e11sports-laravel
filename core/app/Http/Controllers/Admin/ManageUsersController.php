@@ -108,6 +108,7 @@ class ManageUsersController extends Controller {
         $widget['total_invest']      = GameLog::where('user_id', $user->id)->sum('invest');
         $widget['total_win_amount']  = GameLog::where('user_id', $user->id)->where('win_status', '!=', 0)->sum('invest');
         $widget['total_loss_amount'] = GameLog::loss()->where('user_id', $user->id)->sum('invest');
+        $game_log=bet_log::where('user_id', $user->id)->orderBy('id','desc')->with('betdata')->paginate(getPaginate());
 
         return view('admin.users.detail', compact('pageTitle', 'user', 'totalDeposit', 'totalWithdrawals', 'totalTransaction', 'countries', 'widget'));
  
