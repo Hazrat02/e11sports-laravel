@@ -74,7 +74,7 @@
                         </table><!-- table end -->
                     </div>
                 </div>
-                @if ($bets->hasPages())
+                @if ($game_log->hasPages())
                     <div class="card-footer py-4">
                         {{ paginateLinks($game_log) }}
                     </div>
