@@ -216,12 +216,12 @@ class GameController extends Controller {
     public function betinf( Request $request) {
 
         // $game=bet::where('id',$request->id)->get()->first();
-        $gamelog=bet_log::where('status',$request->status)->orderBy('id','desc')->with('user')->with('game');
+        $game_log=bet_log::where('status',$request->status)->orderBy('id','desc')->with('user')->with('game')->paginate(getPaginate());
 
      
       
         $pageTitle='Betting details';
-        return view('admin.game.bet_details', compact('pageTitle','gamelog'));
+        return view('admin.game.bet_details', compact('pageTitle','game_log'));
 
     }
     public function betstore( Request $request) {
