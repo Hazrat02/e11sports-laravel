@@ -29,8 +29,9 @@
         
                                             </td>
                                             <td>
+                                                {{ optional($bet->betdata)->game }}
                                                 
-                                                {{ $bet->betdata->game }}
+                                                {{-- {{ $bet->betdata->game }} --}}
         
                                             </td>
                                             <td>
