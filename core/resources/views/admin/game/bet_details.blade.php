@@ -30,7 +30,7 @@
                                             </td>
                                             <td>
                                                 
-                                                    {{$bet->betdata->game }} 
+                                                    {{$bet->betdata['game'] }} 
         
                                             </td>
                                             <td>
