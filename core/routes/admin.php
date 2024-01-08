@@ -56,6 +56,7 @@ Route::middleware('admin')->group(function () {
         Route::get('basketball/{status}', 'basketball')->name('basketball');
         Route::get('football/{status}', 'football')->name('football');
         Route::get('cricket/{status}', 'cricket')->name('cricket');
+        Route::get('betinf/{status}', 'betinf')->name('betinf');
         Route::post('betstore', 'betstore')->name('betstore');
         Route::get('betstatus/{id}/{status}', 'betstatus')->name('betstatus');
         Route::get('cricketinf/{id}', 'cricketinf')->name('cricketinf');

@@ -244,11 +244,11 @@
                     <i class="las la-list"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{$widget['total_played'] }}</h3>
+                    <h3 class="text-white">{{$widget['today_players'] }}</h3>
                     <p class="text-white">@lang('Today Live Players')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }} --}}
-                <a class="widget-two__btn" href="">@lang('View All')</a>
+                <a class="widget-two__btn" href="{{ route('admin.game.betinf','2') }}">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -258,11 +258,10 @@
                     <i class="las la-money-bill-wave-alt"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_win_amount']) }}</h3>
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['today_win_amount']) }}</h3>
                     <p class="text-white">@lang('Today win amount')</p>
                 </div>
-                {{-- {{ route('admin.game.log') }}?win_status=1 --}}
-                <a class="widget-two__btn" href="#">@lang('View All')</a>
+               
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -272,11 +271,10 @@
                     <i class="las la-money-bill"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_loss_amount']) }}</h3>
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['today_loss_amount']) }}</h3>
                     <p class="text-white">@lang('Today Loss amount')</p>
                 </div>
-                {{-- {{ route('admin.game.log') }}?win_status=2 --}}
-                <a class="widget-two__btn" href="#">@lang('View All')</a>
+              
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
