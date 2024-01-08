@@ -248,7 +248,7 @@
                     <p class="text-white">@lang('Today Live Players')</p>
                 </div>
                 {{-- {{ route('admin.game.log') }} --}}
-                <a class="widget-two__btn" href="{{ route('admin.game.betinf','2') }}">@lang('View All')</a>
+                <a class="widget-two__btn" href="{{ route('admin.game.betinf','4') }}">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -284,9 +284,10 @@
                     <i class="las la-percentage"></i>
                 </div>
                 <div class="widget-two__content">
-                    <h3 class="text-white">{{ $widget['total_profit'] }}</h3>
+                    <h3 class="text-white">{{ $widget['today_accept'] }}</h3>
                     <p class="text-white">@lang('Today Bet Users')</p>
                 </div>
+                <a class="widget-two__btn" href="{{ route('admin.game.betinf','2') }}">@lang('View All')</a>
             </div>
         </div>
     </div>

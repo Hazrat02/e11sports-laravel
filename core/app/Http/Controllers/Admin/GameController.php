@@ -216,7 +216,13 @@ class GameController extends Controller {
     }
     public function betinf( Request $request) {
         $today=Carbon::today();
-        $game_log=bet_log::where('status',$request->status)->whereDate('created_at',$today)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
+
+        if ($request->status == '4') {
+            $game_log=bet_log::whereDate('created_at',$today)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
+        } else {
+            $game_log=bet_log::where('status',$request->status)->whereDate('created_at',$today)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
+        }
+        
 
      
       

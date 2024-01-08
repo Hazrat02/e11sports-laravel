@@ -29,11 +29,12 @@ class AdminController extends Controller {
         // User Info
         $widget['total_users']             = User::count();
         $widget['verified_users']          = User::where('status', Status::USER_ACTIVE)->where('ev', 1)->where('sv', 1)->count();
-        $widget['active_bet']          = bet::whereDate('created_at',$today)->count();
+        $widget['active_bet']          = bet_log::whereDate('created_at',$today)->count();
         $widget['today_ravenue']          = bet_log::whereDate('created_at',$today)->where('winorloss', 'win')->sum('fee');
         $widget['today_win_amount']          = bet_log::whereDate('created_at',$today)->where('winorloss', 'win')->sum('winamount');
         $widget['today_loss_amount']          = bet_log::whereDate('created_at',$today)->where('winorloss', 'loss')->sum('winamount');
-        $widget['today_players']          = bet_log::whereDate('created_at',$today)->where('status', '2')->count();
+        $widget['today_players']          = bet_log::whereDate('created_at',$today)->count();
+        $widget['today_accept']          = bet_log::whereDate('created_at',$today)->where('status', '2')->count();
         $widget['all_ravenue']          = bet_log::where('winorloss', 'win')->sum('fee');
         $widget['email_unverified_users']  = User::emailUnverified()->count();
         $widget['mobile_unverified_users'] = User::mobileUnverified()->count();
