@@ -202,16 +202,14 @@
                                             </td>
                                             <td>
                                                 @if ($bet->winorloss == 'win')
-                                                    {{-- <span class="badge badge-secondary">Win</span> --}}
-                                                    <span class="menu-badge pill bg--danger ms-auto">Loss </span>
-
+                                                    <span class="btn btn-success">Win</span>
                                                     @else
                                                     @if ($bet->winorloss == 'loss')
-                                                    <span class="menu-badge pill bg--danger ms-auto">Loss </span>
 
+                                                    <span class="btn btn-danger">Loss</span>
 
                                                     @else
-                                                    <span class="badge badge-primary">Pending</span>
+                                                    <span class="btn btn-primary">Pending</span>
 
                                                     @endif
 
@@ -268,12 +266,13 @@
                             </tbody>
                         </table><!-- table end -->
                     </div>
-                </div>
-                @if ($game_log->hasPages())
+                    @if ($game_log->hasPages())
                     <div class="card-footer py-4">
                         {{ paginateLinks($game_log) }}
                     </div>
                 @endif
+                </div>
+                
             </div>
         </div>
 
