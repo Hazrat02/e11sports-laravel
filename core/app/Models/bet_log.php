@@ -34,8 +34,5 @@ class bet_log extends Model
         return $this->belongsTo(bet::class, 'game_id');
     }
     
-    protected $casts = [
-        'betdata' => 'object', // or 'array' depending on your data structure
-    ];
-
+  
 }
