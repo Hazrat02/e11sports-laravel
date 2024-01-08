@@ -28,7 +28,7 @@ class bet_log extends Model
         return $this->belongsTo(User::class);
     }
     public function betdata() {
-        return $this->belongsTo(bet::class);
+        return $this->belongsTo(bet::class,'game_id');
     }
 
 }
