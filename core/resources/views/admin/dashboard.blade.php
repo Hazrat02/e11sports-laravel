@@ -70,22 +70,8 @@
                 </div>
             </div>
         </div><!-- dashboard-w1 end -->
-        {{-- <div class="col-xxl-3 col-sm-6">
-            <div class="card bg--danger has-link box--shadow2">
-                <a class="item-link" href="{{ route('admin.users.email.unverified') }}"></a>
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-4">
-                            <i class="lar la-envelope f-size--56"></i>
-                        </div>
-                        <div class="col-8 text-end">
-                            <span class="text--small text-white">@lang('Email Unverified Users')</span>
-                            <h2 class="text-white">{{ $widget['email_unverified_users'] }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- dashboard-w1 end --> --}}
+        <div class="col-xxl-3 col-sm-6">
+      
         {{-- <div class="col-xxl-3 col-sm-6">
             <div class="card bg--red has-link box--shadow2">
                 <a class="item-link" href="{{ route('admin.users.mobile.unverified') }}"></a>
@@ -112,12 +98,26 @@
                     <i class="fas fa-hand-holding-usd"></i>
                 </div>
                 <div class="widget-two__content">
+                    <h3>{{ $widget['email_unverified_users'] }}</h3>
+                    <p>@lang('Email Unverified Users')</p>
+                </div>
+
+                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.users.email.unverified') }}">@lang('View All')</a>
+            </div>
+        </div><!-- dashboard-w1 end -->
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two box--shadow2 b-radius--5 bg--white">
+                <i class="fas fa-hand-holding-usd overlay-icon text--success"></i>
+                <div class="widget-two__icon b-radius--5 bg--success">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <div class="widget-two__content">
                     <h3>{{ $general->cur_sym }}{{ showAmount($deposit['total_deposit_amount']) }}</h3>
                     <p>@lang('Lifetime Deposit')</p>
                 </div>
 
-                {{-- {{ route('admin.deposit.list') }} --}}
-                <a class="widget-two__btn border--success btn-outline--success border" href="#">@lang('View All')</a>
+            
+                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.deposit.list') }}">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">
@@ -131,7 +131,7 @@
                     <p>@lang('Pending Deposits')</p>
                 </div>
                
-                <a class="widget-two__btn border--warning btn-outline--warning border" href="#">@lang('View All')</a>
+                <a class="widget-two__btn border--warning btn-outline--warning border" href="{{ route('admin.deposit.pending') }}">@lang('View All')</a>
             </div>
         </div><!-- dashboard-w1 end -->
         <div class="col-xxl-3 col-sm-6">

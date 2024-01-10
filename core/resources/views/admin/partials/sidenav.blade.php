@@ -423,16 +423,16 @@
                         <i class="menu-icon las la-language"></i>
                         <span class="menu-title">@lang('Language') </span>
                     </a>
-                </li>
+                </li>--}}
 
                 <li class="sidebar-menu-item {{ menuActive('admin.seo') }}">
                     <a class="nav-link" href="{{ route('admin.seo') }}">
                         <i class="menu-icon las la-globe"></i>
                         <span class="menu-title">@lang('SEO Manager')</span>
                     </a>
-                </li>
+                </li> 
 
-                <li class="sidebar-menu-item {{ menuActive('admin.kyc.setting') }}">
+              {{--      <li class="sidebar-menu-item {{ menuActive('admin.kyc.setting') }}">
                     <a class="nav-link" href="{{ route('admin.kyc.setting') }}">
                         <i class="menu-icon las la-user-check"></i>
                         <span class="menu-title">@lang('KYC Setting')</span>

@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Validator;
 class PlayController extends Controller {
 
     public function playGame($alias) {
-        // $game      = Game::where('alias', $alias)->firstOrFail();
-        // $pageTitle = "Play " . $game->name;
-        // return view($this->activeTemplate . 'user.games.' . $alias, compact('game', 'pageTitle'));
-        return 'working...';
+        $game      = Game::where('alias', $alias)->firstOrFail();
+        $pageTitle = "Play " . $game->name;
+        return view($this->activeTemplate . 'user.games.' . $alias, compact('game', 'pageTitle'));
+        // return 'working...';
     }
 
     public function investGame(Request $request, $alias) {
