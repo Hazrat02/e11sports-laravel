@@ -201,8 +201,8 @@
                     <h3>{{ $withdrawals['total_withdraw_pending'] }}</h3>
                     <p>@lang('Pending Withdrawals')</p>
                 </div>
-                {{-- {{ route('admin.withdraw.pending') }} --}}
-                <a class="widget-two__btn border--warning btn-outline--warning border" href="">@lang('View All')</a>
+              
+                <a class="widget-two__btn border--warning btn-outline--warning border" href="{{ route('admin.withdraw.pending') }}">@lang('View All')</a>
             </div>
         </div>
         <div class="col-xxl-3 col-sm-6">
@@ -289,6 +289,60 @@
                     <p class="text-white">@lang('Today Bet Users')</p>
                 </div>
                 <a class="widget-two__btn" href="{{ route('admin.game.betinf','2') }}">@lang('View All')</a>
+            </div>
+        </div>
+    </div>
+    <div class="row gy-4 mt-2">
+
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two style--two box--shadow2 b-radius--5 bg--1">
+                <i class="las la-users overlay-icon text--white"></i>
+                <div class="widget-two__icon b-radius--5 bg--primary">
+                    <i class="las la-list"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_played']) }}</h3>
+                    <p class="text-white">@lang('Casino-Total Played')</p>
+                </div>
+                <a class="widget-two__btn" href="{{ route('admin.game.log') }}">@lang('View All')</a>
+            </div>
+        </div>
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
+                <i class="las la-users overlay-icon text--white"></i>
+                <div class="widget-two__icon b-radius--5 bg--primary">
+                    <i class="las la-money-bill-wave-alt"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_win_amount']) }}</h3>
+                    <p class="text-white">@lang('Casino-Total Win')</p>
+                </div>
+                <a class="widget-two__btn" href="{{ route('admin.game.log') }}?win_status=1">@lang('View All')</a>
+            </div>
+        </div>
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two style--two box--shadow2 b-radius--5 bg--14">
+                <i class="las la-users overlay-icon text--white"></i>
+                <div class="widget-two__icon b-radius--5 bg--primary">
+                    <i class="las la-money-bill"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_loss_amount']) }}</h3>
+                    <p class="text-white">@lang('Casino-Total Loss')</p>
+                </div>
+                <a class="widget-two__btn" href="{{ route('admin.game.log') }}?win_status=2">@lang('View All')</a>
+            </div>
+        </div>
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two style--two box--shadow2 b-radius--5 bg--primary">
+                <i class="las la-users overlay-icon text--white"></i>
+                <div class="widget-two__icon b-radius--5 bg--primary">
+                    <i class="las la-percentage"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3 class="text-white">{{ $general->cur_sym }}{{ showAmount($widget['total_profit']) }}</h3>
+                    <p class="text-white">@lang('Casino-Total Profit')</p>
+                </div>
             </div>
         </div>
     </div>
