@@ -75,9 +75,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                   
-                                                            <input name="invest_back" type="hidden" value="{{$game->invest_back}}">
-                                                     
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>@lang('Invest')</label>
+                                                            <input name="invest_back" data-width="100%" data-onstyle="-success" data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Give Back')" data-off="@lang('No Back"')" type="checkbox" @checked($game->invest_back)>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
