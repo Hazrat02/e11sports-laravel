@@ -64,7 +64,7 @@
 															<div class="form-group">
 																<label>@lang('No Win Chance')</label>
 																<div class="input-group mb-3">
-																	<input type="number" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[0]) }}" placeholder="Triple Win Chance">
+																	<input type="text" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[0]) }}" placeholder="Triple Win Chance">
 																	<span class="input-group-text">@lang('%')</span>
 																</div>
 															</div>
@@ -73,7 +73,7 @@
 															<div class="form-group">
 																<label>@lang('Single Win Chance') </label>
 																<div class="input-group mb-3">
-																	<input type="number" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[1]) }}" placeholder="Single Win Chance">
+																	<input type="text" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[1]) }}" placeholder="Single Win Chance">
 																	<span class="input-group-text">%</span>
 																</div>
 															</div>
@@ -86,7 +86,7 @@
 															<div class="form-group">
 																<label>@lang('Double Win Chance') </label>
 																<div class="input-group mb-3">
-																	<input type="number" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[2]) }}" placeholder="Double Win Chance">
+																	<input type="text" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[2]) }}" placeholder="Double Win Chance">
 																	<span class="input-group-text">@lang('%')</span>
 																</div>
 															</div>
@@ -95,7 +95,7 @@
 															<div class="form-group">
 																<label>@lang('Triple Win Chance')</label>
 																<div class="input-group mb-3">
-																	<input type="number" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[3]) }}" placeholder="Triple Win Chance">
+																	<input type="text" class="form-control" name="chance[]" value="{{ getAmount(@$game->probable_win[3]) }}" placeholder="Triple Win Chance">
 																	<span class="input-group-text">@lang('%')</span>
 																</div>
 															</div>
