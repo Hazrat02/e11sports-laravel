@@ -91,20 +91,7 @@
     </div><!-- row end-->
 
     <div class="row gy-4 mt-2">
-        <div class="col-xxl-3 col-sm-6">
-            <div class="widget-two box--shadow2 b-radius--5 bg--white">
-                <i class="fas fa-hand-holding-usd overlay-icon text--success"></i>
-                <div class="widget-two__icon b-radius--5 bg--success">
-                    <i class="fas fa-hand-holding-usd"></i>
-                </div>
-                <div class="widget-two__content">
-                    <h3>{{ $widget['email_unverified_users'] }}</h3>
-                    <p>@lang('Email Unverified Users')</p>
-                </div>
-
-                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.users.email.unverified') }}">@lang('View All')</a>
-            </div>
-        </div><!-- dashboard-w1 end -->
+    
         <div class="col-xxl-3 col-sm-6">
             <div class="widget-two box--shadow2 b-radius--5 bg--white">
                 <i class="fas fa-hand-holding-usd overlay-icon text--success"></i>
@@ -232,6 +219,20 @@
                 <a class="widget-two__btn border--danger btn-outline--danger border" href="{{ route('admin.withdraw.rejected') }}">@lang('View All')</a>
             </div>
         </div>
+        <div class="col-xxl-3 col-sm-6">
+            <div class="widget-two box--shadow2 b-radius--5 bg--white">
+                <i class="fas fa-hand-holding-usd overlay-icon text--success"></i>
+                <div class="widget-two__icon b-radius--5 bg--success">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <div class="widget-two__content">
+                    <h3>{{ $widget['email_unverified_users'] }}</h3>
+                    <p>@lang('Email Unverified Users')</p>
+                </div>
+
+                <a class="widget-two__btn border--success btn-outline--success border" href="{{ route('admin.users.email.unverified') }}">@lang('View All')</a>
+            </div>
+        </div><!-- dashboard-w1 end -->
         
     </div><!-- row end-->
 
