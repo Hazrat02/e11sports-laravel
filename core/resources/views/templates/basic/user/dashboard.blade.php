@@ -115,6 +115,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6 mb-30 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">
+                    <div class="game-card">
+                        <div class="game-card__thumb">
+                            <img style="height: 300px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6MvbI_65UzXF4vVyr9Tb7RtovfpM6hKYW8BXD7v5Jnp4wy34-fJsO4IexULoJ3adniZs&usqp=CAU" alt="image">
+                        </div>
+                        <div class="game-card__content">
+                            <h4 class="game-name">Basketball</h4>
+                            {{-- {{ route('user.play.game', $game->alias) }} --}}
+                            <a class="cmn-btn d-block btn-sm btn--capsule mt-3 text-center" href="{{ route('user.play.basketball') }}">@lang('Bet Now')</a>
+                        </div>
+                    </div>
+                </div>
                 @forelse($games as $game)
                     <div class="col-xl-3 col-lg-4 col-sm-6 mb-30 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">
                         <div class="game-card style--two">

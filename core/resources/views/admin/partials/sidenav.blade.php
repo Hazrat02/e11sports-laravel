@@ -53,12 +53,12 @@
                                     <span class="menu-title">@lang('Casino')</span>
                                 </a>
                             </li>
-                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.game.log') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.game.log') }}">
                                 <a class="nav-link" href="{{ route('admin.game.log') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Game Log')</span>
                                 </a>
-                            </li> --}}
+                            </li>
 
                         </ul>
                     </div>
