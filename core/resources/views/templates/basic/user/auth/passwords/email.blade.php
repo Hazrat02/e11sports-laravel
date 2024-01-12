@@ -8,8 +8,8 @@
                     <div class="mb-4">
                         <p>@lang('To recover your account please provide your email or username to find your account.')</p>
                     </div>
-                    {{-- {{ route('user.password.email') }} --}}
-                    <form method="POST" action="#">
+                 
+                    <form method="POST" action="{{ route('user.password.email') }}">
                         @csrf
                         <div class="form-group">
                             <label class="form-label">@lang('Email or Username')</label>

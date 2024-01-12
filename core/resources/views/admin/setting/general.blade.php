@@ -15,6 +15,12 @@
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <div class="form-group">
+                                    <label> @lang('Email From')</label>
+                                    <input class="form-control" name="email_from" type="text" value="{{ $general->email_from }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="form-group">
                                     <label>@lang('Currency')</label>
                                     <input class="form-control" name="cur_text" type="text" value="{{ $general->cur_text }}" required>
                                 </div>

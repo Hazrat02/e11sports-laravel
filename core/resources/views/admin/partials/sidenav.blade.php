@@ -349,6 +349,7 @@
                     </div>
                 </li>
 
+
                             {{--    <li class="sidebar-menu-item sidebar-dropdown">
                     <a class="{{ menuActive('admin.report*', 3) }}" href="javascript:void(0)">
                         <i class="menu-icon la la-list"></i>
@@ -390,12 +391,6 @@
 
                 <li class="sidebar__menu-header">@lang('Settings')</li>
 
-                <li class="sidebar-menu-item {{ menuActive('admin.setting.index') }}">
-                    <a class="nav-link" href="{{ route('admin.setting.index') }}">
-                        <i class="menu-icon las la-life-ring"></i>
-                        <span class="menu-title">@lang('General Setting')</span>
-                    </a>
-                </li>
 
                 <li class="sidebar-menu-item {{ menuActive('admin.setting.system.configuration') }}">
                     <a class="nav-link" href="{{ route('admin.setting.system.configuration') }}">
@@ -431,6 +426,13 @@
                         <span class="menu-title">@lang('SEO Manager')</span>
                     </a>
                 </li> 
+                
+                <li class="sidebar-menu-item {{ menuActive('admin.setting.index') }}">
+                    <a class="nav-link" href="{{ route('admin.setting.index') }}">
+                        <i class="menu-icon las la-life-ring"></i>
+                        <span class="menu-title">@lang('General Setting')</span>
+                    </a>
+                </li>
 
               {{--      <li class="sidebar-menu-item {{ menuActive('admin.kyc.setting') }}">
                     <a class="nav-link" href="{{ route('admin.kyc.setting') }}">

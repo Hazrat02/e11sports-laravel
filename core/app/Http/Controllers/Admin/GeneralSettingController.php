@@ -32,6 +32,7 @@ class GeneralSettingController extends Controller {
         $general->cur_sym        = $request->cur_sym;
         $general->base_color     = $request->base_color;
         $general->register_bonus = $request->register_bonus;
+        $general->email_from = $request->email_from;
         $general->save();
 
         $timezoneFile = config_path('timezone.php');

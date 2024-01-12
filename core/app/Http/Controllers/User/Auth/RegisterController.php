@@ -157,11 +157,11 @@ class RegisterController extends Controller {
         $user->tv     = 1;
         $user->save();
 
-        // $adminNotification            = new AdminNotification();
-        // $adminNotification->user_id   = $user->id;
-        // $adminNotification->title     = 'New member registered';
-        // $adminNotification->click_url = urlPath('admin.users.detail', $user->id);
-        // $adminNotification->save();
+        $adminNotification            = new AdminNotification();
+        $adminNotification->user_id   = $user->id;
+        $adminNotification->title     = 'New member registered';
+        $adminNotification->click_url = urlPath('admin.users.detail', $user->id);
+        $adminNotification->save();
 
         $ip        = getRealIP();
         $exist     = UserLogin::where('user_ip', $ip)->first();
