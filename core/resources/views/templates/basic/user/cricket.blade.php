@@ -73,12 +73,13 @@
                                             <tr>
                                                 <td>
                                                     
-                                                        {{$match->t1 }}  VS {{$match->t1 }}
+                                                        {{$match->t1 }}  VS {{$match->t2 }}
             
                                                 </td>
                                                 <td>
+                                                    {{ showDateTime($match->start) }}
                                                     
-                                                   {{$match->created_at }}
+                                              
                                                 </td>
                                                 
                                                 
