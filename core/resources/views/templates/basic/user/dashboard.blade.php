@@ -111,7 +111,7 @@
                         <div class="game-card__content">
                             <h4 class="game-name">FootBall</h4>
                             {{-- {{ route('user.play.game', $game->alias) }} --}}
-                            <a class="cmn-btn d-block btn-sm btn--capsule mt-3 text-center" href="{{ route('user.working') }}">@lang('Bet Now')</a>
+                            <a class="cmn-btn d-block btn-sm btn--capsule mt-3 text-center" href="{{ route('user.play.football') }}">@lang('Bet Now')</a>
                         </div>
                     </div>
                 </div>
