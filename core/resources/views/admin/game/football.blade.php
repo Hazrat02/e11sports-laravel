@@ -180,6 +180,9 @@
                                             <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.game.betstatus', ['id' => $bet->id, 'status' => '2']) }}">
                                                 <i class="las la-hand-pointer"></i> @lang('place in Bet')
                                             </a>
+                                            <a class="btn btn-sm btn-outline--primary" href="{{ route('admin.game.gamedelete',$bet->id) }}">
+                                                <i class="las la-hand-pointer"></i> @lang('Delete')
+                                            </a>
                                             @else
                                             <a class="btn btn-sm btn-outline--primary" href="{{route('admin.game.cricketinf',$bet->id)}}">
                                                 <i class="las la-desktop"></i> @lang('Details')

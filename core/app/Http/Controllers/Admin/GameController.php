@@ -389,6 +389,24 @@ class GameController extends Controller {
 
     
     }
+    public function gamedelete( Request $request) {
+
+     
+       $bet=bet::where('id',$request->id)->delete();
+        
+
+
+
+
+        $notify[] = ['success', 'Game Delete successfully!'];
+        return back()->withNotify($notify);
+   
+
+      
+
+
+    
+    }
     public function ratios( Request $request) {
 
      

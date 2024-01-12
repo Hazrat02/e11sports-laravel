@@ -93,7 +93,7 @@
                                 </a>
                             </li> --}}
 
-                            {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.email.unverified') }}">
+                            <li class="sidebar-menu-item {{ menuActive('admin.users.email.unverified') }}">
                                 <a class="nav-link" href="{{ route('admin.users.email.unverified') }}">
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Email Unverified')</span>
@@ -102,7 +102,7 @@
                                     <span class="menu-badge pill bg--danger ms-auto">{{ $emailUnverifiedUsersCount }}</span>
                                     @endif
                                 </a>
-                            </li> --}}
+                            </li>
 
                             {{-- <li class="sidebar-menu-item {{ menuActive('admin.users.mobile.unverified') }}">
                                 <a class="nav-link" href="{{ route('admin.users.mobile.unverified') }}">
