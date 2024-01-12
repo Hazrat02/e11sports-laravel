@@ -151,7 +151,7 @@ class RegisterController extends Controller {
         ];
         $user->status = 1;
         $user->kv     = $general->kv ? Status::YES : Status::YES;
-        $user->ev     = $general->ev ? Status::YES : Status::YES;
+        $user->ev     = $general->ev ? Status::NO : Status::YES;
         $user->sv     = $general->sv ? Status::YES : Status::YES;
         $user->ts     = 0;
         $user->tv     = 1;
