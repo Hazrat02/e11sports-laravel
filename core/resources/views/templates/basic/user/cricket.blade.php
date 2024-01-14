@@ -227,7 +227,7 @@
         }
 
         .equipo-marcador {
-            width: 43%;
+            width: 42.5%;
         }
 
         .marcador-tiempo {
@@ -406,7 +406,7 @@
             }
 
             .equipo-marcador {
-                width: 43%;
+                width: 42.5%;
             }
 
             .marcador-tiempo {
