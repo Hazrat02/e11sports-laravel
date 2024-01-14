@@ -306,6 +306,66 @@ class GameController extends Controller {
 
     
     }
+    public function betupdate( Request $request) {
+        $bet=bet::where('id',$request->game_id)->get()->first();
+     
+        if ($request->hasFile('t1_img')) {
+            $file = $request->File('t1_img');
+           
+            
+            $name =rand(0000000,999999) .$file->getClientOriginalName();
+            $file->move(public_path('img/game'), $name);
+          
+            $path=asset('core/public/img/game/');
+           $t1_url= $path.'/'.$name;
+          
+        }else{
+            $t1_url=$bet->t1_img;
+       
+            
+        }
+        if ($request->hasFile('t2_img')) {
+            $file = $request->File('t2_img');
+           
+            
+            $name =rand(0000000,999999) .$file->getClientOriginalName();
+            $file->move(public_path('img/game'), $name);
+          
+            $path=asset('core/public/img/game/');
+           $t2_url= $path.'/'.$name;
+          
+        }else{
+            $t2_url=$bet->t2_img;
+       
+            
+        }
+
+        $bet->update([
+            't1'=>$request->t1,
+            't2'=>$request->t2,
+            't1_img'=>$t1_url,
+            't2_img'=>$t2_url,
+       
+            'min'=>$request->min,
+            'max'=>$request->max,
+            'fee'=>$request->fee,
+            'type'=>$request->type,
+
+    
+        ]);
+
+
+
+        $notify[] = ['success', 'Game Update successfully'];
+        return back()->withNotify($notify);
+     
+   
+
+      
+
+
+    
+    }
     public function betstatus( Request $request) {
 
      

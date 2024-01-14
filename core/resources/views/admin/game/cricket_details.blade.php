@@ -211,7 +211,7 @@
                             <div class="form-group">
                                 <label>@lang('Ratio')</label>
                                 <div class="input-group mb-3">
-                                    <input class="form-control" name="ratio_x" type="number" value=""
+                                    <input class="form-control" name="ratio_x" type="text" value=""
                                         placeholder="@lang('Enter Ratio')">
                                     <span class="input-group-text" id="basic-addon2">@lang('X')</span>
                                 </div>
@@ -292,15 +292,15 @@
         </div>
     </div>
 </div>
-{{-- <div class="modal fade " id="cronModal" role="dialog" tabindex="-1" aria-hidden="true">
+<div class="modal fade " id="updateModal" role="dialog" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">@lang('Create Cricket Games')</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">@lang('Update Games')</h5>
                 <span class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></span>
             </div>
             <div class="modal-body">
-                <form action="{{route('admin.game.betstore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('admin.game.betupdate')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="row">
@@ -383,61 +383,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label>@lang('Place In')</label>
-                                    <select class="form-control" name="status">
-                                        <option selected
-                                         value="1">
-                                            Upcoming
-                                        </option>
-                                        <option value="2">
-                                            Betting
-                                        </option>
-                                    </select>
-                                   
-                                </div>
-
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label>@lang('Match Start')</label>
-                                    
-                                    <input class="form-control" name="start" type="datetime-local" 
-                                    required>
-                                    <input class="form-control" name="game" type="hidden" value="cricket" 
-                                    >
-                                </div>
-
-                            </div>
-                            
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label>@lang('Ratio')</label>
-                                    <div class="input-group mb-3">
-                                        <input class="form-control" name="ratio_x" type="number" value=""
-                                            placeholder="@lang('Enter Ratio')">
-                                        <span class="input-group-text" id="basic-addon2">@lang('X')</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label>@lang('Ratio For')</label>
-                                    <select class="form-control" name="ratios">
-                                        <option selected
-                                         value="1">
-                                            Team A
-                                        </option>
-                                        <option value="2">
-                                            Team B
-                                        </option>
-                                    </select>
-                                   
-                                </div>
-
-                            </div>
+                            <input type="hidden" name="game_id" value="{{$game->id}}">
 
 
                         </div>
@@ -450,13 +396,13 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection
 
 @push('script')
 
 @endpush
 @push('breadcrumb-plugins')
-    {{-- <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#cronModal">Update
-        Game</button> --}}
+    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#updateModal">Update
+        Game</button>
 @endpush
