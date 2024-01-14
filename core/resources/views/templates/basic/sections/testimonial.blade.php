@@ -16,7 +16,8 @@ $testimonials = getContent('testimonial.element');
                 <div class="testimonial-slider">
                     @foreach ($testimonials as $testimonial)
                     <div class="single-slide">
-                        <div class="testimonial-card">
+                        sadasdadasdasda
+                        {{-- <div class="testimonial-card">
                             <div class="testimonial-card__content">
                                 <div class="testimonial-card__content-inner">
                                     <p>{{ __(@$testimonial->data_values->quote) }}</p>
@@ -26,7 +27,7 @@ $testimonials = getContent('testimonial.element');
                                 <img src="{{ getImage('assets/images/frontend/testimonial/' . @$testimonial->data_values->image, '100x100') }}" alt="image">
                             </div>
                             <h6 class="name mt-2">{{ __(@$testimonial->data_values->name) }}</h6>
-                        </div>
+                        </div> --}}
                     </div>
                     @endforeach
                 </div>
