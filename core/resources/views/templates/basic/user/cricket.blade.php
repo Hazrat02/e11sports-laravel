@@ -32,12 +32,12 @@
                                     </div>
                                 </div>
                                 <div class="panel marcadores">
-                                    <div class="equipo-marcador  izquierdo">
+                                    <div class=" izquierdo">
                                         <p style="font-size: 2vw !important" >{{$match->t1}}</p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
-                                    <div class="equipo-marcador  derecho">
+                                    <div class=" derecho">
                                         <p style="font-size: 2vw !important">{{$match->t2}}</p>
                                     </div>
                                 </div>
