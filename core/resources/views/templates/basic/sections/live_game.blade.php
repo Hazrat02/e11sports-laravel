@@ -21,7 +21,7 @@ $testimonials = getContent('testimonial.element');
                             <div class="contenedorEquipo">
                                 <div class="base">
     
-                                    <div class="panel panel-superior">
+                                    <div class="panel2 panel2-superior">
                                         <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
                                                 src="{{$bet->t1_img}}">
     
@@ -41,14 +41,14 @@ $testimonials = getContent('testimonial.element');
     
                                         </div>
                                     </div>
-                                    <div class="panel marcadores">
+                                    <div class="panel2 marcadores">
                                         <div class="equipo-marcador  izquierdo">
-                                            <p class="float-izquierda">{{$bet->t1}}</p>
+                                            <p  >{{$bet->t1}}</p>
     
                                         </div>
                                         <div class="marcador-tiempo"><time>VS</time></div>
                                         <div class="equipo-marcador  derecho">
-                                            <p class="">{{$bet->t2}}</p>
+                                            <p  >{{$bet->t2}}</p>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
@@ -82,6 +82,10 @@ $testimonials = getContent('testimonial.element');
         .contenedorEquipo {
             margin: 10px 0px 15px 0px;
         }
+        .com{
+                font-size: 13px;
+                font-family: bebas, Verdana, Geneva, sans-serif;
+            }
 
         .base {
 
@@ -97,7 +101,7 @@ $testimonials = getContent('testimonial.element');
             padding-bottom: 10px;
         }
 
-        .panel {
+        .panel2 {
             width: 100%;
             box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
             background-color: rgba(0, 0, 0, 1);
@@ -130,19 +134,19 @@ $testimonials = getContent('testimonial.element');
             float: right !important;
         }
 
-        .panel-superior .izquierdo {
+        .panel2-superior .izquierdo {
             background: linear-gradient(to right, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0) 100%);
         }
 
-        .panel-superior .izquierdo span {
+        .panel2-superior .izquierdo span {
             float: left;
         }
 
-        .panel-superior .derecho span {
+        .panel2-superior .derecho span {
             float: right;
         }
 
-        .panel-superior .derecho {
+        .panel2-superior .derecho {
             background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 1) 53%, rgba(30, 87, 153, 1) 100%);
         }
 
@@ -181,16 +185,16 @@ $testimonials = getContent('testimonial.element');
 
         .marcadores div p {
             margin: 10px 0px 0px 5px;
-            width: 60%;
-            font-size: 24px;
+            /* width: 60%;
+            font-size: 24px; */
         }
 
         .equipo-marcador {
-            width: 40%;
+            width: 42.5%;
         }
 
         .marcador-tiempo {
-            width: 20%;
+            width: 15%;
             font-size: 26px;
 
             line-height: 50px !important;
@@ -256,6 +260,7 @@ $testimonials = getContent('testimonial.element');
         .estadisticas {
             text-align: center;
         }
+      
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
             .com{
@@ -275,7 +280,7 @@ $testimonials = getContent('testimonial.element');
                 color: white;
             }
 
-            .panel {
+            .panel2 {
                 width: 100%;
                 box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
                 background-color: rgba(0, 0, 0, 1);
@@ -308,19 +313,19 @@ $testimonials = getContent('testimonial.element');
                 float: right !important;
             }
 
-            .panel-superior .izquierdo {
+            .panel2-superior .izquierdo {
                 background: linear-gradient(to right, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0) 100%);
             }
 
-            .panel-superior .izquierdo span {
+            .panel2-superior .izquierdo span {
                 float: left;
             }
 
-            .panel-superior .derecho span {
+            .panel2-superior .derecho span {
                 float: right;
             }
 
-            .panel-superior .derecho {
+            .panel2-superior .derecho {
                 background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 1) 53%, rgba(30, 87, 153, 1) 100%);
             }
 
@@ -359,16 +364,16 @@ $testimonials = getContent('testimonial.element');
             .marcadores div p {
                 margin: 0px 0px 0px 5px;
 
-                width: 60%;
-                font-size: 10px;
+                /* width: 60%;
+                font-size: 10px; */
             }
 
             .equipo-marcador {
-                width: 40%;
+                width: 42.5%;
             }
 
             .marcador-tiempo {
-                width: 20%;
+                width: 15%;
                 font-size: 16px;
                 line-height: 35px !important;
             }
