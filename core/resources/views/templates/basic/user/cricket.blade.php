@@ -33,12 +33,12 @@
                                 </div>
                                 <div class="panel2 marcadores">
                                     <div class="equipo-marcador  izquierdo">
-                                        <p class="com">{{$match->t1}}</p>
+                                        <p class="com" >{{$match->t1}}</p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
                                     <div class="equipo-marcador  derecho">
-                                        <p  class="com">{{$match->t2}}</p>
+                                        <p  class="com" >{{$match->t2}}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
@@ -227,11 +227,11 @@
         }
 
         .equipo-marcador {
-            width: 40%;
+            width: 43%;
         }
 
         .marcador-tiempo {
-            width: 20%;
+            width: 15%;
             font-size: 26px;
 
             line-height: 50px !important;
@@ -406,11 +406,11 @@
             }
 
             .equipo-marcador {
-                width: 40%;
+                width: 43%;
             }
 
             .marcador-tiempo {
-                width: 20%;
+                width: 15%;
                 font-size: 16px;
                 line-height: 35px !important;
             }
