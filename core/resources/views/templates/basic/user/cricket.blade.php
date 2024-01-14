@@ -11,7 +11,7 @@
                         <div class="contenedorEquipo">
                             <div class="base">
 
-                                <div class="panel2 panel2-superior">
+                                <div class="panel panel-superior">
                                     <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
                                             src="{{$match->t1_img}}">
 
@@ -31,14 +31,14 @@
 
                                     </div>
                                 </div>
-                                <div class="panel2 marcadores">
-                                    <div class="izquierdo">
-                                        <p style="font-size: 2vw !important" >{{$match->t1}}</p>
+                                <div class="panel marcadores">
+                                    <div class="equipo-marcador  izquierdo">
+                                        <p class="com">{{$match->t1}}</p>
 
                                     </div>
-                                    <div class="marcador-tiempo "><time>VS</time></div>
-                                    <div class=" derecho">
-                                        <p style="font-size: 2vw !important">{{$match->t2}}</p>
+                                    <div class="marcador-tiempo"><time>VS</time></div>
+                                    <div class="equipo-marcador  derecho">
+                                        <p  class="com">{{$match->t2}}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
@@ -138,7 +138,7 @@
             padding-bottom: 10px;
         }
 
-        .panel2 {
+        .panel {
             width: 100%;
             box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
             background-color: rgba(0, 0, 0, 1);
@@ -171,19 +171,19 @@
             float: right !important;
         }
 
-        .panel2-superior .izquierdo {
+        .panel-superior .izquierdo {
             background: linear-gradient(to right, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0) 100%);
         }
 
-        .panel2-superior .izquierdo span {
+        .panel-superior .izquierdo span {
             float: left;
         }
 
-        .panel2-superior .derecho span {
+        .panel-superior .derecho span {
             float: right;
         }
 
-        .panel2-superior .derecho {
+        .panel-superior .derecho {
             background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 1) 53%, rgba(30, 87, 153, 1) 100%);
         }
 
@@ -317,7 +317,7 @@
                 color: white;
             }
 
-            .panel2 {
+            .panel {
                 width: 100%;
                 box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
                 background-color: rgba(0, 0, 0, 1);
@@ -350,19 +350,19 @@
                 float: right !important;
             }
 
-            .panel2-superior .izquierdo {
+            .panel-superior .izquierdo {
                 background: linear-gradient(to right, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0) 100%);
             }
 
-            .panel2-superior .izquierdo span {
+            .panel-superior .izquierdo span {
                 float: left;
             }
 
-            .panel2-superior .derecho span {
+            .panel-superior .derecho span {
                 float: right;
             }
 
-            .panel2-superior .derecho {
+            .panel-superior .derecho {
                 background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 1) 53%, rgba(30, 87, 153, 1) 100%);
             }
 
