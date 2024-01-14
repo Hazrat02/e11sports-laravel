@@ -2,7 +2,7 @@
     <div class="header__bottom">
         <div class="container">
             <nav class="navbar navbar-expand-xl align-items-center p-0">
-                <a class="site-logo site-title" href="{{ route('home') }}"><img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
+                <a class="site-logo site-title" href="{{ route('home') }}"><img src="{{ getImage(getFilePath('logoIcon') . '/logo3.png') }}" alt="site-logo"><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
                 <button class="navbar-toggler ml-auto" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="menu-toggle"></span>
                 </button>
@@ -25,15 +25,15 @@
                                 </li>
                             </ul>
                         </li>
-                      <li><a href="{{ route('user.referrals') }}">@lang('Referrals')</a></li>
-                          {{-- <li class="menu_has_children">
-                            <a href="#">@lang('Reports')</a>
+                     
+                          <li class="menu_has_children">
+                            <a href="#">@lang('History')</a>
                             <ul class="sub-menu">
                                 <li><a href="{{ route('user.game.log') }}">@lang('Game Log')</a></li>
                                 <li><a href="{{ route('user.commission.log') }}">@lang('Commission Log')</a></li>
                                 <li><a href="{{ route('user.transactions') }}">@lang('Transactions')</a></li>
                             </ul>
-                        </li> --}}
+                        </li>
                         <li class="menu_has_children">
                             <a href="#">@lang('Support')</a>
                             <ul class="sub-menu">
@@ -41,14 +41,15 @@
                                 <li><a href="{{ route('ticket.index') }}">@lang('My Tickets')</a></li>
                             </ul>
                         </li>
-                        {{-- <li class="menu_has_children">
+                        <li class="menu_has_children">
                             <a href="#">@lang('Account')</a>
                             <ul class="sub-menu">
+                                <li><a href="{{ route('user.referrals') }}">@lang('Referrals')</a></li>
                                 <li><a href="{{ route('user.profile.setting') }}">@lang('Profile Setting')</a></li>
                                 <li><a href="{{ route('user.change.password') }}">@lang('Change Password')</a></li>
-                                <li><a href="{{ route('user.twofactor') }}">@lang('2FA Security')</a></li>
+                                {{-- <li><a href="{{ route('user.twofactor') }}">@lang('2FA Security')</a></li> --}}
                             </ul>
-                        </li> --}}
+                        </li>
                     </ul>
                     @endauth
 
