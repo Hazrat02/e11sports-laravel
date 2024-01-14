@@ -219,12 +219,12 @@
             line-height: 35px;
             text-align: center;
         }
-/* 
+
         .marcadores div p {
             margin: 10px 0px 0px 5px;
-            width: 60%;
-            font-size: 24px;
-        } */
+            /* width: 60%;
+            font-size: 24px; */
+        }
 
         .equipo-marcador {
             width: 42.5%;
@@ -398,12 +398,12 @@
                 text-align: center;
             }
 
-            /* .marcadores div p {
+            .marcadores div p {
                 margin: 0px 0px 0px 5px;
 
-                width: 60%;
-                font-size: 10px;
-            } */
+                /* width: 60%;
+                font-size: 10px; */
+            }
 
             .equipo-marcador {
                 width: 42.5%;
