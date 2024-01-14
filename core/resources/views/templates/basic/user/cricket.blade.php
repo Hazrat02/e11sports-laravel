@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="panel marcadores">
                                     <div class="equipo-marcador  izquierdo">
-                                        <p class="float-izquierda com">{{$match->t1}}</p>
+                                        <p class="com">{{$match->t1}}</p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
