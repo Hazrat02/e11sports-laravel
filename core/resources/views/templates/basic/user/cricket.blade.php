@@ -33,12 +33,12 @@
                                 </div>
                                 <div class="panel marcadores">
                                     <div class="equipo-marcador  izquierdo">
-                                        <p class="com">{{$match->t1}}</p>
+                                        <p style="font-size: 10px !important" class="com">{{$match->t1}}</p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
                                     <div class="equipo-marcador  derecho">
-                                        <p class="com">{{$match->t2}}</p>
+                                        <p style="font-size: 10px !important" class="com">{{$match->t2}}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
@@ -119,6 +119,10 @@
         .contenedorEquipo {
             margin: 10px 0px 15px 0px;
         }
+        .com{
+                font-size: 13px;
+                font-family: bebas, Verdana, Geneva, sans-serif;
+            }
 
         .base {
 
@@ -293,10 +297,7 @@
         .estadisticas {
             text-align: center;
         }
-        .com{
-                font-size: 13px;
-                font-family: bebas, Verdana, Geneva, sans-serif;
-            }
+      
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
             .com{
