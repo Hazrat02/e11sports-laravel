@@ -1,20 +1,20 @@
-@php
+{{-- @php
 $content = getContent('testimonial.content', true);
 $testimonials = getContent('testimonial.element');
-@endphp
+@endphp --}}
 <section class="pt-120 pb-120 overflow-hidden">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section-header text-center">
-                    <h2 class="section-title style--two">{{ __(@$content->data_values->heading) }}</h2>
+                    <h2 class="section-title style--two">Running Live Game</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="testimonial-slider">
-                    @foreach ($testimonials as $testimonial)
+                    @foreach ($bets as $bet)
                     <div class="single-slide">
                         sadasdadasdasda
                         {{-- <div class="testimonial-card">

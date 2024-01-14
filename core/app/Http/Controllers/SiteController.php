@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Constants\Status;
 use App\Models\AdminNotification;
+use App\Models\bet;
 use App\Models\Frontend;
 use App\Models\Game;
 use App\Models\Language;
@@ -27,7 +28,8 @@ class SiteController extends Controller {
 
         $pageTitle = 'Home';
         $sections  = Page::where('tempname', $this->activeTemplate)->where('slug', '/')->first();
-        return view($this->activeTemplate . 'home', compact('pageTitle', 'sections'));
+        $bets  = bet::where('status', '2')->get();
+        return view($this->activeTemplate . 'home', compact('pageTitle', 'sections','bets'));
     }
 
     public function pages($slug) {
