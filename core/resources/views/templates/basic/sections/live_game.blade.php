@@ -25,7 +25,7 @@ $testimonials = getContent('testimonial.element');
                                         <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
                                                 src="{{$bet->t1_img}}">
     
-                                            <div class="" style="position: absolute;top:0%;left:31%">
+                                            <div class="" style="position: absolute;top:0%;left:35%">
                                                 <p class="com"><span >Commition : </span> <span style="color: #e176ce"> {{$bet->fee}}%</span>
                                                     @if ($bet->isbet == '1')
                                                     <p class="com"><span>Bet : </span> <span style="color: #32874a"> Runing</span>
