@@ -31,7 +31,7 @@ $socialIcon  = getContent('social_icon.element', false, null, true);
                 <div class="col-lg-4 col-md-4 text-md-left">
                     <div class="footer-widget text-md-start text-center">
                         <a class="footer-logo" href="{{ route('home') }}">
-                            <img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="image">
+                            <img src="{{ getImage(getFilePath('logoIcon') . '/logo3.png') }}" alt="image">
                         </a>
                     </div>
                 </div>
