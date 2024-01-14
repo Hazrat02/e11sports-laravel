@@ -73,6 +73,7 @@ Route::middleware('auth')->name('user.')->group(function () {
                 Route::get('attachment-download/{fil_hash}', 'attachmentDownload')->name('attachment.download');
 
                 Route::get('game/log', 'gameLog')->name('game.log');
+                Route::get('bet/log', 'betLog')->name('bet.log');
                 Route::get('commission/log', 'commissionLog')->name('commission.log');
             });
 

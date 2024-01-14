@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Lib\FormProcessor;
 use App\Lib\GoogleAuthenticator;
+use App\Models\bet_log;
 use App\Models\CommissionLog;
 use App\Models\Deposit;
 use App\Models\Form;
@@ -219,6 +220,11 @@ class UserController extends Controller {
         $pageTitle = "Game Logs";
         $logs      = GameLog::where('user_id', auth()->id())->where('status', 1)->latest()->with('game')->paginate(getPaginate());
         return view($this->activeTemplate . 'user.game_log', compact('pageTitle', 'logs'));
+    }
+    public function betLog() {
+        $pageTitle = "Bet Game Logs";
+        $logs      = bet_log::where('user_id', auth()->id())->latest()->with('betdata')->paginate(getPaginate());
+        return view($this->activeTemplate . 'user.bet_log', compact('pageTitle', 'logs'));
     }
 
     public function commissionLog() {

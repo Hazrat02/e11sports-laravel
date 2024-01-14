@@ -29,7 +29,8 @@
                           <li class="menu_has_children">
                             <a href="#">@lang('History')</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ route('user.game.log') }}">@lang('Game Log')</a></li>
+                                <li><a href="{{ route('user.bet.log') }}">@lang('Bet Game Log')</a></li>
+                                <li><a href="{{ route('user.game.log') }}">@lang('Casino Game Log')</a></li>
                                 <li><a href="{{ route('user.commission.log') }}">@lang('Commission Log')</a></li>
                                 <li><a href="{{ route('user.transactions') }}">@lang('Transactions')</a></li>
                             </ul>
