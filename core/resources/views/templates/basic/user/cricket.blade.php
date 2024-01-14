@@ -31,7 +31,7 @@
 
                                     </div>
                                 </div>
-                                <div class="panel marcadores">
+                                <div class="">
                                     <div class=" izquierdo">
                                         <p style="font-size: 2vw !important" >{{$match->t1}}</p>
 
