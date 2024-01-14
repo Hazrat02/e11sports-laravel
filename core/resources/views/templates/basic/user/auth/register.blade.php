@@ -10,7 +10,7 @@
             <div class="registration-area-inner">
                 <div class="text-center">
                     <a class="site-logo mb-4" href="{{ route('home') }}">
-                        <img src="{{ getImage(getFilePath('logoIcon') . '/logo2.png') }}" alt="site-logo">
+                        <img src="{{ getImage(getFilePath('logoIcon') . '/logo3.png') }}" alt="site-logo">
                     </a>
                     <h2 class="title mb-3">Welcome to E11sports</h2>
                     <p>{{ __(@$register->data_values->subtitle) }}</p>
