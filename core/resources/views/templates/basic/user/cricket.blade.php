@@ -11,7 +11,7 @@
                         <div class="contenedorEquipo">
                             <div class="base">
 
-                                <div class="panel panel-superior">
+                                <div class="panel2 panel2-superior">
                                     <div class="equipo-superior izquierdo"><img alt="nombreEquipo" class="float-izquierda"
                                             src="{{$match->t1_img}}">
 
@@ -31,7 +31,7 @@
 
                                     </div>
                                 </div>
-                                <div class="panel marcadores">
+                                <div class="panel2 marcadores">
                                     <div class="equipo-marcador  izquierdo">
                                         <p class="com">{{$match->t1}}</p>
 
@@ -138,7 +138,7 @@
             padding-bottom: 10px;
         }
 
-        .panel {
+        .panel2 {
             width: 100%;
             box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
             background-color: rgba(0, 0, 0, 1);
@@ -171,19 +171,19 @@
             float: right !important;
         }
 
-        .panel-superior .izquierdo {
+        .panel2-superior .izquierdo {
             background: linear-gradient(to right, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0) 100%);
         }
 
-        .panel-superior .izquierdo span {
+        .panel2-superior .izquierdo span {
             float: left;
         }
 
-        .panel-superior .derecho span {
+        .panel2-superior .derecho span {
             float: right;
         }
 
-        .panel-superior .derecho {
+        .panel2-superior .derecho {
             background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 1) 53%, rgba(30, 87, 153, 1) 100%);
         }
 
@@ -317,7 +317,7 @@
                 color: white;
             }
 
-            .panel {
+            .panel2 {
                 width: 100%;
                 box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
                 background-color: rgba(0, 0, 0, 1);
@@ -350,19 +350,19 @@
                 float: right !important;
             }
 
-            .panel-superior .izquierdo {
+            .panel2-superior .izquierdo {
                 background: linear-gradient(to right, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0) 100%);
             }
 
-            .panel-superior .izquierdo span {
+            .panel2-superior .izquierdo span {
                 float: left;
             }
 
-            .panel-superior .derecho span {
+            .panel2-superior .derecho span {
                 float: right;
             }
 
-            .panel-superior .derecho {
+            .panel2-superior .derecho {
                 background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 1) 53%, rgba(30, 87, 153, 1) 100%);
             }
 
