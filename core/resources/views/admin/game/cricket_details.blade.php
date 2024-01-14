@@ -308,7 +308,7 @@
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label>@lang('Team A Name')</label>
-                                    <input class="form-control" name="t1" type="text" value=""
+                                    <input class="form-control" name="t1" type="text" value="{{$game->t1}}"
                                         placeholder="@lang('Bangladesh')" required>
                                 </div>
 
@@ -316,7 +316,7 @@
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label>@lang('Team B Name')</label>
-                                    <input class="form-control" name="t2" type="text" value=""
+                                    <input class="form-control" name="t2" type="text" value="{{$game->t2}}"
                                         placeholder="@lang('India')" required>
                                 </div>
 
@@ -327,7 +327,7 @@
 
                                     <label>@lang('Minimum Invest Amount')</label>
                                     <div class="input-group mb-3">
-                                        <input class="form-control" name="min" type="number" value=""
+                                        <input class="form-control" name="min" type="number" value="{{$game->min}}"
                                             step="any" min="1" placeholder="@lang('Minimum Invest Amount')" required>
                                         <span class="input-group-text" id="basic-addon2">{{ $general->cur_sym }}</span>
                                     </div>
@@ -339,7 +339,7 @@
                                 <div class="form-group">
                                     <label>@lang('Maximum Invest Amount')</label>
                                     <div class="input-group mb-3">
-                                        <input class="form-control" name="max" type="number" value=""
+                                        <input class="form-control" name="max" type="number" value="{{$game->max}}"
                                             step="any" min="1" placeholder="@lang('Maximum Invest Amount')" required>
                                         <span class="input-group-text"
                                             id="basic-addon2">{{ $general->cur_sym }}</span>
@@ -352,7 +352,7 @@
                                 <div class="form-group">
                                     <label>@lang('Commission fee')</label>
                                     <div class="input-group mb-3">
-                                        <input class="form-control" name="fee" type="number" value=""
+                                        <input class="form-control" name="fee" type="number" value="{{$game->fee}}"
                                             placeholder="@lang('Commission fee')">
                                         <span class="input-group-text" id="basic-addon2">@lang('%')</span>
                                     </div>
@@ -378,7 +378,7 @@
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label>@lang('Game Type')</label>
-                                    <input class="form-control" name="type" type="text" placeholder="IPL" value=""
+                                    <input class="form-control" name="type" type="text" placeholder="IPL" value="{{$game->type}}"
                                          required>
                                 </div>
 

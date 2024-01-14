@@ -218,8 +218,8 @@
 
         .marcadores div p {
             margin: 10px 0px 0px 5px;
-            width: 60%;
-            font-size: 24px;
+            /* width: 60%;
+            font-size: 24px; */
         }
 
         .equipo-marcador {
@@ -396,8 +396,8 @@
             .marcadores div p {
                 margin: 0px 0px 0px 5px;
 
-                width: 60%;
-                font-size: 10px;
+                /* width: 60%;
+                font-size: 10px; */
             }
 
             .equipo-marcador {
