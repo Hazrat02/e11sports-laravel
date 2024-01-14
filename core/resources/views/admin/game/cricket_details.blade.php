@@ -363,7 +363,7 @@
                                 <div class="form-group">
                                     <label>@lang('Team A Image')</label>
                                     <input class="form-control" name="t1_img" type="file" value=""
-                                         required>
+                                         >
                                 </div>
 
                             </div>
@@ -371,7 +371,7 @@
                                 <div class="form-group">
                                     <label>@lang('Team B Image')</label>
                                     <input class="form-control" name="t2_img" type="file" value=""
-                                         required>
+                                         >
                                 </div>
 
                             </div>
