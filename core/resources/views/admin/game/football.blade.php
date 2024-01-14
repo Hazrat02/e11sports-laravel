@@ -333,7 +333,7 @@
                                     <div class="form-group">
                                         <label>@lang('Ratio')</label>
                                         <div class="input-group mb-3">
-                                            <input class="form-control" name="ratio_x" type="number" value=""
+                                            <input class="form-control" name="ratio_x" type="text" value=""
                                                 placeholder="@lang('Enter Ratio')">
                                             <span class="input-group-text" id="basic-addon2">@lang('X')</span>
                                         </div>
