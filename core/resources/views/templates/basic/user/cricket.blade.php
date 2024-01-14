@@ -31,13 +31,13 @@
 
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class=" izquierdo">
+                                <div class="panel marcadores row">
+                                    <div class="izquierdo col-5">
                                         <p style="font-size: 2vw !important" >{{$match->t1}}</p>
 
                                     </div>
-                                    <div class="marcador-tiempo"><time>VS</time></div>
-                                    <div class=" derecho">
+                                    <div class="marcador-tiempo col-2"><time>VS</time></div>
+                                    <div class=" col-5 derecho">
                                         <p style="font-size: 2vw !important">{{$match->t2}}</p>
                                     </div>
                                 </div>
