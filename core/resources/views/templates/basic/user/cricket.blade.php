@@ -33,12 +33,12 @@
                                 </div>
                                 <div class="panel2 marcadores">
                                     <div class="equipo-marcador  izquierdo">
-                                        <p class="com" >{{$match->t1}}</p>
+                                        <p  >{{$match->t1}}</p>
 
                                     </div>
                                     <div class="marcador-tiempo"><time>VS</time></div>
                                     <div class="equipo-marcador  derecho">
-                                        <p  class="com" >{{$match->t2}}</p>
+                                        <p  >{{$match->t2}}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
