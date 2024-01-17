@@ -63,12 +63,12 @@
                                                 <td>
                                                     <a class="btn
                                                      base--bg btn-sm 
-                                                     @if ($details) 
-                                                     detailBtn @else disabled @endif" 
+                                                     
+                                                     detailBtn " 
                                                      href="javascript:void(0)"
                                                      
                                                      data-info="{{ $details }}"
-                                                      @endif
+                                                     
                                                        {{-- @if ($deposit->status == Status::PAYMENT_REJECT)
                                                       data-admin_feedback="{{ $log }}" 
                                                       @endif --}}
