@@ -125,15 +125,15 @@
                 var userData = $(this).data('info');
                 var html = '';
                 if (userData) {
-                    userData.forEach(element => {
-                        if (element.type != 'file') {
+            
+                        if (userData.type != 'file') {
                             html += `
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Match:</span>
-                                <span">${element.value}</span>
+                                <span">gfgfg</span>
                             </li>`;
                         }
-                    });
+                  
                 }
 
                 modal.find('.userData').html(html);
