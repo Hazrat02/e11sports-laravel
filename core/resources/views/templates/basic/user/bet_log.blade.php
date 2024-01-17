@@ -130,7 +130,7 @@
                             html += `
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Match:</span>
-                                <span">${userData.gameData.t1} vs ${userData.gameData.t2}</span>
+                                <span">${userData.betdata.t1} vs ${userData.betdata.t2}</span>
                             </li>`;
                         }
                   
