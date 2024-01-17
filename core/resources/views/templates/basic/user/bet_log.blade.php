@@ -130,7 +130,7 @@
                             html += `
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Match:</span>
-                                <span">gfgfg</span>
+                                <span">${userData.ratios}</span>
                             </li>`;
                         }
                   
