@@ -41,39 +41,39 @@ class ForgotPasswordController extends Controller
         $request->validate([
             'value'=>'required'
         ]);
-        // $fieldType = $this->findFieldType();
-        // $user = User::where($fieldType, $request->value)->first();
+        $fieldType = $this->findFieldType();
+        $user = User::where($fieldType, $request->value)->first();
         $user = User::where('email', $request->value)->first();
 
-        // if (!$user) {
-        //     $notify[] = ['error', 'Couldn\'t find any account with this information'];
-        //     return back()->withNotify($notify);
-        // }
+        if (!$user) {
+            $notify[] = ['error', 'Couldn\'t find any account with this information'];
+            return back()->withNotify($notify);
+        }
 
-        // PasswordReset::where('email', $user->email)->delete();
+        PasswordReset::where('email', $user->email)->delete();
         $code = verificationCode(6);
-        // $password = new PasswordReset();
-        // $password->email = $user->email;
-        // $password->token = $code;
-        // $password->created_at = \Carbon\Carbon::now();
-        // $password->save();
+        $password = new PasswordReset();
+        $password->email = $user->email;
+        $password->token = $code;
+        $password->created_at = \Carbon\Carbon::now();
+        $password->save();
 
-        // $userIpInfo = getIpInfo();
-        // $userBrowserInfo = osBrowser();
-
-        // notify($user, 'PASS_RESET_CODE', [
-        //     'code' => $code,
-        //     'operating_system' => @$userBrowserInfo['os_platform'],
-        //     'browser' => @$userBrowserInfo['browser'],
-        //     'ip' => @$userIpInfo['ip'],
-        //     'time' => @$userIpInfo['time']
-        // ],['email']);
-
+        $userIpInfo = getIpInfo();
+        $userBrowserInfo = osBrowser();
 
         notify($user, 'PASS_RESET_CODE', [
             'code' => $code,
-         
+            'operating_system' => @$userBrowserInfo['os_platform'],
+            'browser' => @$userBrowserInfo['browser'],
+            'ip' => @$userIpInfo['ip'],
+            'time' => @$userIpInfo['time']
         ],['email']);
+
+
+        // notify($user, 'PASS_RESET_CODE', [
+        //     'code' => $code,
+         
+        // ],['email']);
 
         // $email = $user->email;
         // session()->put('pass_res_mail',$email);
