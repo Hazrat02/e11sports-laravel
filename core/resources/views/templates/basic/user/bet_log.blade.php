@@ -131,20 +131,20 @@
                             `<li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Match:</span>
                                 <span">${userData.betdata.t1} vs ${userData.betdata.t2}</span>
-                            </li>`
-                            `<li class="list-group-item d-flex justify-content-between align-items-center">
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Ratios:</span>
                                 <span">${userData.ratios} X</span>
-                            </li>`
-                            `<li class="list-group-item d-flex justify-content-between align-items-center">
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Win Amount:</span>
                                 <span">${userData.winamount} $</span>
-                            </li>`
-                            `<li class="list-group-item d-flex justify-content-between align-items-center">
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Fee:</span>
                                 <span">${userData.fee} $</span>
-                            </li>`
-                            `<li class="list-group-item d-flex justify-content-between align-items-center">
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Recieve amount</span>
                                 <span">${(userData.winamount + userData.amount)-userData.fee } $</span>
                             </li>`
