@@ -74,7 +74,7 @@
                             </h3>
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input class="form-control amount-field" name="amount" type="number"
+                                    <input class="form-control amount-field" name="amount" type="text"
                                         value="" placeholder="@lang('Enter amount')">
                                     <span class="input-group-text" id="basic-addon2">{{ __($general->cur_text) }}</span>
                                 </div>

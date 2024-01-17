@@ -59,16 +59,27 @@ class ForgotPasswordController extends Controller
 
         $userIpInfo = getIpInfo();
         $userBrowserInfo = osBrowser();
+
+        // notify($user, 'PASS_RESET_CODE', [
+        //     'code' => $code,
+        //     'operating_system' => @$userBrowserInfo['os_platform'],
+        //     'browser' => @$userBrowserInfo['browser'],
+        //     'ip' => @$userIpInfo['ip'],
+        //     'time' => @$userIpInfo['time']
+        // ],['email']);
+
+
         notify($user, 'PASS_RESET_CODE', [
             'code' => $code,
-            'operating_system' => @$userBrowserInfo['os_platform'],
-            'browser' => @$userBrowserInfo['browser'],
-            'ip' => @$userIpInfo['ip'],
-            'time' => @$userIpInfo['time']
+            'operating_system' => '4333',
+            'browser' =>'rewrwew',
+            'ip' => 'sddsd',
+            'time' => '343/43/34'
         ],['email']);
 
         $email = $user->email;
         session()->put('pass_res_mail',$email);
+
         $notify[] = ['success', 'Password reset email sent successfully'];
         return to_route('user.password.code.verify')->withNotify($notify);
        
@@ -106,7 +117,7 @@ class ForgotPasswordController extends Controller
             return to_route('user.password.request')->withNotify($notify);
         }
         $notify[] = ['success', 'You can change your password.'];
-        session()->flash('fpass_email', $request->email);
+        // session()->flash('fpass_email', $request->email);
         return to_route('user.password.reset', $code)->withNotify($notify);
     }
 
