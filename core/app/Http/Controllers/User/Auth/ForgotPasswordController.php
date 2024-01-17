@@ -70,7 +70,7 @@ class ForgotPasswordController extends Controller
         // ],['email']);
 
 
-        notify($user, 'code', [
+        notify($user, 'PASS_RESET_CODE', [
             'code' => $code,
          
         ],['email']);
