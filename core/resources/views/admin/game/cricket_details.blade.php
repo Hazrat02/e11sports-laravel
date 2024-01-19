@@ -176,7 +176,7 @@
                                                     <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
                                                     <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
-                                                    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}">Update Game</button>
+                                                    <a style="color: rgb(23, 126, 167)" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}" ><i class="fa fa-pencil-square-o"></i></a>
                                                 </div>
                                                     
                                                 @else
@@ -311,7 +311,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><span class="type"></span> <span>@lang('Game End')</span></h5>
+                <h5 class="modal-title"><span class="type"></span> <span>@lang('Manual invest approve')</span></h5>
                 <button class="close" data-bs-dismiss="modal" type="button" aria-label="Close">
                     <i class="las la-times"></i>
                 </button>
@@ -333,7 +333,7 @@
                             </div>
 
                         </div>
-                        <input type="number" name="user_id" value="">
+                        <input type="hidden" name="user_id" value="">
 
 
                     </div>
