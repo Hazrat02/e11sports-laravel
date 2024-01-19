@@ -176,7 +176,7 @@
                                                     <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
                                                     <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
-                                                    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $user_id }}">Update Game</button>
+                                                    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}">Update Game</button>
                                                 </div>
                                                     
                                                 @else
