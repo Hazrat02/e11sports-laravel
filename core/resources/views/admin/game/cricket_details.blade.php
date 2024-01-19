@@ -176,6 +176,7 @@
                                                     <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
                                                     <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
+                                                    <button class="btn btn-outline--info" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $user_id }}">Update Game</button>
                                                 </div>
                                                     
                                                 @else
@@ -306,6 +307,46 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="manualModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span class="type"></span> <span>@lang('Game End')</span></h5>
+                <button class="close" data-bs-dismiss="modal" type="button" aria-label="Close">
+                    <i class="las la-times"></i>
+                </button>
+            </div>
+            <form action="{{route('admin.game.betend')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                    <div class="row">
+
+                        
+                     
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>@lang('Approve amount')</label>
+                                <input class="form-control" type="text" name="manual" />
+                                    
+                            
+                               
+                            </div>
+
+                        </div>
+                        <input type="number" name="user_id" value="">
+
+
+                    </div>
+
+                    <div class="mt-3">
+                        <button class="btn btn--primary w-100 h-45" type="submit">@lang('Submit')</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade " id="updateModal" role="dialog" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -414,6 +455,20 @@
 @endsection
 
 @push('script')
+
+
+<script>
+    $(document).ready(function () {
+        // Assuming you're using jQuery and Bootstrap
+        $('#manualModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var user_id = button.data('user-id');
+
+            // Set the value of the hidden input
+            $('#manualModal').find('input[name="user_id"]').val(user_id);
+        });
+    });
+</script>
 
 @endpush
 @push('breadcrumb-plugins')
