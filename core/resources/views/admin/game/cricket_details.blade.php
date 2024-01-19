@@ -172,11 +172,11 @@
                                             <td>
                                                
                                                 @if ($bet->status == '1')
-                                                <div class="d-flex justify-content-evenly">
+                                                <div class="d-flex justify-content-between">
                                                     <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
                                                     <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
-                                                    <a style="color: rgb(23, 126, 167)" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}" ><i class="fa fa-check"></i></a>
+                                                    <a style="color: rgb(23, 126, 167)" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}" ><i class="fa fa-plus"></i></a>
                                                 </div>
                                                     
                                                 @else
@@ -326,7 +326,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>@lang('Approve amount')</label>
-                                <input class="form-control" type="text" name="manual" />
+                                <input class="form-control" required type="text" name="manual" />
                                     
                             
                                
