@@ -1,5 +1,34 @@
 @extends($activeTemplate . 'layouts.master')
 @section('content')
+    <div class="container">
+
+        <div class="row mb-3">
+
+            <div class="col-lg-4 col-md-6 mb-30">
+                <div class="d-widget dashbaord-widget-card d-widget-win">
+                    <div class="d-widget-icon">
+                        <i class="las la-trophy"></i>
+                    </div>
+                    <div class="d-widget-content">
+                        <p>@lang('Total Win')</p>
+                        <h2 class="title">{{ $win }} {{ $general->cur_text }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30">
+                <div class="d-widget dashbaord-widget-card d-widget-loss">
+                    <div class="d-widget-icon">
+                        <i class="las la-money-bill-alt"></i>
+                    </div>
+                    <div class="d-widget-content">
+                        <p>@lang('Total Loss')</p>
+                        <h2 class="title">{{ $loss }} {{ $general->cur_text }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <div class="pt-120 pb-120">
         <div class="container">
             <div class="row justify-content-center">
@@ -26,34 +55,40 @@
                                                 </td>
                                                 <td>
                                                     <div>
-                                                       
-                                                            {{ __($log->choose) }}
-                                                   
+
+                                                        {{ __($log->choose) }}
+
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div>
                                                         @if ($log->status == '2')
-                                                        <span class="badge badge--success"><i class="las la-smile"></i> @lang('Approved')</span>
-                                                    @else
-                                                    @if ($log->status == '1')
-                                                    <span class="badge badge--primary"><i class="las la-smile"></i> @lang('Pending')</span>
-                                                @else
-                                                    <span class="badge badge--danger"><i class="las la-frown"></i> @lang('Reject')</span>
-                                                @endif
-                                                    @endif
+                                                            <span class="badge badge--success"><i class="las la-smile"></i>
+                                                                @lang('Approved')</span>
+                                                        @else
+                                                            @if ($log->status == '1')
+                                                                <span class="badge badge--primary"><i
+                                                                        class="las la-smile"></i> @lang('Pending')</span>
+                                                            @else
+                                                                <span class="badge badge--danger"><i
+                                                                        class="las la-frown"></i> @lang('Reject')</span>
+                                                            @endif
+                                                        @endif
                                                     </div>
                                                 </td>
-                                                <td><span>{{ $general->cur_sym }}{{getAmount($log->amount) }}</span> </td>
+                                                <td><span>{{ $general->cur_sym }}{{ getAmount($log->amount) }}</span> </td>
                                                 <td>
                                                     @if ($log->winorloss == 'win')
-                                                        <span class="badge badge--success"><i class="las la-smile"></i> @lang('Win')</span>
+                                                        <span class="badge badge--success"><i class="las la-smile"></i>
+                                                            @lang('Win')</span>
                                                     @else
-                                                    @if ($log->winorloss != 'loss')
-                                                    <span class="badge badge--primary"><i class="las la-smile"></i> @lang('Pending')</span>
-                                                @else
-                                                    <span class="badge badge--danger"><i class="las la-frown"></i> @lang('Lost')</span>
-                                                @endif
+                                                        @if ($log->winorloss != 'loss')
+                                                            <span class="badge badge--primary"><i class="las la-smile"></i>
+                                                                @lang('Pending')</span>
+                                                        @else
+                                                            <span class="badge badge--danger"><i class="las la-frown"></i>
+                                                                @lang('Lost')</span>
+                                                        @endif
                                                     @endif
                                                 </td>
                                                 @php
@@ -64,16 +99,11 @@
                                                     <a class="btn
                                                      base--bg btn-sm 
                                                      
-                                                     detailBtn " 
-                                                     href="javascript:void(0)"
-                                                     
-                                                     data-info="{{ $details }}"
-                                                     
-                                                       {{-- @if ($deposit->status == Status::PAYMENT_REJECT)
+                                                     detailBtn "
+                                                        href="javascript:void(0)" data-info="{{ $details }}"
+                                                        {{-- @if ($deposit->status == Status::PAYMENT_REJECT)
                                                       data-admin_feedback="{{ $log }}" 
-                                                      @endif --}}
-                                                      
-                                                      >
+                                                      @endif --}}>
                                                         <i class="fa fa-desktop"></i>
                                                     </a>
                                                 </td>
@@ -125,9 +155,9 @@
                 var userData = $(this).data('info');
                 var html = '';
                 if (userData) {
-            
-                        if (userData.type != 'file') {
-                            html += 
+
+                    if (userData.type != 'file') {
+                        html +=
                             `<li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Match</span>
                                 <span">${userData.betdata.t1} vs ${userData.betdata.t2}</span>
@@ -148,10 +178,10 @@
                                 <span>Recieve amount</span>
                                 <span">${(userData.winamount + userData.amount)-userData.fee } $</span>
                             </li>`
-                            
-                            ;
-                        }
-                  
+
+                        ;
+                    }
+
                 }
 
                 modal.find('.userData').html(html);
