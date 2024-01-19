@@ -70,6 +70,7 @@ Route::middleware('admin')->group(function () {
         Route::post('update/{id}', 'update')->name('update');
         Route::post('status/{id}', 'status')->name('status');
         Route::post('chance-create', 'chanceCreate')->name('chance.create');
+        Route::post('manualapproved', 'manualapproved')->name('manualapproved');
         Route::get('game-log', 'gameLog')->name('log');
     });
 

@@ -19,7 +19,7 @@ class bet_log extends Model
         'winamount',
         'fee',
         'ratios',
-
+        'refund',
         'status',
 
     ];

@@ -14,14 +14,18 @@ use App\Rules\FileTypeValidate;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-class GameController extends Controller {
-    public function index() {
+
+class GameController extends Controller
+{
+    public function index()
+    {
         $pageTitle = "Games";
         $games     = Game::latest()->get();
         return view('admin.game.index', compact('pageTitle', 'games'));
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $game      = Game::findOrFail($id);
         $pageTitle = "Update " . $game->name;
         $view      = 'game_edit';
@@ -35,7 +39,8 @@ class GameController extends Controller {
         return view('admin.game.' . $view, compact('pageTitle', 'game', 'bonuses'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'name'        => 'required',
             'min'         => 'required|numeric',
@@ -85,7 +90,7 @@ class GameController extends Controller {
         if ($request->hasFile('image')) {
             try {
                 $game->image = fileUploader($request->image, getFilePath('game'), getFileSize('game'), $oldImage);
-            } catch (\Exception$e) {
+            } catch (\Exception $e) {
                 $notify[] = ['error', 'Could not upload the Image.'];
                 return back()->withNotify($notify);
             }
@@ -97,14 +102,16 @@ class GameController extends Controller {
         return back()->withNotify($notify);
     }
 
-    public function gameLog(Request $request) {
+    public function gameLog(Request $request)
+    {
 
         $pageTitle = "Game Logs";
         $logs      = GameLog::where('status', Status::ENABLE)->searchable(['user:username'])->filter(['win_status'])->with('user', 'game')->latest('id')->paginate(getPaginate());
         return view('admin.game.log', compact('pageTitle', 'logs'));
     }
 
-    public function chanceCreate(Request $request) {
+    public function chanceCreate(Request $request)
+    {
 
         $request->validate([
             'chance'    => 'required|array|min:1',
@@ -130,7 +137,8 @@ class GameController extends Controller {
         return back()->withNotify($notify);
     }
 
-    public function status($id) {
+    public function status($id)
+    {
         $game = Game::findOrFail($id);
 
         if ($game->status == Status::ENABLE) {
@@ -144,124 +152,119 @@ class GameController extends Controller {
         $game->save();
         return back()->withNotify($notify);
     }
-    public function cricket(Request $request) {
-        $game=bet::orderBy('id', 'desc')->where('game','cricket')->where('status',$request->status)->paginate(getPaginate());
-       
+    public function cricket(Request $request)
+    {
+        $game = bet::orderBy('id', 'desc')->where('game', 'cricket')->where('status', $request->status)->paginate(getPaginate());
+
         if ($request->status == '1') {
-            $inf="Upcoming Game";
+            $inf = "Upcoming Game";
         } else {
             if ($request->status == '2') {
-                $inf="Betting Game";
+                $inf = "Betting Game";
             } else {
-                $inf="Success Game";
+                $inf = "Success Game";
             }
-            
         }
-        
-        $pageTitle='Cricket Manage';
 
-        return view('admin.game.cricket', compact('pageTitle','game','inf'));
+        $pageTitle = 'Cricket Manage';
+
+        return view('admin.game.cricket', compact('pageTitle', 'game', 'inf'));
     }
-    public function basketball(Request $request) {
-    
-        $game=bet::orderBy('id', 'desc')->where('game','basketball')->where('status',$request->status)->paginate(getPaginate());
+    public function basketball(Request $request)
+    {
+
+        $game = bet::orderBy('id', 'desc')->where('game', 'basketball')->where('status', $request->status)->paginate(getPaginate());
         if ($request->status == '1') {
-            $inf="Upcoming Game";
+            $inf = "Upcoming Game";
         } else {
             if ($request->status == '2') {
-                $inf="Betting Game";
+                $inf = "Betting Game";
             } else {
-                $inf="Success Game";
+                $inf = "Success Game";
             }
-            
         }
 
-        $pageTitle='Basketball Manage';
+        $pageTitle = 'Basketball Manage';
 
-        return view('admin.game.basketball', compact('pageTitle','game','inf'));
+        return view('admin.game.basketball', compact('pageTitle', 'game', 'inf'));
     }
-    public function football(Request $request) {
-    
-        $game=bet::orderBy('id', 'desc')->where('game','football')->where('status',$request->status)->paginate(getPaginate());
-       
+    public function football(Request $request)
+    {
+
+        $game = bet::orderBy('id', 'desc')->where('game', 'football')->where('status', $request->status)->paginate(getPaginate());
+
         if ($request->status == '1') {
-            $inf="Upcoming Game";
+            $inf = "Upcoming Game";
         } else {
             if ($request->status == '2') {
-                $inf="Betting Game";
+                $inf = "Betting Game";
             } else {
-                $inf="Success Game";
+                $inf = "Success Game";
             }
-            
         }
-        
-        $pageTitle='Football Manage';
 
-        return view('admin.game.football', compact('pageTitle','game','inf'));
+        $pageTitle = 'Football Manage';
+
+        return view('admin.game.football', compact('pageTitle', 'game', 'inf'));
     }
-    public function cricketinf( Request $request) {
+    public function cricketinf(Request $request)
+    {
 
-        $game=bet::where('id',$request->id)->get()->first();
-        $log=bet_log::where('game_id',$request->id)->with('user');
+        $game = bet::where('id', $request->id)->get()->first();
+        $log = bet_log::where('game_id', $request->id)->with('user');
 
-     
-        $gamelog=$log->orderBy('id', 'desc')->get();
-        $teamAsuccess=$log->where('status','2')->where('choose',$game->t1)->get();
-        
-        $teamBsuccess=bet_log::where('game_id',$request->id)->where('status','2')->where('choose',$game->t2)->get();
+
+        $gamelog = $log->orderBy('id', 'desc')->get();
+        $teamAsuccess = $log->where('status', '2')->where('choose', $game->t1)->get();
+
+        $teamBsuccess = bet_log::where('game_id', $request->id)->where('status', '2')->where('choose', $game->t2)->get();
         // dd($teamBsuccess);
-        $pageTitle=$game->game.' '.'details';
-        return view('admin.game.cricket_details', compact('pageTitle','game','gamelog','teamAsuccess','teamBsuccess'));
-
+        $pageTitle = $game->game . ' ' . 'details';
+        return view('admin.game.cricket_details', compact('pageTitle', 'game', 'gamelog', 'teamAsuccess', 'teamBsuccess'));
     }
-    public function betinf( Request $request) {
-        $today=Carbon::today();
+    public function betinf(Request $request)
+    {
+        $today = Carbon::today();
 
         if ($request->status == '4') {
-            $game_log=bet_log::whereDate('created_at',$today)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
+            $game_log = bet_log::whereDate('created_at', $today)->orderBy('id', 'desc')->with('user')->with('betdata')->paginate(getPaginate());
         } else {
-            $game_log=bet_log::where('status',$request->status)->whereDate('created_at',$today)->orderBy('id','desc')->with('user')->with('betdata')->paginate(getPaginate());
+            $game_log = bet_log::where('status', $request->status)->whereDate('created_at', $today)->orderBy('id', 'desc')->with('user')->with('betdata')->paginate(getPaginate());
         }
-        
 
-     
-      
-        $pageTitle='Betting details';
-        return view('admin.game.bet_details', compact('pageTitle','game_log'));
 
+
+
+        $pageTitle = 'Betting details';
+        return view('admin.game.bet_details', compact('pageTitle', 'game_log'));
     }
-    public function betstore( Request $request) {
+    public function betstore(Request $request)
+    {
 
-     
+
         if ($request->hasFile('t1_img')) {
             $file = $request->File('t1_img');
-           
-            
-            $name =rand(0000000,999999) .$file->getClientOriginalName();
+
+
+            $name = rand(0000000, 999999) . $file->getClientOriginalName();
             $file->move(public_path('img/game'), $name);
-          
-            $path=asset('core/public/img/game/');
-           $t1_url= $path.'/'.$name;
-          
-        }else{
-            $t1_url='';
-       
-            
+
+            $path = asset('core/public/img/game/');
+            $t1_url = $path . '/' . $name;
+        } else {
+            $t1_url = '';
         }
         if ($request->hasFile('t2_img')) {
             $file = $request->File('t2_img');
-           
-            
-            $name =rand(0000000,999999) .$file->getClientOriginalName();
+
+
+            $name = rand(0000000, 999999) . $file->getClientOriginalName();
             $file->move(public_path('img/game'), $name);
-          
-            $path=asset('core/public/img/game/');
-           $t2_url= $path.'/'.$name;
-          
-        }else{
-            $t2_url='';
-       
-            
+
+            $path = asset('core/public/img/game/');
+            $t2_url = $path . '/' . $name;
+        } else {
+            $t2_url = '';
         }
         if ($request->ratios == '1') {
             $t1_ratios = $request->ratio_x;
@@ -270,276 +273,278 @@ class GameController extends Controller {
             $t2_ratios = $request->ratio_x;
             $t1_ratios = 1 / $request->ratio_x;
         }
-        
+
         // $startDateTime = \DateTime::createFromFormat('Y-m-d\TH:i', $request->start)->format('Y-m-d H:i:s');
 
 
         bet::create([
-            'game'=>$request->game,
-            't1'=>$request->t1,
-            't2'=>$request->t2,
-            't1_img'=>$t1_url,
-            't2_img'=>$t2_url,
-            't1_ratio'=>$t1_ratios,
-            't2_ratio'=>$t2_ratios,
-            'min'=>$request->min,
-            'max'=>$request->max,
-            'status'=>$request->status,
-            'fee'=>$request->fee,
-            'type'=>$request->type,
-            'start'=>$request->start,
-            'ratios'=>$request->ratios,
+            'game' => $request->game,
+            't1' => $request->t1,
+            't2' => $request->t2,
+            't1_img' => $t1_url,
+            't2_img' => $t2_url,
+            't1_ratio' => $t1_ratios,
+            't2_ratio' => $t2_ratios,
+            'min' => $request->min,
+            'max' => $request->max,
+            'status' => $request->status,
+            'fee' => $request->fee,
+            'type' => $request->type,
+            'start' => $request->start,
+            'ratios' => $request->ratios,
 
 
-    
+
         ]);
 
 
 
         $notify[] = ['success', 'Game Create successfully'];
         return back()->withNotify($notify);
-     
-   
-
-      
-
-
-    
     }
-    public function betupdate( Request $request) {
-        $bet=bet::where('id',$request->game_id)->get()->first();
-     
+    public function betupdate(Request $request)
+    {
+        $bet = bet::where('id', $request->game_id)->get()->first();
+
         if ($request->hasFile('t1_img')) {
             $file = $request->File('t1_img');
-           
-            
-            $name =rand(0000000,999999) .$file->getClientOriginalName();
+
+
+            $name = rand(0000000, 999999) . $file->getClientOriginalName();
             $file->move(public_path('img/game'), $name);
-          
-            $path=asset('core/public/img/game/');
-           $t1_url= $path.'/'.$name;
-          
-        }else{
-            $t1_url=$bet->t1_img;
-       
-            
+
+            $path = asset('core/public/img/game/');
+            $t1_url = $path . '/' . $name;
+        } else {
+            $t1_url = $bet->t1_img;
         }
         if ($request->hasFile('t2_img')) {
             $file = $request->File('t2_img');
-           
-            
-            $name =rand(0000000,999999) .$file->getClientOriginalName();
+
+
+            $name = rand(0000000, 999999) . $file->getClientOriginalName();
             $file->move(public_path('img/game'), $name);
-          
-            $path=asset('core/public/img/game/');
-           $t2_url= $path.'/'.$name;
-          
-        }else{
-            $t2_url=$bet->t2_img;
-       
-            
+
+            $path = asset('core/public/img/game/');
+            $t2_url = $path . '/' . $name;
+        } else {
+            $t2_url = $bet->t2_img;
         }
 
         $bet->update([
-            't1'=>$request->t1,
-            't2'=>$request->t2,
-            't1_img'=>$t1_url,
-            't2_img'=>$t2_url,
-       
-            'min'=>$request->min,
-            'max'=>$request->max,
-            'fee'=>$request->fee,
-            'type'=>$request->type,
+            't1' => $request->t1,
+            't2' => $request->t2,
+            't1_img' => $t1_url,
+            't2_img' => $t2_url,
 
-    
+            'min' => $request->min,
+            'max' => $request->max,
+            'fee' => $request->fee,
+            'type' => $request->type,
+
+
         ]);
 
 
 
         $notify[] = ['success', 'Game Update successfully'];
         return back()->withNotify($notify);
-     
-   
-
-      
-
-
-    
     }
-    public function betstatus( Request $request) {
+    public function betstatus(Request $request)
+    {
 
-     
-       $bet=bet::find($request->id);
-        
 
-       $bet->update([
+        $bet = bet::find($request->id);
 
-            'status'=>$request->status,
 
-    
+        $bet->update([
+
+            'status' => $request->status,
+
+
         ]);
 
 
 
         $notify[] = ['success', 'Game Change successfully'];
         return back()->withNotify($notify);
-   
-
-      
-
-
-    
     }
-    public function gamestatus( Request $request) {
+    public function gamestatus(Request $request)
+    {
 
-     
-       $bet=bet_log::where('id',$request->id);
-       if ($request->status == '3') {
-        $bet2=$bet->with('user')->get()->first();
-        $user=User::where('id',$bet2->user_id);
 
-        
-        $user = $bet2->user;
-   
+        $bet = bet_log::where('id', $request->id);
+        if ($request->status == '3') {
+            $bet2 = $bet->with('user')->get()->first();
+            $user = User::where('id', $bet2->user_id);
 
-        $user->balance += $bet2->amount;
-        $user->save();
-       }
-        
 
-       $bet->update([
+            $user = $bet2->user;
 
-            'status'=>$request->status,
 
-    
+            $user->balance += $bet2->amount;
+            $user->save();
+        }
+
+
+        $bet->update([
+
+            'status' => $request->status,
+
+
         ]);
 
 
 
         $notify[] = ['success', 'Betting data Change successfully'];
         return back()->withNotify($notify);
-   
-
-      
-
-
-    
     }
-    public function isbet( Request $request) {
+    public function manualapproved(Request $request)
+    {
 
-     
-       $bet=bet::where('id',$request->id);
-        
+        $request->validate([
+            'manual' => 'required',
+            'user_id' => 'required',
+        ]);
 
-       $bet->update([
+        $bet2 = bet_log::where('id', $request->user_id);
 
-            'isbet'=>$request->status,
+        $bet = $bet2->get()->first();
+        $gamebet = bet::where('id', $bet->game_id)->get()->first();
+        $winamount =  $bet->ratios * $request->manual;
+        $fee = ($winamount / 100) * $gamebet->fee;
+        $refund = $bet->amount - $request->manual;
 
-    
+        if ($request->manual > $bet->amount) {
+
+            $bet2->update(
+                [
+                    'amount' => $request->manual,
+                    'winamount' => $winamount,
+                    'fee' => $fee,
+                    'status' => '2',
+                    'refund' => $bet->amount,
+
+
+                ]
+            );
+            $bet3 = $bet2->with('user')->get()->first();
+
+
+            $user = $bet3->user;
+
+
+            $user->balance += $refund;
+            $user->save();
+
+            $notify[] = ['success', 'Manual investment approved'];
+            return back()->withNotify($notify);
+        } else {
+            $notify[] = ['error', 'This user investment is low'];
+            return back()->withNotify($notify);
+        }
+    }
+    public function isbet(Request $request)
+    {
+
+
+        $bet = bet::where('id', $request->id);
+
+
+        $bet->update([
+
+            'isbet' => $request->status,
+
+
         ]);
 
 
 
         $notify[] = ['success', 'Betting stop/start successfully'];
         return back()->withNotify($notify);
-   
-
-      
-
-
-    
     }
-    public function gamedelete( Request $request) {
+    public function gamedelete(Request $request)
+    {
 
-     
-       $bet=bet::where('id',$request->id)->delete();
-        
+
+        $bet = bet::where('id', $request->id)->delete();
+
 
 
 
 
         $notify[] = ['success', 'Game Delete successfully!'];
         return back()->withNotify($notify);
-   
-
-      
-
-
-    
     }
-    public function ratios( Request $request) {
+    public function ratios(Request $request)
+    {
 
-     
-       $bet=bet::where('id',$request->game_id);
-       if ($request->ratios == '1') {
-        $t1_ratios = $request->ratio_x;
-        $t2_ratios = 1 / $request->ratio_x;
-    } else {
-        $t2_ratios = $request->ratio_x;
-        $t1_ratios = 1 / $request->ratio_x;
-    }
 
-       $bet->update([
+        $bet = bet::where('id', $request->game_id);
+        if ($request->ratios == '1') {
+            $t1_ratios = $request->ratio_x;
+            $t2_ratios = 1 / $request->ratio_x;
+        } else {
+            $t2_ratios = $request->ratio_x;
+            $t1_ratios = 1 / $request->ratio_x;
+        }
 
-            't1_ratio'=>$t1_ratios,
-            't2_ratio'=>$t2_ratios,
+        $bet->update([
 
-    
+            't1_ratio' => $t1_ratios,
+            't2_ratio' => $t2_ratios,
+
+
         ]);
 
 
 
         $notify[] = ['success', 'Ratios Change successfully'];
         return back()->withNotify($notify);
-   
-
-      
-
-
-    
     }
-    public function betend( Request $request) {
+    public function betend(Request $request)
+    {
 
-     
-       $bet=bet::where('id',$request->game_id);
-       $bet2=$bet->get()->first();
 
-       $betData=bet_log::where('game_id',$request->game_id)->where('status','2')->with('user')->get();
+        $bet = bet::where('id', $request->game_id);
+        $bet2 = $bet->get()->first();
 
-       foreach ($betData as $item) {
+        $betData = bet_log::where('game_id', $request->game_id)->where('status', '2')->with('user')->get();
 
-        if ($item->choose == $request->win) {
-            $user = $item->user;
+        foreach ($betData as $item) {
 
-            $amount= ($item->amount + $item->winamount) - $item->fee;
-   
+            if ($item->choose == $request->win) {
+                $user = $item->user;
 
-            $user->balance += $amount;
-            $user->save();
-            $status ='win';
-        } else {
-            $status ='loss';
+                $amount = ($item->amount + $item->winamount) - $item->fee;
+
+
+                $user->balance += $amount;
+                $user->save();
+                $status = 'win';
+            } else {
+                $status = 'loss';
+            }
+
+            $item->update([
+                'winorloss' => $status,
+            ]);
         }
-        
-        $item->update([
-            'winorloss'=> $status,
-        ]);
-    }
-    $bet->update(
-        [
-            'status'=>'3',
-            'win'=>$request->win,
-        ]
+        $bet->update(
+            [
+                'status' => '3',
+                'win' => $request->win,
+            ]
         );
         $notify[] = ['success', 'Betting Pay  successfully'];
-        return redirect()->route('admin.game.'.$bet2->game, ['status' => '3'])->withNotify($notify);
-    
+        return redirect()->route('admin.game.' . $bet2->game, ['status' => '3'])->withNotify($notify);
+
         // return back()->withNotify($notify);
-   
-
-      
 
 
-    
+
+
+
+
     }
 }

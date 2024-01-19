@@ -173,10 +173,10 @@
                                                
                                                 @if ($bet->status == '1')
                                                 <div class="d-flex justify-content-between">
-                                                    <a style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
+                                                    <a class="block" style="color: rgb(146, 9, 9)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '3']) }}"><i class="fa fa-window-close"></i></a>
 
-                                                    <a style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
-                                                    <a style="color: rgb(23, 126, 167)" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}" ><i class="fa fa-plus"></i></a>
+                                                    <a  class="block" style="color: rgb(23, 167, 50)"  href="{{ route('admin.game.gamestatus', ['id' => $bet->id, 'status' => '2']) }}"><i class="fa fa-check"></i></a>
+                                                    <a  class="block" style="color: rgb(23, 126, 167)" data-bs-toggle="modal" type="button" data-bs-target="#manualModal" data-user-id="{{ $bet->id }}" ><i class="fa fa-plus"></i></a>
                                                 </div>
                                                     
                                                 @else
@@ -316,7 +316,7 @@
                     <i class="las la-times"></i>
                 </button>
             </div>
-            <form action="{{route('admin.game.betend')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.game.manualapproved')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="row">
@@ -333,7 +333,7 @@
                             </div>
 
                         </div>
-                        <input type="hidden" name="user_id" value="">
+                        <input  type="hidden" name="user_id" value="">
 
 
                     </div>
