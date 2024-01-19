@@ -58,6 +58,11 @@ class ForgotPasswordController extends Controller
         $password->created_at = \Carbon\Carbon::now();
         $password->save();
 
+
+
+
+
+
         $userIpInfo = getIpInfo();
         $userBrowserInfo = osBrowser();
 

@@ -11,7 +11,12 @@
 
 <div class="row">
     <div class="col-12">
+        @php
+        $t1_need_invest=$teamBsuccess->sum('winamount')-$teamAsuccess->sum('amount');
+        $t2_need_invest=$teamAsuccess->sum('winamount')-$teamBsuccess->sum('amount');
+    @endphp
         <div class="row gy-4">
+
 
             <div class="col-xxl-3 col-sm-6">
                 <div class="widget-two style--two box--shadow2 b-radius--5 bg--19">
@@ -21,6 +26,11 @@
                     <div class="widget-two__content">
                         <h3 class="text-white">{{ $general->cur_sym }}{{ $teamAsuccess->sum('amount') }}</h3>
                         <p class="text-white">@lang('Team A - '){{$game->t1}} Invest</p>
+                  
+                        @if ($t1_need_invest > '0')
+                        <p class="text-white">need more invest = {{$t1_need_invest}}</p>
+                        @endif
+                        
                     </div>
                     
                 </div>
@@ -33,7 +43,11 @@
                     </div>
                     <div class="widget-two__content">
                         <h3 class="text-white">{{ $general->cur_sym }}{{ $teamBsuccess->sum('amount') }}</h3>
+                       
                         <p class="text-white">@lang('Team B - '){{$game->t2}} Invest</p>
+                        @if ($t2_need_invest > '0')
+                        <p class="text-white">need more invest = {{$t2_need_invest}}</p>
+                        @endif
                     </div>
                 </div>
             </div>
