@@ -136,7 +136,9 @@
                                             <td>
                                                 
                                                 {{ __($general->cur_sym) }} {{ $bet->amount  }}
-        
+                                                @if ($bet->refund)
+                                                    / {{ $bet->refund }}
+                                                @endif
                                             </td>
                                             
                                             <td>
