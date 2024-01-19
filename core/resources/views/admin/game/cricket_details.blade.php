@@ -28,7 +28,7 @@
                         <p class="text-white">@lang('Team A - '){{$game->t1}} Invest</p>
                   
                         @if ($t1_need_invest > '0')
-                        <p class="text-white">need more invest = {{$t1_need_invest}}</p>
+                        <p class="text-danger">need more invest = {{$t1_need_invest}} $</p>
                         @endif
                         
                     </div>
@@ -46,7 +46,7 @@
                        
                         <p class="text-white">@lang('Team B - '){{$game->t2}} Invest</p>
                         @if ($t2_need_invest > '0')
-                        <p class="text-white">need more invest = {{$t2_need_invest}}</p>
+                        <p class="text-danger">need more invest = {{$t2_need_invest}} $</p>
                         @endif
                     </div>
                 </div>
