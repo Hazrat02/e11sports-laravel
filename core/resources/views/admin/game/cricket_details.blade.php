@@ -151,7 +151,10 @@
                                             <td>
                                                 
                                                 {{ __($general->cur_sym) }} {{ $bet->amount  }}
-        
+                                                @if ($bet->refund)
+
+                                                 / {{ __($general->cur_sym) }} {{ $bet->refund  }}
+                                                @endif
                                             </td>
                                             
                                             <td>
@@ -326,7 +329,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>@lang('Approve amount')</label>
-                                <input class="form-control" required type="number" name="manual" />
+                                <input class="form-control" required type="text" name="manual" />
                                     
                             
                                
