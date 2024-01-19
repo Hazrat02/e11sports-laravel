@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
 
-        <div class="row mb-3">
+        <div class="row mb-3 mt-2 justify-content-around align-content-center">
 
             <div class="col-lg-4 col-md-6 mb-30">
                 <div class="d-widget dashbaord-widget-card d-widget-win">
@@ -29,7 +29,7 @@
         </div>
 
     </div>
-    <div class="pt-120 pb-120">
+    <div class="pb-120">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -76,7 +76,11 @@
                                                         @endif
                                                     </div>
                                                 </td>
-                                                <td><span>{{ $general->cur_sym }}{{ getAmount($log->amount) }}</span> </td>
+                                                <td><span>{{ $general->cur_sym }}{{ getAmount($log->amount) }}
+                                                @if ($log->refund)
+                                                    / {{ getAmount($log->refund) }}
+                                                @endif
+                                                </span> </td>
                                                 <td>
                                                     @if ($log->winorloss == 'win')
                                                         <span class="badge badge--success"><i class="las la-smile"></i>
