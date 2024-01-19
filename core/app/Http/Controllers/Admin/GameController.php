@@ -415,7 +415,7 @@ class GameController extends Controller
         $fee = ($winamount / 100) * $gamebet->fee;
         $refund = $bet->amount - $request->manual;
         // dd( $bet->amount,$request->manual);
-        if ($request->manual > $bet->amount) {
+        if ($request->manual < $bet->amount) {
 
             $bet2->update(
                 [

@@ -326,7 +326,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>@lang('Approve amount')</label>
-                                <input class="form-control" required type="text" name="manual" />
+                                <input class="form-control" required type="number" name="manual" />
                                     
                             
                                
