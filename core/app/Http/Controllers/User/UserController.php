@@ -226,7 +226,7 @@ class UserController extends Controller {
         $play = bet_log::where('user_id', auth()->id())->latest();
         $logs      = $play->with('betdata')->paginate(getPaginate());
         $loss      = $play->where('winorloss', 'loss')->sum('amount');
-        $win      = $play->where('winorloss', 'win')->sum('amount');
+        $win      = $play->where('winorloss', 'win')->sum('winamount');
         return view($this->activeTemplate . 'user.bet_log', compact('pageTitle', 'logs','win','loss'));
     }
 
