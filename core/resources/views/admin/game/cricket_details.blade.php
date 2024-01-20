@@ -289,10 +289,14 @@
                                      value="{{$game->t1}}">
                                         {{$game->t1}}
                                     </option>
+                                    <option value="{{$game->t2}}">
+                                        {{$game->t2}}
+                                    </option>
+                                    <option value="drow">
+                                        Drow
+                                    </option>
+                                   
                                 </select>
-                                <option value="drow">
-                                    Drow
-                                </option>
                                
                             </div>
 
