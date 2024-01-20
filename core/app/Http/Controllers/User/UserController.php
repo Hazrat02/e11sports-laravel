@@ -25,10 +25,15 @@ class UserController extends Controller {
         $widget['total_balance']   = $user->balance;
         $widget['total_deposit']   = Deposit::successful()->where('user_id', $user->id)->sum('amount');
         $widget['total_withdrawn'] = Withdrawal::approved()->where('user_id', $user->id)->sum('amount');
-
-        $widget['total_invest'] = GameLog::where('user_id', $user->id)->sum('invest');
-        $widget['total_win']    = GameLog::win()->where('user_id', $user->id)->sum('invest');
-        $widget['total_loss']   = GameLog::loss()->where('user_id', $user->id)->sum('invest');
+        $casino_invest=GameLog::where('user_id', $user->id)->sum('invest');
+        $bet_invest=bet_log::where('user_id', $user->id)->sum('amount');
+        $casino_win=GameLog::win()->where('user_id', $user->id)->sum('invest');
+        $bet_win=bet_log::where('user_id', $user->id)->where('winorloss'.'win')->sum('winamount');
+        $casino_loss=GameLog::loss()->where('user_id', $user->id)->sum('invest');
+        $bet_loss=bet_log::where('user_id', $user->id)->where('winorloss'.'loss')->sum('amount');
+        $widget['total_invest'] = $casino_invest + $bet_invest;
+        $widget['total_win']    =$casino_win + $bet_win ;
+        $widget['total_loss']   = $casino_loss + $bet_loss ;
         return view($this->activeTemplate . 'user.dashboard', compact('pageTitle', 'games', 'widget', 'user'));
     }
 
