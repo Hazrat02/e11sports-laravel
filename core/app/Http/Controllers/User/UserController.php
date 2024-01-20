@@ -224,9 +224,10 @@ class UserController extends Controller {
     public function betLog() {
         $pageTitle = "Bet Game Logs";
         $play = bet_log::where('user_id', auth()->id())->latest();
+        $play2 = $play->get();
         $logs      = $play->with('betdata')->paginate(getPaginate());
-        $loss      = $play->where('winorloss', 'loss')->sum('amount');
-        $win      = $play->where('winorloss', 'win')->sum('winamount');
+        $loss      = $play2->where('winorloss', 'loss')->sum('amount');
+        $win      = $play2->where('winorloss', 'win')->sum('winamount');
         return view($this->activeTemplate . 'user.bet_log', compact('pageTitle', 'logs','win','loss'));
     }
 
