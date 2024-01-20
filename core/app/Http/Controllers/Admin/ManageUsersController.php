@@ -104,7 +104,8 @@ class ManageUsersController extends Controller {
         $totalTransaction = Transaction::where('user_id', $user->id)->count();
         $countries        = json_decode(file_get_contents(resource_path('views/partials/country.json')));
 
-        $widget['total_played']      = GameLog::where('user_id', $user->id)->count();
+        $casino_played     = GameLog::where('user_id', $user->id)->count();
+        $bet_played   = bet_log::where('user_id', $user->id)->count();
 
         $casino_invest=GameLog::where('user_id', $user->id)->sum('invest');
         $bet_invest=bet_log::where('user_id', $user->id)->sum('amount');
@@ -115,6 +116,7 @@ class ManageUsersController extends Controller {
         $widget['total_invest'] = $casino_invest + $bet_invest;
         $widget['total_win_amount']    =$casino_win + $bet_win ;
         $widget['total_loss_amount']   = $casino_loss + $bet_loss ;
+        $widget['total_played']      =$casino_played  + $bet_played   ;
 
 
         $game_log=bet_log::where('user_id', $user->id)->orderBy('id','desc')->with('betdata')->paginate(getPaginate());
