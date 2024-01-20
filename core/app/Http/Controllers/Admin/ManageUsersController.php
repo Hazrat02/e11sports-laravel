@@ -105,9 +105,18 @@ class ManageUsersController extends Controller {
         $countries        = json_decode(file_get_contents(resource_path('views/partials/country.json')));
 
         $widget['total_played']      = GameLog::where('user_id', $user->id)->count();
-        $widget['total_invest']      = GameLog::where('user_id', $user->id)->sum('invest');
-        $widget['total_win_amount']  = GameLog::where('user_id', $user->id)->where('win_status', '!=', 0)->sum('invest');
-        $widget['total_loss_amount'] = GameLog::loss()->where('user_id', $user->id)->sum('invest');
+
+        $casino_invest=GameLog::where('user_id', $user->id)->sum('invest');
+        $bet_invest=bet_log::where('user_id', $user->id)->sum('amount');
+        $casino_win=GameLog::where('user_id', $user->id)->where('win_status', '!=', 0)->sum('invest');
+        $bet_win=bet_log::where('user_id', $user->id)->where('winorloss','win')->sum('winamount');
+        $casino_loss=GameLog::loss()->where('user_id', $user->id)->sum('invest');
+        $bet_loss=bet_log::where('user_id', $user->id)->where('winorloss','loss')->sum('amount');
+        $widget['total_invest'] = $casino_invest + $bet_invest;
+        $widget['total_win_amount']    =$casino_win + $bet_win ;
+        $widget['total_loss_amount']   = $casino_loss + $bet_loss ;
+
+
         $game_log=bet_log::where('user_id', $user->id)->orderBy('id','desc')->with('betdata')->paginate(getPaginate());
 
         return view('admin.users.detail', compact('pageTitle', 'user', 'totalDeposit', 'totalWithdrawals', 'totalTransaction', 'countries', 'widget','game_log'));
