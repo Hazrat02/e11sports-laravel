@@ -36,6 +36,7 @@ class AdminController extends Controller {
         $widget['today_players']          = bet_log::whereDate('created_at',$today)->count();
         $widget['today_accept']          = bet_log::whereDate('created_at',$today)->where('status', '2')->count();
         $widget['all_ravenue']          = bet_log::where('winorloss', 'win')->sum('fee');
+
         $widget['email_unverified_users']  = User::emailUnverified()->count();
         $widget['mobile_unverified_users'] = User::mobileUnverified()->count();
         $widget['total_games']             = Game::count();

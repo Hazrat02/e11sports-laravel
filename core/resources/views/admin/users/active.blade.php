@@ -44,8 +44,9 @@
                                             </td>
                                             
                                             <td>
-                                                
-                                                {{ $bet->ratios  }} X
+                                                {{ number_format($bet->ratios, 1) }} X
+
+                                                {{-- {{ $bet->ratios  }} X --}}
         
                                             </td>
                                             

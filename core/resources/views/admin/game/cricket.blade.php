@@ -73,13 +73,17 @@
                                         </td>
                                         
                                         <td>
+                                            {{ number_format($bet->t1_ratio, 1) }} X
+
                                             
-                                            {{ $bet->t1_ratio  }} X
+                                            {{-- {{ $bet->t1_ratio  }} X --}}
     
                                         </td>
                                         <td>
+                                            {{ number_format($bet->t2_ratio, 1) }} X
+
                                             
-                                            {{ $bet->t2_ratio  }} X
+                                            {{-- {{ $bet->t2_ratio  }} X --}}
     
                                         </td>
                                         @if ($inf == 'Upcoming Game')

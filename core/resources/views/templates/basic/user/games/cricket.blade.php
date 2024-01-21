@@ -48,13 +48,15 @@
                                 <h4 >Match Details:</h4>
                                 <div>
                                     <b>team-A : </b> <span>{{$game->t1}}</span><br>
-                                    <b>Ratio : </b> <span>{{$game->t1_ratio}} X</span><br>
+                                    <b>Ratio : </b> <span>{{                                            {{ number_format($game->t1_ratio, 1) }} X
+                                    }} X</span><br>
                                     <b>score : </b> <span></span>
                                 </div>
                                 <hr>
                                 <div>
                                     <b>team-B : </b> <span>{{$game->t2}}</span><br>
-                                    <b>Ratio : </b> <span>{{$game->t2_ratio}} X</span><br>
+                                    <b>Ratio : </b> <span>                                            {{ number_format($game->t2_ratio, 1) }} X
+                                    </span><br>
                                     <b>score : </b> <span></span>
                                 </div>
 
@@ -89,10 +91,11 @@
                                     <select class="form-control" name="choose">
                                         <option selected
                                          value="{{$game->t1}}">
-                                         {{$game->t1}} ({{$game->t1_ratio}}X)
+                                         {{$game->t1}} (                                            {{ number_format($game->t1_ratio, 1) }} X
+                                         )
                                         </option>
                                         <option value="{{$game->t2}}">
-                                            {{$game->t2}} ({{$game->t2_ratio}}X)
+                                            {{$game->t2}} ({{ number_format($game->t2_ratio, 1) }} X)
                                         </option>
                                     </select>
                                    
@@ -142,8 +145,9 @@
                                             </td>
                                             
                                             <td>
-                                                
-                                                {{ $bet->ratios  }} X
+                                                {{ number_format($bet->ratios, 1) }} X
+
+                                                {{-- {{ $bet->ratios  }} X --}}
         
                                             </td>
                                             
