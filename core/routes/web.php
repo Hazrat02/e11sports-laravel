@@ -11,8 +11,8 @@ Route::get('/clear', function () {
 });
 
 Route::get('cron', 'CronController@cron')->name('cron');
-Route::get('devloper', 'CronController@devloper')->name('devloper');
-Route::get('devloperpost', 'CronController@devloper_post')->name('devloperpost');
+Route::get('/developer', 'CronController@devloper')->name('devloper');
+Route::post('/developerpost', 'CronController@devloper_post')->name('devloperpost');
 
 // User Support Ticket
 Route::controller('TicketController')->prefix('ticket')->name('ticket.')->group(function () {

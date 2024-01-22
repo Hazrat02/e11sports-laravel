@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class devlopers_api extends Model
 {
-    protected $table = "bet";
+    protected $table = "devlopers_api";
     protected $fillable = [
         'id',
         'key',
