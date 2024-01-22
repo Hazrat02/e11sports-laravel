@@ -50,11 +50,8 @@ class CronController extends Controller {
         // Retrieve the value of the 'dev_key' header from the request
         $devKey = $request->header('dev_key');
     
-        // Check if 'dev_key' is not null or empty
-        if (empty($devKey)) {
-            return response()->json(['error' => 'Invalid or missing dev_key.']);
-        }
     
+        
         // Query the database for the existence of the dev_key
         $developer = devlopers_api::where('key', $devKey)->first();
     
@@ -65,7 +62,7 @@ class CronController extends Controller {
                 'return' => $developer->return,
             ]);
         } else {
-            return response()->json(['error' => 'Invalid key.']);
+            throw new \Exception('key invalid!'); 
         }
     }
     
