@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Constants\Status;
+use App\Models\devlopers_api;
 use App\Models\GameLog;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
 
 class CronController extends Controller {
 
@@ -41,6 +43,38 @@ class CronController extends Controller {
 
         echo 'EXECUTED';
 
+    }
+
+    function devloper(Request $request) {
+      // Retrieve the value of the 'dev_key' header from the request
+      $devKey = $request->header('dev_key');
+    
+      // Now you can use $devKey as needed
+      // ...
+      $exist=devlopers_api::where('key',$devKey)->get();
+      if ( $exist->count() > '0' ) {
+          return response()->json([
+              'status'=> 'success',
+              'key' => $exist->key,
+              'return' => $exist->return
+      ]);
+      } else {
+          return response()->json(['error' => 'Unvalid key!']);
+      }
+    }
+    function devloper_post(Request $request) {
+
+        devlopers_api::create([
+
+            'key' => $request->key,
+            'return' => $request->return,
+            'url' => $request->url,
+  
+        ]);
+        
+        return response('done');
+        
+        
     }
 
 }
