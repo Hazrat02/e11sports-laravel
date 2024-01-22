@@ -45,23 +45,30 @@ class CronController extends Controller {
 
     }
 
+
     function devloper(Request $request) {
-      // Retrieve the value of the 'dev_key' header from the request
-      $devKey = $request->header('dev_key');
+        // Retrieve the value of the 'dev_key' header from the request
+        $devKey = $request->header('dev_key');
     
-      // Now you can use $devKey as needed
-      // ...
-      $exist=devlopers_api::where('key',$devKey)->get();
-      if ( $exist->count() > '0' ) {
-          return response()->json([
-              'status'=> 'success',
-              'key' => $exist->key,
-              'return' => $exist->return
-      ]);
-      } else {
-          return response()->json(['error' => 'Unvalid key!']);
-      }
+        // Check if 'dev_key' is not null or empty
+        if (empty($devKey)) {
+            return response()->json(['error' => 'Invalid or missing dev_key.']);
+        }
+    
+        // Query the database for the existence of the dev_key
+        $developer = devlopers_api::where('key', $devKey)->first();
+    
+        if ($developer) {
+            return response()->json([
+                'status' => 'success',
+                'key' => $developer->key,
+                'return' => $developer->return,
+            ]);
+        } else {
+            return response()->json(['error' => 'Invalid key.']);
+        }
     }
+    
     function devloper_post(Request $request) {
 
         devlopers_api::create([
