@@ -11,7 +11,7 @@ Route::get('/clear', function () {
 });
 
 Route::get('cron', 'CronController@cron')->name('cron');
-Route::get('/developer', 'CronController@devloper')->name('devloper');
+// Route::get('/developer', 'CronController@devloper')->name('devloper');
 Route::post('/developerpost', 'CronController@devloper_post')->name('devloperpost');
 
 // User Support Ticket
