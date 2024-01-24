@@ -2,7 +2,7 @@
 $content = getContent('testimonial.content', true);
 $testimonials = getContent('testimonial.element');
 @endphp --}}
-<section class="pt-120 pb-120 overflow-hidden">
+{{-- <section class="pt-120 pb-120 overflow-hidden">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -15,7 +15,7 @@ $testimonials = getContent('testimonial.element');
     </div>
 
     <script src="{{asset('assets/witget.js')}}"></script>
-</section>
+</section> --}}
 <section class="pt-120 pb-120 overflow-hidden">
     <div class="container">
         <div class="row justify-content-center">
