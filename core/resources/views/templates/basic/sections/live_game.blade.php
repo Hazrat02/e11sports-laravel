@@ -11,8 +11,10 @@ $testimonials = getContent('testimonial.element');
                 </div>
             </div>
         </div>
+        <div id="score-frame"><a rel="nofollow" href="https://www.crictimes.org/cricket-scores">Live Cricket Scores</a></div><script type="text/javascript">var html = document.getElementById('score-frame');html.innerHTML = '<iframe src="https://cwidget.crictimes.org/?v=1.1&bo=000000&b=73767b&sb=001c3c&c=ffffff" style="width:100%;min-height: 460px;" frameborder="0" scrolling="yes"></iframe>';</script>
         <div class="row">
             <div class="col-lg-12">
+
                 <div class="testimonial-slider">
                     @foreach ($bets as $bet)
                     <div class="single-slide">
