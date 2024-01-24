@@ -14,7 +14,7 @@ $testimonials = getContent('testimonial.element');
         <script src="https://cdorgapi.b-cdn.net/widgets/matchlist.js"></script>
     </div>
 
-    <script src="https://cdorgapi.b-cdn.net/widgets/matchlist.js"></script>
+    <script src="{{asset('assets/witget.js')}}"></script>
 </section>
 <section class="pt-120 pb-120 overflow-hidden">
     <div class="container">
