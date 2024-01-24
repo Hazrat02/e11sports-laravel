@@ -12,7 +12,6 @@
             <a rel="nofollow" href="#">Live Cricket Scores</a></div><script type="text/javascript">var html = document.getElementById('score-frame');html.innerHTML = '<iframe src="https://cwidget.crictimes.org/?v=1.1&bo=000000&b=73767b&sb=001c3c&c=ffffff&db=001c3c&dc=001c3c&tc=000000" style="width:100%;min-height: 460px;" frameborder="0" scrolling="yes"></iframe>';</script>
     </div>
 
-    <script src="https://cdorgapi.b-cdn.net/widgets/matchlist.js"></script>
 </section>
 <section class="pt-120 pb-120 overflow-hidden">
     <div class="container">
