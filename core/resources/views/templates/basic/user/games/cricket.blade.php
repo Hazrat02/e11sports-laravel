@@ -48,14 +48,14 @@
                                 <h4 >Match Details:</h4>
                                 <div>
                                     <b>team-A : </b> <span>{{$game->t1}}</span><br>
-                                    <b>Ratio : </b> <span>{{                                            {{ number_format($game->t1_ratio, 1) }} X
+                                    <b>Ratio : </b> <span>{{                                            {{ number_format($game->t1_ratios, 1) }} X
                                     }} X</span><br>
                                     <b>score : </b> <span></span>
                                 </div>
                                 <hr>
                                 <div>
                                     <b>team-B : </b> <span>{{$game->t2}}</span><br>
-                                    <b>Ratio : </b> <span>                                            {{ number_format($game->t2_ratio, 1) }} X
+                                    <b>Ratio : </b> <span>                                            {{ number_format($game->t2_ratios, 1) }} X
                                     </span><br>
                                     <b>score : </b> <span></span>
                                 </div>
